@@ -1,0 +1,15 @@
+﻿:Project name?
+:rewritten in another code base?
+
+:Charge Phase
+:Fight phase
+:Complete psychic phase and amount of psychic powers per psyker inc denials
+:abilities
+:invuln save
+:Damage Characteristics
+:assault + heavy for moving and advancing
+:exploding and chaining, and kill on number of shots termination
+:Complete Weapons rule exceptions
+:Include vehicle and flyers
+:Flesh out Races:- O DE C CD E T etc
+:check units info and groups & units

@@ -1,0 +1,471 @@
+Captain,1.25,1.25,6,2,2,4,4,5,4,9,3
+Captain in Terminator Armour,1.5,1.5,5,2,2,4,4,6,4,9,2
+Captain in Cataphractii Armour,1.5,1.5,4,2,2,4,4,6,4,9,2
+Captain in Gravis Armour,1.5,1.5,5,2,2,4,5,6,5,9,3
+Captain on Bike,2.75,1,14,2,2,4,5,6,4,9,3
+Librarian,1.25,1.25,6,3,3,4,4,4,3,9,3
+Librarian in Terminator Armour,1.5,1.5,5,3,3,4,4,5,3,9,2
+Librarian on Bike,2.75,1,14,3,3,4,5,5,3,9,3
+Techmarine,1.25,1.25,6,3,2,4,4,4,3,8,2
+Servitor,1,1,5,5,5,3,3,1,1,6,4
+Techmarine on Bike,2.75,1,14,3,2,4,5,5,3,8,2
+Chaplain,1.25,1.25,6,2,3,4,4,4,3,9,3
+Chaplain in Terminator Armour,1.5,1.5,5,2,3,4,4,5,3,9,2
+Chaplain on Bike,2.75,1,14,2,3,4,5,5,3,9,3
+Apothecary,1.25,1.25,6,3,3,4,4,4,3,8,3
+Apothecary on Bike,2.75,1,14,3,3,4,5,5,3,8,3
+Primaris Lieutenant,1.25,1.25,6,2,3,4,4,5,4,8,3
+Company Ancient,1.25,1.25,6,3,3,4,4,4,3,8,3
+Company Ancient on Bike,2.75,1,14,3,3,4,5,5,3,8,3
+Primaris Ancient,1.25,1.25,6,3,3,4,4,5,4,8,3
+Company Champion,1.25,1.25,6,2,3,4,4,4,3,8,3
+Company Champion on Bike,2.75,1,14,2,3,4,5,5,3,8,3
+Space Marine Veteran,1.25,1.25,6,3,3,4,4,1,2,8,3
+Space Marine Veteran Biker,2.75,1,14,3,3,4,5,2,2,8,3
+Veteran Biker Sergeant,2.75,1,14,3,3,4,5,2,3,9,3
+Space Marine Sergeant,1.25,1.25,6,3,3,4,4,1,2,8,3
+Scout,1,1,6,3,3,4,4,1,1,7,4
+Scout Sergeant,1,1,6,3,3,4,4,1,2,8,4
+Intercessor,1.25,1.25,6,3,3,4,4,2,2,7,3
+Intercessor Sergeant,1.25,1.25,6,3,3,4,4,2,3,8,3
+Imperial Space Marine,1.25,1.25,6,3,3,4,4,4,3,8,3
+Honour Guard,1.25,1.25,6,3,3,4,4,2,2,9,2
+Chapter Ancient,1.25,1.25,6,3,3,4,4,4,3,9,2
+Chapter Champion,1.25,1.25,6,2,3,4,4,4,4,9,2
+Centurion,2,2,4,3,3,5,5,3,2,7,2
+Centurion Sergeant,2,2,4,3,3,5,5,3,3,8,2
+Veteran Sergeant,1.25,1.25,6,3,3,4,4,1,3,9,3
+Dreadnought,2.35,2.35,6,3,3,6,7,8,4,8,3
+Venerable Dreadnought,2.35,2.35,6,2,2,6,7,8,4,8,3
+Contemptor Dreadnought,2.35,2.35,9,2,2,7,7,10,4,8,3
+Ironclad Dreadnought,2.35,2.35,6,3,3,6,8,8,4,8,3
+Terminator,1.5,1.5,5,3,3,4,4,2,2,8,2
+Terminator Sergeant,1.5,1.5,5,3,3,4,4,2,3,9,2
+Cataphractii Terminator,1.5,1.5,4,3,3,4,4,2,2,8,2
+Cataphractii Sergeant,1.5,1.5,4,3,3,4,4,2,3,9,2
+Tartaros Terminator,1.5,1.5,6,3,3,4,4,2,2,8,2
+Tartaros Sergeant,1.5,1.5,6,3,3,4,4,2,3,9,2
+Inceptor,1.25,1.25,10,3,3,4,5,2,2,7,3
+Inceptor Sergeant,1.25,1.25,10,3,3,4,5,2,3,8,3
+Scout Biker,2.75,1,16,3,3,4,5,2,1,7,4
+Scout Biker Sergeant,2.75,1,16,3,3,4,5,2,2,8,4
+Space Marine Biker,2.75,1,14,3,3,4,5,2,1,7,3
+Biker Sergeant,2.75,1,14,3,3,4,5,2,2,8,3
+Attack Bike,2.75,2.75,14,3,3,4,5,4,2,7,3
+Land Speeder Storm,1,1,18,3,3,4,5,7,2,7,4
+Land Speeder,1,1,16,3,3,4,5,6,2,7,3
+Rhino,1,1,12,6,3,6,7,10,3,8,3
+Rhino Primaris,1,1,12,6,3,6,7,10,3,8,3
+Razorback,1,1,12,6,3,6,7,10,3,8,3
+Drop Pod,1,1,0,0,3,6,6,8,0,8,3
+Stormhawk Interceptor,1,1,60,6,3,6,7,10,3,8,3
+Stormtalon Gunship,1,1,50,6,3,6,6,10,3,8,3
+Space Marine,1,1,6,3,3,4,4,1,1,7,3
+Armorium Cherub,1,1,6,6,0,2,4,1,1,3,6
+Hellblaster,1,1,6,3,3,4,4,2,2,7,3
+Hellblaster Sergeant,1,1,6,3,3,4,4,2,3,8,3
+Thunderfire Cannon,1,1,3,6,3,3,6,4,1,8,3
+Techmarine Gunner,1,1,6,3,2,4,4,2,3,8,2
+Predator,1,1,12,6,3,6,7,11,3,8,3
+Whirlwind,1,1,12,6,3,6,7,11,3,8,3
+Vindicator,1,1,10,6,3,6,8,11,3,8,3
+Hunter,1,1,10,6,3,6,8,11,3,8,3
+Stalker,1,1,10,6,3,6,8,11,3,8,3
+Stormraven Gunship,1,1,45,6,3,8,7,14,3,9,3
+Land Raider,1,1,10,6,3,8,8,16,6,9,2
+Land Raider Crusader,1,1,10,6,3,8,8,16,6,9,3
+Land Raider Redeemer,1,1,10,6,3,8,8,16,6,9,2
+Land Raider Excelsior,1,1,10,6,3,8,8,16,6,9,2
+Roboute Guilliman,1,1,8,2,2,6,6,9,6,10,2
+Marneus Calgar,1,1,5,2,2,4,4,7,5,9,2
+Marneus Calgar in Artificer Armour,1,1,6,2,2,4,4,6,5,9,2
+Captain Sicarius,1,1,6,2,2,4,4,5,4,9,2
+Chief Librarian Tigurius,1,1,6,3,3,4,4,4,3,9,3
+Chaplain Cassius,1,1,6,2,3,4,5,4,3,9,3
+Sergeant Telion,1,1,7,3,2,4,4,4,2,8,4
+Sergeant Chronus (Infantry),1,1,6,3,2,4,4,4,2,8,3
+Tyrannic War Veteran,1,1,6,3,3,4,4,1,2,8,3
+Veteran Sergeant (Astartes),1,1,6,3,3,4,4,1,3,9,3
+Terminus Ultra,1,1,10,6,3,8,8,16,6,9,2
+Captain Lysander,1,1,5,2,2,4,4,6,4,9,2
+Pedro Kantor,1,1,6,2,2,4,4,6,4,9,2
+High Marshal Helbrecht,1,1,6,2,2,4,4,6,4,9,2
+The Emperor’s Champion,1,1,6,2,3,4,4,4,4,8,2
+Chaplain Grimaldus,1,1,6,2,3,4,4,4,3,9,3
+Cenobyte Servitor,1,1,5,5,5,3,3,1,1,6,4
+Initiate,1,1,6,3,3,4,4,1,1,7,3
+Neophyte,1,1,6,3,3,4,4,1,1,6,4
+Sword Brother,1,1,6,3,3,4,4,1,2,8,3
+Kayvaan Shrike,1,1,12,2,2,4,4,5,5,9,3
+Vulkan He’stan,1,1,6,2,2,4,4,5,4,9,2
+Kor’sarro Khan,1,1,6,2,2,4,4,5,4,9,3
+Kor’sarro Khan on Moondrakkan,2.75,1,14,2,2,4,5,6,4,9,3
+Legionnaire,1,1,5,3,3,4,4,1,2,10,3
+Legionnaire Sergeant,1,1,5,3,3,4,4,1,3,10,3
+Commander Dante,1,1,12,2,2,4,4,6,6,9,2
+Captain Tycho,1,1,6,2,2,4,4,5,4,9,2
+Tycho the Lost,1,1,6,2,2,4,4,5,4,9,2
+Librarian Dreadnought,1,1,6,2,3,6,7,8,3,9,3
+Chief Librarian Mephiston,1,1,7,2,2,5,5,5,4,9,2
+The Sanguinor,1,1,12,2,2,4,4,5,5,9,2
+Astorath,1,1,12,2,2,4,4,5,4,9,2
+Sanguinary Priest,1,1,6,2,3,4,4,4,3,9,3
+Sanguinary Priest on Bike,2.75,1,14,2,3,4,5,5,3,9,3
+Brother Corbulo,1,1,6,2,2,4,4,5,4,9,3
+Sanguinary Guard Ancient,1,1,12,3,3,4,4,4,3,9,2
+Terminator Ancient,1,1,5,3,3,4,4,5,3,8,2
+Death Company Marine,1,1,6,3,3,4,4,1,2,7,3
+Lemartes,1,1,12,2,3,4,4,4,5,9,3
+Sanguinary Guard,1,1,12,3,3,4,4,2,2,8,2
+Death Company Dreadnought,1,1,8,3,3,6,7,8,4,7,3
+Furioso Dreadnought,1,1,8,3,3,6,7,8,4,8,3
+Baal Predator,1,1,12,6,3,6,7,11,3,8,3
+Gabriel Seth,1,1,6,2,2,4,4,6,4,9,3
+Azrael,1,1,6,2,2,4,4,6,5,9,2
+Belial,1,1,5,2,2,4,4,6,4,9,2
+Sammael on Corvex,2.75,1,14,2,2,4,6,6,5,9,3
+Sammael in Sableclaw,1,1,16,2,2,4,6,7,5,9,3
+Interrogator-Chaplain,1,1,6,2,3,4,4,5,3,9,3
+Interrogator-Chaplain in Terminator Armour,1,1,5,2,3,4,4,6,3,9,2
+Interrogator-Chaplain on Bike,2.75,1,14,2,3,4,5,6,3,9,3
+Asmodai,1,1,6,2,3,4,4,5,3,9,3
+Ezekiel,1,1,6,2,2,4,4,5,3,9,2
+Deathwing Apothecary,1,1,5,3,3,4,4,5,2,8,2
+Deathwing Ancient,1,1,5,3,3,4,4,5,3,8,2
+Deathwing Champion,1,1,5,2,3,4,4,5,3,8,2
+Deathwing Terminator,1,1,5,3,3,4,4,2,2,8,2
+Deathwing Sergeant,1,1,5,3,3,4,4,2,3,9,2
+Deathwing Knights,1,1,5,3,3,4,4,2,2,8,2
+Knight Master,1,1,5,3,3,4,4,2,3,9,2
+Ravenwing Apothecary,2.75,1,14,3,3,4,5,5,3,8,3
+Ravenwing Ancient,2.75,1,14,2,3,4,5,5,3,8,3
+Ravenwing Champion,2.75,1,14,3,3,4,5,5,3,8,3
+Ravenwing Biker,2.75,1,14,3,3,4,5,2,1,7,3
+Ravenwing Sergeant,2.75,1,14,3,3,4,5,2,2,8,3
+Ravenwing Attack Bike,2.75,2.75,14,3,3,4,5,4,1,7,3
+Ravenwing Land Speeder,2.16,2.16,16,3,3,4,5,6,2,7,3
+Ravenwing Darkshroud,1,1,12,3,3,4,6,9,3,8,3
+Nephilim Jetfighter,1,1,50,6,3,6,6,10,3,8,3
+Ravenwing Dark Talon,1,1,40,6,3,6,6,10,3,8,3
+Ravenwing Black Knight,1,1,14,3,3,4,5,2,2,8,3
+Ravenwing Huntmaster,1,1,14,3,3,4,5,2,3,8,3
+Ravenwing Land Speeder Vengeance,2.16,2.16,12,3,3,4,6,9,3,8,3
+Fortress of Redemption,1,1,0,0,5,0,10,30,0,9,3
+Logan Grimnar,1.5,1.5,5,2,2,4,4,7,5,9,2
+Logan Grimnar on Stormrider,2.75,2.75,10,2,2,4,6,12,5,9,3
+Wolf Lord on Thunderwolf,2.75,2.75,10,2,2,4,5,7,4,9,3
+Ragnar Blackmane,1,1,6,2,2,4,4,5,5,9,3
+Svangir,2.75,1,12,3,7,4,4,1,3,4,6
+Ulfgir,2.75,1,12,3,7,4,4,1,3,4,6
+Krom Dragongaze,1.5,1.5,6,2,2,4,4,5,5,9,3
+Harald Deathwolf,2.75,2.75,10,2,2,4,5,7,4,9,3
+Canis Wolfborn,2.75,2.75,10,2,5,4,5,6,4,8,3
+Rune Priest,1.25,1.25,6,2,3,4,4,4,3,9,3
+Rune Priest in Terminator Armour,1.5,1.5,5,2,3,4,4,5,3,9,2
+Rune Priest on Bike,2.75,1,14,2,3,4,5,5,3,9,3
+Njal Stormcaller,1.25,1.25,6,2,2,4,4,5,3,9,2
+Njal Stormcaller in Runic Terminator Armour,1.5,1.5,5,2,2,4,4,6,3,9,2
+Wolf Priest,1.25,1.25,6,2,3,4,4,4,3,9,3
+Wolf Priest in Terminator Armour,1.5,1.5,5,2,3,4,4,5,3,9,2
+Wolf Priest on Bike,2.75,1,14,2,3,4,5,5,3,9,3
+Ulrik the Slayer,1.25,1.25,6,2,2,4,4,5,4,9,3
+Wolf Guard Battle Leader,1.25,1.25,6,2,3,4,4,4,4,8,3
+Wolf Guard Battle Leader on Bike,2.75,1,14,2,3,4,5,5,4,8,3
+Wolf Guard Battle Leader in Terminator Armour,1.5,1.5,5,2,3,4,4,5,4,8,2
+Wolf Guard Battle Leader on Thunderwolf,2.75,2.75,10,2,3,4,5,6,4,8,3
+Bjorn the Fell-handed,2.35,2.35,8,2,2,7,8,8,5,9,3
+Blood Claw,1.25,1.25,6,3,4,4,4,1,1,7,3
+Blood Claw Pack Leader,1.25,1.25,6,3,4,4,4,1,2,7,3
+Wolf Guard Pack Leader,1.25,1.25,6,3,3,4,4,1,2,8,3
+Wolf Guard Pack Leader in Terminator Armour,1.5,1.5,5,3,3,4,4,2,2,8,2
+Lukas the Trickster,1.25,1.25,6,2,3,4,4,4,4,8,3
+Grey Hunter,1.25,1.25,6,3,3,4,4,1,1,7,3
+Grey Hunter Pack Leader,1.25,1.25,6,3,3,4,4,1,2,7,3
+Iron Priest,1.25,1.25,6,2,3,4,4,4,3,8,2
+Iron Priest on Bike,2.75,1,14,2,3,4,5,5,3,8,2
+Iron Priest on Thunderwolf,2.75,2.75,10,2,3,4,5,6,3,8,2
+Cyberwolf,1.25,1.25,10,3,0,4,4,2,3,4,4
+Wolf Scout,1.25,1.25,6,3,3,4,4,1,1,7,4
+Wolf Scout Pack Leader,1.25,1.25,6,3,3,4,4,1,2,7,4
+Wulfen,1.25,1.25,7,3,5,5,4,2,3,7,4
+Wulfen Pack Leader,1.25,1.25,7,3,5,5,4,2,4,7,4
+Lone Wolf,1.25,1.25,6,2,3,4,4,3,3,8,3
+Lone Wolf in Terminator Armour,1.5,1.5,5,2,3,4,4,4,3,9,2
+Murderfang,1.25,1.25,8,2,3,6,7,8,5,8,3
+Wolf Guard,1.25,1.25,6,3,3,4,4,1,2,8,3
+Wolf Guard on Bike,2.75,1,14,3,3,4,5,2,2,8,3
+Wolf Guard Pack Leader on Bike,2.75,1,14,3,3,4,5,2,3,8,3
+Arjac Rockfist,1.5,1.5,5,2,3,5,4,5,4,8,2
+Wolf Guard in Terminator Armour,1.5,1.5,5,3,3,4,4,2,2,8,2
+Swiftclaw,2.75,1,14,3,4,4,5,2,1,7,3
+Swiftclaw Pack Leader,2.75,1,14,3,4,4,5,2,2,7,3
+Swiftclaw Attack Bike,2.75,2.75,14,3,4,4,5,4,2,7,3
+Wolf Guard Bike Leader,2.75,2.75,14,3,3,4,5,2,2,8,3
+Stormwolf,2.75,1,50,6,3,8,7,14,3,8,3
+Thunderwolf Cavalry,2.75,2.75,10,3,3,4,5,3,2,8,3
+Thunderwolf Cavalry Pack Leader,2.75,2.75,10,3,3,4,5,3,3,8,3
+Fenrisian Wolf,2.75,1,10,3,0,4,4,1,2,4,6
+Skyclaw,1.25,1.25,12,3,4,4,4,1,1,7,3
+Skyclaw Pack Leader,1.25,1.25,12,3,4,4,4,1,2,7,3
+Wolf Guard Sky Leader,1.25,1.25,12,3,3,4,4,1,2,8,3
+Stormfang Gunship,3.6,4.75,50,6,3,8,7,14,3,8,3
+Long Fang,1.25,1.25,6,3,3,4,4,1,1,8,3
+Long Fang Pack Leader,1.25,1.25,6,3,3,4,4,1,2,8,3
+Watch Master,1.25,1.25,6,2,2,4,4,6,4,9,2
+Watch Captain Artemis,1.25,1.25,6,2,2,4,4,5,4,9,3
+Deathwatch Veteran,1.25,1.25,6,3,3,4,4,1,2,8,3
+Watch Sergeant,1.25,1.25,6,3,3,4,4,1,3,9,3
+Black Shield,1.25,1.25,6,3,3,4,4,1,3,8,3
+Deathwatch Biker,2.75,1,14,3,3,4,5,2,2,8,3
+Deathwatch Terminator,1.5,1.5,5,3,3,4,4,2,2,8,2
+Deathwatch Terminator Sergeant,1.5,1.5,5,3,3,4,4,2,3,9,2
+Deathwatch Vanguard Veteran,1.25,1.25,12,3,3,4,4,1,2,8,3
+Deathwatch Vanguard Sergeant,1.25,1.25,12,3,3,4,4,1,3,9,3
+Deathwatch Biker Sergeant,2.75,1,14,3,3,4,5,2,3,9,3
+Corvus Blackstar,1,1,45,6,3,8,7,14,3,8,3
+Lord Kaldor Draigo,1.5,1.5,5,2,2,4,4,7,5,9,2
+Grand Master Voldus,1.5,1.5,5,2,2,4,4,6,5,9,2
+Grand Master,1.5,1.5,5,2,2,4,4,6,5,9,2
+Brother-Captain,1.5,1.5,5,2,2,4,4,6,4,9,2
+Brother-Captain Stern,1.5,1.5,5,2,2,4,4,6,4,9,2
+Brotherhood Ancient,1.25,1.25,5,3,3,4,4,5,3,8,2
+Brotherhood Champion,1.25,1.25,6,2,2,4,4,4,4,8,2
+Castellan Crowe,1.25,1.25,6,2,2,4,4,5,5,8,2
+Grey Knight,1.25,1.25,6,3,3,4,4,1,1,7,3
+Justicar,1.25,1.25,6,3,3,4,4,1,2,8,3
+Grey Knight Terminator,1.5,1.5,5,3,3,4,4,2,2,7,2
+Terminator Justicar,1.5,1.5,5,3,3,4,4,2,3,8,2
+Purifier,1.25,1.25,6,3,3,4,4,1,1,8,3
+Knight of the Flame,1.25,1.25,6,3,3,4,4,1,2,9,3
+Paladin,1.25,1.25,5,3,3,4,4,3,3,8,2
+Paragon,1.25,1.25,5,2,3,4,4,3,3,9,2
+Paladin Ancient,1.25,1.25,5,2,3,4,4,5,4,8,2
+Grey Knight Apothecary,1.25,1.25,5,2,3,4,4,5,4,8,2
+Interceptor,1.25,1.25,12,3,3,4,4,1,1,7,3
+Interceptor Justicar,1.25,1.25,12,3,3,4,4,1,2,8,3
+Purgator,1.25,1.25,6,3,3,4,4,1,1,7,3
+Purgator Justicar,1.25,1.25,6,3,3,4,4,1,2,8,3
+Nemesis Dreadknight,3.6,4.75,8,3,3,6,6,12,4,8,2
+
+
+Company Commander,1,1,6,3,3,3,3,4,3,8,5
+Tank Commander,4.5,3,10,6,3,7,8,12,3,7,3
+Master of Ordnance,1,1,6,4,3,3,3,3,2,6,5
+Platoon Commander,1,1,6,3,3,3,3,3,3,7,5
+Veteran,1,1,6,4,3,3,3,1,1,6,5
+Veteran Heavy Weapons Team,2.75,2.75,6,4,3,3,3,2,2,6,5
+Guardsman,1,1,6,4,4,3,3,1,1,6,5
+Sergeant,1,1,6,4,4,3,3,1,2,7,5
+Heavy Weapons Team,2.75,2.75,6,4,4,3,3,2,2,6,5
+Veteran Sergeant (Militarum),1,1,6,4,3,3,3,1,2,7,5
+Veteran Weapons Team,2.75,2.75,6,4,3,3,3,2,2,6,5
+Conscript,1,1,6,5,5,3,3,1,1,4,5
+Rough Rider,2.75,1,10,4,4,3,3,2,1,6,5
+Rough Rider Sergeant,2.75,1,10,4,4,3,3,2,2,7,5
+Scout Sentinel,2.35,2.35,9,4,4,5,5,6,1,7,4
+Armoured Sentinel,2.35,2.35,8,4,4,5,5,6,1,7,3
+Chimera,4.75,3.75,12,6,4,6,7,10,3,7,3
+Taurox,4.35,2.75,14,6,4,6,6,10,3,7,3
+Hellhound,4.75,3.75,12,6,4,6,7,11,3,7,3
+Devil Dog,4.75,3.75,12,6,4,6,7,11,3,7,3
+Bane Wolf,4.75,3.75,14,6,4,6,6,10,3,7,3
+Basilisk,4.75,3.75,12,6,4,6,6,11,3,7,3
+Hydra,4.75,3.75,12,6,4,6,6,11,3,7,3
+Wyvern,4.75,3.75,12,6,4,6,6,10,3,7,3
+Manticore,4.75,3.75,12,6,4,6,7,11,3,7,3
+Deathstrike,4.75,3.75,12,6,4,6,7,11,3,7,3
+Leman Russ Battle Tank,4.5,3,10,6,4,7,8,12,3,7,3
+Leman Russ Demolisher,4.5,3,10,6,4,7,8,12,3,7,3
+Baneblade,8.75,5.5,10,5,4,9,8,26,9,8,3
+Banehammer,8.75,5.5,10,5,4,9,8,26,9,8,3
+Banesword,8.75,5.5,10,5,4,9,8,26,9,8,3
+Doomhammer,8.75,5.5,10,5,4,9,8,26,9,8,3
+Hellhammer,8.75,5.5,10,5,4,9,8,26,9,8,3
+Shadowsword,8.75,5.5,10,5,4,9,8,26,9,8,3
+Stormlord,8.75,5.5,10,5,4,9,8,26,9,8,3
+Stormsword,8.75,5.5,10,5,4,9,8,26,9,8,3
+Lord Castellan Creed,1,1,6,3,3,3,3,4,3,9,4
+Colour Sergeant Kell,1,1,6,3,3,3,3,4,3,7,4
+Knight Commander Pask,4.75,3.75,10,6,2,7,8,12,3,8,3
+Colonel 'Iron Hand' Straken,1,1,6,2,3,6,4,5,4,9,3
+Sergeant Harker,1,1,6,3,3,4,3,3,4,7,5
+Lord Commissar,1,1,6,2,2,3,3,4,3,9,4
+Commissar,1,1,6,3,3,3,3,3,3,8,5
+Commissar Yarrick,1,1,6,2,2,3,4,4,3,9,4
+Tempestor Prime,1,1,6,3,3,3,3,4,3,8,4
+Tempestus Scion,1,1,6,4,3,3,3,1,1,6,4
+Tempestor,1,1,6,3,3,3,3,1,2,7,4
+Taurox Prime,4.35,2.75,14,6,3,6,6,10,3,7,3
+Ogryn,1.5,1.5,6,3,4,5,5,3,3,7,5
+Ogryn Bone'ead,1.5,1.5,6,3,4,5,5,3,4,8,5
+Bullgryn,1.5,1.5,6,3,4,5,5,3,3,7,5
+Bullgryn Bone'ead,1.5,1.5,6,3,4,5,5,3,4,8,5
+Ratling,1,1,5,5,3,2,2,1,1,5,6
+Nork Deddog,1,1,6,3,4,5,5,6,4,8,4
+Officer of the Fleet,1,1,6,4,3,3,3,3,2,6,5
+Valkyrie,4.75,3.55,45,6,4,7,7,14,3,7,3
+Belisarius Cawl,4.15,2.75,6,2,2,5,6,8,4,9,2
+Tech-Priest Dominus,2,2,6,3,2,4,4,5,3,8,2
+Tech-Priest Enginseer,2,2,6,4,4,4,4,4,2,8,3
+Kataphron Breacher,2.35,2.35,5,4,4,5,5,3,2,7,3
+Kataphron Destroyer,2.35,2.35,5,4,4,5,5,3,1,7,4
+Fulgurite Electro-Priest,1.25,1.25,6,3,4,3,3,1,2,8,6
+Corpuscarii Electro-Priest,1.25,1.25,6,4,3,3,3,1,2,8,6
+Kastelan Robot,2.35,2.35,8,4,4,6,7,6,3,10,3
+Cybernetica Datasmith,1.25,1.25,6,3,3,4,4,4,2,8,2
+Skitarii Ranger,1,1,6,4,3,3,3,1,1,6,4
+Ranger Alpha,1,1,6,4,3,3,3,1,2,7,4
+Skitarii Vanguard,1,1,6,4,3,3,3,1,1,6,4
+Vanguard Alpha,1,1,6,4,3,3,3,1,2,7,4
+Sicarian Infiltrator,1,1,6,3,3,4,3,2,2,6,4
+Infiltrator Princeps,1,1,8,3,3,4,3,2,3,7,4
+Sicarian Ruststalker,1,1,8,3,3,4,3,2,3,6,4
+Ruststalker Princeps,1,1,8,3,3,4,3,2,4,7,4
+Ironstrider Ballistarius,4.15,2.75,10,3,3,5,6,6,2,8,4
+Sydonian Dragoon,4.15,2.75,10,3,3,5,6,6,3,8,4
+Onager Dunecrawler,5.15,5.15,8,5,3,6,7,11,3,8,3
+Knight Errant,4.15,6.7,12,3,3,8,8,24,4,9,3
+Knight Paladin,4.15,6.7,12,3,3,8,8,24,4,9,3
+Knight Warden,4.15,6.7,12,3,3,8,8,24,4,9,3
+Knight Gallant,4.15,6.7,12,3,3,8,8,24,4,9,3
+Knight Crusader,4.15,6.7,12,3,3,8,8,24,4,9,3
+
+
+Archon,1,1,8,2,2,3,3,5,5,9,5
+
+
+Player,1,1,8,3,3,3,3,1,4,8,6
+Troupe Master,1,1,8,2,2,3,3,5,5,9,6
+Death Jester,1,1,8,2,2,3,3,5,4,9,6
+Shadowseer,1,1,8,2,2,3,3,5,3,9,7
+Solitaire,1,1,12,2,2,3,3,5,8,9,6
+Skyweavers,1,1,16,3,3,3,4,3,3,8,4
+Starweaver,1,1,16,3,3,5,5,6,3,8,4
+Voidweaver,1,1,16,3,3,5,5,6,3,8,4
+Yvraine,1,1,8,2,2,3,3,5,4,9,6
+The Visarch,1,1,6,2,2,3,3,5,5,9,3
+The Yncarne,1,1,8,2,2,6,6,9,6,9,3
+Imotekh the Stormlord,1,1,5,2,2,5,5,6,3,10,3
+Overlord,1,1,5,2,2,5,5,5,3,10,3
+Lord,1,1,5,3,3,5,5,4,3,10,3
+Cryptek,1,1,5,3,3,4,4,4,1,10,4
+Destroyer Lord,1,1,10,3,3,5,6,6,4,10,3
+Nemesor Zahndrekh,1,1,5,2,2,5,5,6,3,10,2
+Vargard Obyron,1,1,5,2,3,5,5,6,3,10,2
+Illuminor Szeras,1,1,6,3,3,4,4,5,4,10,3
+Orikan the Diviner,1,1,5,3,3,4,4,5,2,10,4
+Orikan Empowered,1,1,5,2,2,7,7,7,4,10,4
+Anrakyr the Traveller,1,1,5,2,2,6,5,6,3,10,3
+Trazyn the Infinite,1,1,5,2,2,5,5,6,3,10,3
+Catacomb Command Barge,1,1,12,2,2,5,6,8,3,10,3
+Necron Warrior,1,1,5,3,3,4,4,1,1,10,4
+Immortal,1,1,5,3,3,4,4,1,1,10,3
+Lychguard,1,1,5,3,3,5,5,2,2,10,3
+Deathmarks,1,1,5,3,3,4,4,1,1,10,3
+Flayed One,1,1,5,3,6,4,4,1,4,10,4
+Triarch Praetorian,1,1,10,3,3,5,5,2,2,10,3
+Triarch Stalker,1,1,10,3,3,7,6,10,3,10,3
+C'tan Shard of the Nightbringer,1,1,8,2,2,7,7,8,4,10,4
+C'tan Shard of the Deceiver,1,1,8,2,2,7,7,8,4,10,4
+Ghost Ark,1,1,12,6,3,6,6,14,3,10,4
+Night Scythe,1,1,60,6,3,6,6,12,3,10,3
+Doom Scythe,1,1,60,6,3,6,6,12,3,10,3
+Canoptek Wraith,1,1,12,3,3,6,5,3,3,10,4
+Canoptek Scarab Swarm,1,1,10,3,3,3,3,3,4,10,6
+Tomb Blades,1,1,14,3,3,4,5,2,1,10,4
+Destroyer,1,1,10,3,3,4,5,3,2,10,3
+Heavy Destroyer,1,1,10,3,3,4,5,3,2,10,3
+Heavy Destroyer,1,1,10,3,3,4,5,3,2,10,3
+Canoptek Spyder,1,1,6,4,4,6,6,4,4,10,3
+Monolith,1,1,6,6,4,8,8,20,3,10,3
+Annihilation Barge,1,1,12,6,3,5,6,8,3,10,4
+Doomsday Ark,1,1,12,6,3,6,6,14,3,10,4
+Transcendent C'tan,1,1,8,2,2,7,7,8,4,10,4
+Tesseract Vault,1,1,8,6,3,8,7,28,3,10,3
+Obelisk,1,1,8,6,3,8,8,24,3,10,3
+Warboss,1,1,5,2,5,6,5,6,4,8,4
+Warboss in Mega Armour,1,1,4,2,5,6,5,7,4,8,2
+Warboss on Bike,1,1,14,2,5,6,6,7,4,8,4
+Weirdboy,1,1,5,3,5,5,4,4,3,6,6
+Big Mek,1,1,5,3,5,5,4,4,3,7,4
+Grot Oiler,1,1,5,5,4,2,2,1,1,4,6
+Big Mek in Mega Armour,1,1,4,3,5,5,4,5,3,8,2
+Grot Oiler,1,1,5,5,4,2,2,1,1,4,6
+Big Mek on Warbike,1,1,14,3,5,5,5,5,3,7,4
+Ghazghkull Thraka,1,1,5,2,5,6,6,8,5,8,2
+Kaptin Badrukk,1,1,5,2,4,5,4,6,4,8,3
+Ammo Runt,1,1,5,5,4,2,2,1,1,4,6
+Boss Zagstruk,1,1,12,2,5,6,4,6,6,7,4
+Boss Snikrot,1,1,6,2,5,6,4,6,6,7,6
+Mek,1,1,5,3,5,4,4,3,2,6,6
+Grot Oiler,1,1,5,5,4,2,2,1,1,4,6
+Painboy,1,1,5,3,5,5,4,4,4,6,6
+Grot Orderly,1,1,5,5,4,2,2,1,1,4,6
+Painboy on Warbike,1,1,14,3,5,5,5,5,4,6,4
+Mad Dok Grotsnik,1,1,5,2,5,5,5,4,4,8,4
+Ork Boy,1,1,5,3,5,4,4,1,2,6,6
+Boss Nob,1,1,5,3,5,5,4,2,3,7,6
+Gretchin,1,1,5,5,4,2,2,1,1,4,6
+Runtherd,1,1,5,3,5,4,4,4,3,7,6
+Burna Boy,1,1,5,3,5,4,4,1,2,6,6
+Spanner,1,1,5,3,5,4,4,1,2,6,6
+Tankbusta,1,1,5,3,5,4,4,1,2,6,6
+Boss Nob,1,1,5,3,5,5,4,2,3,7,6
+Bomb Squig,1,1,5,2,2,3,4,1,1,4,6
+Nob,1,1,5,3,5,5,4,2,3,6,4
+Boss Nob,1,1,5,3,5,5,4,2,3,7,4
+Ammo Runt,1,1,5,5,4,2,2,1,1,4,6
+Nob with Waaagh! Banner,1,1,5,3,5,5,4,4,3,6,4
+Nob on Warbike,1,1,14,3,5,5,5,3,3,6,4
+Boss Nob on Warbike,1,1,14,3,5,5,5,3,3,7,4
+Meganob,1,1,4,3,5,5,4,3,3,6,2
+Boss Meganob,1,1,4,3,5,5,4,3,3,7,2
+Kommando,1,1,6,3,5,4,4,1,2,6,6
+Boss Nob,1,1,6,3,5,5,4,2,3,7,6
+Trukk,1,1,12,5,5,6,6,10,3,6,4
+Stormboy,1,1,12,3,5,4,4,1,2,6,6
+Boss Nob,1,1,12,3,5,5,4,2,3,7,6
+Deffkopta,1,1,14,3,5,4,5,4,2,6,4
+Dakkajet,1,1,60,5,5,6,6,12,3,6,4
+Burna-bommer,1,1,50,5,5,6,6,12,3,6,4
+Blitza-bommer,1,1,50,5,5,6,6,12,3,6,4
+Wazbom Blastajet,1,1,60,5,5,6,6,12,3,6,4
+Warbiker,1,1,14,3,5,4,5,2,2,6,4
+Boss Nob,1,1,14,3,5,5,5,3,3,7,4
+Wartrakk,1,1,12,3,5,4,5,6,4,6,4
+Skorcha,1,1,12,3,5,4,5,6,4,6,4
+Warbuggy,1,1,14,3,5,4,5,5,4,6,4
+Big Gun,1,1,3,6,4,3,5,3,1,6,5
+Grot Gunner,1,1,5,5,4,2,2,1,1,4,6
+Mek Gun,1,1,3,6,4,3,5,6,1,6,5
+Grot Gunner,1,1,5,5,4,2,2,1,1,4,6
+Battlewagon,1,1,12,5,5,8,7,16,6,7,4
+Deff Dread,1,1,6,3,5,5,7,8,2,7,3
+Killa Kan,1,1,6,5,4,5,5,5,3,6,3
+Morkanaut,1,1,8,3,5,8,8,18,4,7,3
+Gorkanaut,1,1,8,3,5,8,8,18,6,7,3
+Loota,1,1,5,3,5,4,4,1,2,6,6
+Spanner,1,1,5,3,5,4,4,1,2,6,6
+Flash Git,1,1,5,,4,5,4,2,3,6,6
+Kaptin,1,1,5,3,4,5,4,2,3,6,6
+Ammo Runt,1,1,5,5,4,2,2,1,1,4,6
+Stompa,1,1,12,3,5,10,8,40,4,8,3
+Commander,1,1,8,3,2,5,5,6,4,9,3
+Commander in XV86 Coldstar Battlesuit,1,1,20,3,2,5,5,6,4,9,3
+Ethereal,1,1,6,3,4,3,3,4,3,9,5
+Cadre Fireblade,1,1,6,3,2,3,3,5,3,8,4
+Commander Farsight,1,1,6,2,2,5,5,6,4,9,3
+Commander Shadowsun,1,1,8,3,2,4,4,5,4,9,3
+MV52 Shield Drone,1,1,8,5,5,3,4,1,1,6,4
+MV62 Command-link Drone,1,1,8,5,5,3,4,1,1,6,4
+Aun'Shi,1,1,6,2,4,3,3,5,5,9,20
+Aun'Va,1,1,6,6,4,2,3,6,1,9,5
+Ethereal Guard,1,1,6,3,3,3,3,2,3,9,5
+Darkstrider,1,1,7,3,2,3,3,5,3,8,5
+Fire Warrior,1,1,6,5,4,3,3,1,1,6,4
+Fire Warrior Shas'ui,1,1,6,5,4,3,3,1,2,7,4
+DS8 Tactial Support Turret,1,1,0,20,4,3,3,1,0,4,4
+MV36 Guardian Drone,1,1,8,5,5,3,4,1,1,6,4
+Fire Warrior,1,1,6,5,4,3,3,1,1,6,4
+Fire Warrior Shas'ui,1,1,6,5,4,3,3,1,2,7,4
+

@@ -1,0 +1,2815 @@
+﻿<Data>
+  <Race Name="Imperium_1">
+    <Chapter Name="General">
+      <SoloUnit>
+        <Group Name="Captain">
+          <UnitName>Captain</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Captain_in_Terminator_Armour">
+          <UnitName>Captain in Terminator Armour</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Captain_in_Cataphractii_Armour">
+          <UnitName>Captain in Cataphractii Armour</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Captain_in_Gravis_Armour">
+          <UnitName>Captain in Gravis Armour</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Captain_on_Bike">
+          <UnitName>Captain on Bike</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Librarian">
+          <UnitName>Librarian</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Librarian_in_Terminator_Armour">
+          <UnitName>Librarian in Terminator Armour</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Librarian_on_Bike">
+          <UnitName>Librarian on Bike</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Techmarine">
+          <UnitName>Techmarine</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Servitors">
+          <UnitName>Servitor</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>4</MaxNumber>
+        </Group>
+        <Group Name="Techmarine_on_Bike">
+          <UnitName>Techmarine on Bike</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Chaplain">
+          <UnitName>Chaplain</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Chaplain_in_Terminator_Armour">
+          <UnitName>Chaplain in Terminator Armour</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Chaplain_on_Bike">
+          <UnitName>Chaplain on Bike</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Apothecary">
+          <UnitName>Apothecary</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Apothecary_on_Bike">
+          <UnitName>Apothecary on Bike</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Primaris_Lieutenants">
+          <UnitName>Primaris Lieutenant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>2</MaxNumber>
+        </Group>
+        <Group Name="Company_Ancient">
+          <UnitName>Company Ancient</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Company_Ancient_on_Bike">
+          <UnitName>Company Ancient on Bike</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Primaris_Ancient">
+          <UnitName>Primaris Ancient</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Company_Champion">
+          <UnitName>Company Champion</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Company_Champion_on_Bike">
+          <UnitName>Company Champion on Bike</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Imperial_Space_Marine">
+          <UnitName>Imperial Space Marine</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Honour_Guard">
+          <UnitName>Honour Guard</UnitName>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>2</MaxNumber>
+        </Group>
+        <Group Name="Chapter_Ancient">
+          <UnitName>Chapter Ancient</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Chapter_Champion">
+          <UnitName>Chapter Champion</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Dreadnought">
+          <UnitName>Dreadnought</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Venerable_Dreadnought">
+          <UnitName>Venerable Dreadnought</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Contemptor_Dreadnought">
+          <UnitName>Contemptor Dreadnought</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Ironclad_Dreadnought">
+          <UnitName>Ironclad Dreadnought</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Attack_Bike_Squad">
+          <UnitName>Attack Bike</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>3</MaxNumber>
+        </Group>
+        <Group Name="Land_Speeder_Storm">
+          <UnitName>Land Speeder Storm</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Land_Speeders">
+          <UnitName>Land Speeder</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>3</MaxNumber>
+        </Group>
+        <Group Name="Rhino">
+          <UnitName>Rhino</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Rhino_Primaris">
+          <UnitName>Rhino Primaris</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Razorback">
+          <UnitName>Razorback</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Drop_Pod">
+          <UnitName>Drop Pod</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Stormhawk_Interceptor">
+          <UnitName>Stormhawk Interceptor</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Stormtalon_Gunship">
+          <UnitName>Stormtalon Gunship</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Predator">
+          <UnitName>Predator</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Whirlwind">
+          <UnitName>Whirlwind</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Vindicator">
+          <UnitName>Vindicator</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Hunter">
+          <UnitName>Hunter</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Stalker">
+          <UnitName>Stalker</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Stormraven_Gunship">
+          <UnitName>Stormraven Gunship</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Land_Raider">
+          <UnitName>Land Raider</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Land_Raider_Crusader">
+          <UnitName>Land Raider Crusader</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Land_Raider_Redeemer">
+          <UnitName>Land Raider Redeemer</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Land_Raider_Excelsior">
+          <UnitName>Land Raider Excelsior</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Fortress_of_Redemption">
+          <UnitName>Fortress of Redemption</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </SoloUnit>
+      <TwoUnitGroups>
+        <Group Name="Company_Veterans">
+          <UnitName>Space Marine Veteran</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>4</MaxNumber>
+          <UnitName>Veteran Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Company_Veterans_on_Bike">
+          <UnitName>Space Marine Veteran Biker</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>4</MaxNumber>
+          <UnitName>Veteran Biker Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Tactical_Squad">
+          <UnitName>Space Marine</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Space Marine Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Scout_Squad">
+          <UnitName>Scout</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Scout Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Intercessor_Squad">
+          <UnitName>Intercessor Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Intercessor</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>4</MaxNumber>
+        </Group>
+        <Group Name="Centurion_Assault_Squad">
+          <UnitName>Centurion</UnitName>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>5</MaxNumber>
+          <UnitName>Centurion Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Sternguard_Veteran_Squad">
+          <UnitName>Space Marine Veteran</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Veteran Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Vanguard_Veteran_Squad">
+          <UnitName>Space Marine Veteran</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Veteran Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Terminator_Squad">
+          <UnitName>Terminator</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Terminator Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Terminator_Assault_Squad">
+          <UnitName>Terminator</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Terminator Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Cataphractii_Terminator_Squad">
+          <UnitName>Cataphractii Terminator</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Cataphractii Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Tartaros_Terminator_Squad">
+          <UnitName>Tartaros Terminator</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Tartaros Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Assault_Squad">
+          <UnitName>Space Marine</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Space Marine Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Inceptor_Squad">
+          <UnitName>Inceptor Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Inceptor</UnitName>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>2</MaxNumber>
+        </Group>
+        <Group Name="Scout_Bike_Squad">
+          <UnitName>Scout Biker</UnitName>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>8</MaxNumber>
+          <UnitName>Scout Biker Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Centurion_Devastator_Squad">
+          <UnitName>Centurion</UnitName>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>5</MaxNumber>
+          <UnitName>Centurion Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Hellblaster_Squad">
+          <UnitName>Hellblaster Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Hellblaster</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>4</MaxNumber>
+        </Group>
+        <Group Name="Thunderfire_Cannon">
+          <UnitName>Techmarine Gunner</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Thunderfire Cannon</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </TwoUnitGroups>
+      <ThreeUnitGroups>
+        <Group Name="Bike_Squad">
+          <UnitName>Space Marine Biker</UnitName>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>7</MaxNumber>
+          <UnitName>Attack Bike</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Biker Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Devastator_Squad">
+          <UnitName>Space Marine</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Armorium Cherub</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Space Marine Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </ThreeUnitGroups>
+    </Chapter>
+    <Chapter Name="Ultramarines">
+      <SoloUnit>
+        <Group Name="Roboute_Guilliman">
+          <UnitName>Roboute Guilliman</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Marneus_Calgar">
+          <UnitName>Marneus Calgar</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Marneus_Calgar_in_Artificer_Armour">
+          <UnitName>Marneus Calgar in Artificer Armour</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Captain_Sicarius">
+          <UnitName>Captain Sicarius</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Chief_Librarian_Tigurius">
+          <UnitName>Chief Librarian Tigurius</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Chaplain_Cassius">
+          <UnitName>Chaplain Cassius</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Sergeant_Telion">
+          <UnitName>Sergeant Telion</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Sergeant_Chronus">
+          <UnitName>Sergeant Chronus (Tank Commander)</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Terminus_Ultra">
+          <UnitName>Terminus Ultra</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </SoloUnit>
+      <TwoUnitGroups>
+        <Group Name="Tyrannic_War_Veterans">
+          <UnitName>Tyrannic War Veteran</UnitName>
+          <MinNumber>3</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Veteran Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </TwoUnitGroups>
+    </Chapter>
+    <Chapter Name="ImperialFists">
+      <SoloUnit>
+        <Group Name="Captain_Lysander">
+          <UnitName>Captain Lysander</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </SoloUnit>
+    </Chapter>
+    <Chapter Name="CrimsonFists">
+      <SoloUnit>
+        <Group Name="Pedro_Kantor">
+          <UnitName>Pedro Kantor</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </SoloUnit>
+    </Chapter>
+    <Chapter Name="BlackTemplars">
+      <SoloUnit>
+        <Group Name="High_Marshal_Helbrecht">
+          <UnitName>High Marshal Helbrecht</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="The_Emperors_Champion">
+          <UnitName>The Emperor's Champion</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Chaplain_Grimaldus">
+          <UnitName>Chaplain Grimaldus</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Cenobyte_Servitors">
+          <UnitName>Cenobyte Servitor</UnitName>
+          <MinNumber>3</MinNumber>
+          <MaxNumber>3</MaxNumber>
+        </Group>
+      </SoloUnit>
+      <ThreeUnitGroups>
+        <Group Name="Crusader_Squad">
+          <UnitName>Initiate</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>10</MaxNumber>
+          <UnitName>Neophyte</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>10</MaxNumber>
+          <UnitName>Sword Brother</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </ThreeUnitGroups>
+    </Chapter>
+    <Chapter Name="RavenGuard">
+      <SoloUnit>
+        <Group Name="Kayvaan_Shrike">
+          <UnitName>Kayvaan Shrike</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </SoloUnit>
+    </Chapter>
+    <Chapter Name="Salamanders">
+      <SoloUnit>
+        <Group Name="Vulkan_Hestan">
+          <UnitName>Vulkan He'stan</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </SoloUnit>
+    </Chapter>
+    <Chapter Name="WhiteScars">
+      <SoloUnit>
+        <Group Name="Korsarro_Khan">
+          <UnitName>Kor'sarro Khan</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Korsarro_Khan_on_Moondrakken">
+          <UnitName>Kor'sarro Khan on Moondrakkan</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </SoloUnit>
+    </Chapter>
+    <Chapter Name="LotD">
+      <TwoUnitGroups>
+        <Group Name="Damned_Legionnaires">
+          <UnitName>Legionnaire</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Legionnaire Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </TwoUnitGroups>
+    </Chapter>
+    <Chapter Name="BloodAngels">
+      <SoloUnit>
+        <Group Name="Commander_Dante">
+          <UnitName>Commander Dante</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Captain_Tycho">
+          <UnitName>Captain Tycho</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Tycho_the_Lost">
+          <UnitName>Tycho the Lost</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Librarian_Dreadnought">
+          <UnitName>Librarian Dreadnought</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Chief_Librarian_Mephiston">
+          <UnitName>Chief Librarian Mephiston</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="The_Sanguinor">
+          <UnitName>The Sanguinor</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Astorath">
+          <UnitName>Astorath</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Sanguinary_Priest">
+          <UnitName>Sanguinary Priest</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Sanguinary_Priest_on_Bike">
+          <UnitName>Sanguinary Priest on Bike</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Brother_Corbulo">
+          <UnitName>Brother Corbulo</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Sanguinary_Guard_Ancient">
+          <UnitName>Sanguinary Guard Ancient</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Terminator_Ancient">
+          <UnitName>Terminator Ancient</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Death_Company">
+          <UnitName>Death Company Marine</UnitName>
+          <MinNumber>5</MinNumber>
+          <MaxNumber>15</MaxNumber>
+        </Group>
+        <Group Name="Lemartes">
+          <UnitName>Lemartes</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Sanguinary_Guard">
+          <UnitName>Sanguinary Guard</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>10</MaxNumber>
+        </Group>
+        <Group Name="Death_Company_Dreadnought">
+          <UnitName>Death Company Dreadnought</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Furioso_Dreadnought">
+          <UnitName>Furioso Dreadnought</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Baal_Predator">
+          <UnitName>Baal Predator</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </SoloUnit>
+    </Chapter>
+    <Chapter Name="FleshTearers">
+      <SoloUnit>
+        <Group Name="Gabriel_Seth">
+          <UnitName>Gabriel Seth</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </SoloUnit>
+    </Chapter>
+    <Chapter Name="DarkAngels">
+      <SoloUnit>
+        <Group Name="Azrael">
+          <UnitName>Azrael</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Belial">
+          <UnitName>Belial</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Sammael_on_Corvex">
+          <UnitName>Sammael on Corvex</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Sammael_in_Sableclaw">
+          <UnitName>Sammael in Sableclaw</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Interrogator-Chaplain">
+          <UnitName>Interrogator-Chaplain</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Interrogator-Chaplain_in_Terminator_Armour">
+          <UnitName>Interrogator-Chaplain in Terminator Armour</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Interrogator-Chaplain_on_Bike">
+          <UnitName>Interrogator-Chaplain on Bike</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Asmodai">
+          <UnitName>Asmodai</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Ezekiel">
+          <UnitName>Ezekiel</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Deathwing_Apothecary">
+          <UnitName>Deathwing Apothecary</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Deathwing_Ancient">
+          <UnitName>Deathwing Ancient</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Deathwing_Champion">
+          <UnitName>Deathwing Champion</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Ravenwing_Apothecary">
+          <UnitName>Deathwing Terminator</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Ravenwing_Ancient">
+          <UnitName>Deathwing Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Ravenwing_Champion">
+          <UnitName>Deathwing Knights</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Ravenwing_Attack_Bike_Squad">
+          <UnitName>Ravenwing Attack Bike</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>3</MaxNumber>
+        </Group>
+        <Group Name="Ravenwing_Land_Speeders">
+          <UnitName>Ravenwing Land Speeder</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>5</MaxNumber>
+        </Group>
+        <Group Name="Ravenwing_Darkshroud">
+          <UnitName>Ravenwing Darkshroud</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Ravenwing_Land_Speeder_Vengeance">
+          <UnitName>Ravenwing Land Speeder Vengeance</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Nephilim_Jetfighter">
+          <UnitName>Nephilim Jetfighter</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Ravenwing_Dark_Talon">
+          <UnitName>Ravenwing Dark Talon</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </SoloUnit>
+      <TwoUnitGroups>
+        <Group Name="Deathwing_Terminator_Squad">
+          <UnitName>Deathwing Terminator</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Deathwing Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Deathwing_Knights">
+          <UnitName>Deathwing Knights</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Knight Master</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Ravenwing_Black_Knights">
+          <UnitName>Ravenwing Black Knight</UnitName>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Ravenwing Huntmaster</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </TwoUnitGroups>
+      <ThreeUnitGroups>
+        <Group Name="Ravenwing_Bike_Squad">
+          <UnitName>Ravenwing Biker</UnitName>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>7</MaxNumber>
+          <UnitName>Ravenwing Attack Bike</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Ravenwing Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </ThreeUnitGroups>
+    </Chapter>
+    <Chapter Name="SpaceWolves">
+      <SoloUnit>
+        <Group Name="Logan_Grimnar">
+          <UnitName>Logan Grimnar</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Wolf_Lord_on_Thunderwolf">
+          <UnitName>Wolf Lord on Thunderwolf</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Krom_Dragongaze">
+          <UnitName>Krom Dragongaze</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Harald_Deathwolf">
+          <UnitName>Harald Deathwolf</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Canis_Wolfborn">
+          <UnitName>Canis Wolfborn</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Rune_Priest">
+          <UnitName>Rune Priest</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Rune_Priest_in_Terminator_Armour">
+          <UnitName>Rune Priest in Terminator Armour</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Rune_Priest_on_Bike">
+          <UnitName>Rune Priest on Bike</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Njal_Stormcaller">
+          <UnitName>Njal Stormcaller</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Njal_Stormcaller_in_Runic_Terminator_Armour">
+          <UnitName>Njal Stormcaller in Runic Terminator Armour</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Wolf_Priest">
+          <UnitName>Wolf Priest</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Wolf_Priest_in_Terminator_Armour">
+          <UnitName>Wolf Priest in Terminator Armour</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Wolf_Priest_on_Bike">
+          <UnitName>Wolf Priest on Bike</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Ulrik_the_Slayer">
+          <UnitName>Ulrik the Slayer</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Wolf_Guard_Battle_Leader">
+          <UnitName>Wolf Guard Battle Leader</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Wolf_Guard_Battle_Leader_on_Bike">
+          <UnitName>Wolf Guard Battle Leader on Bike</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Wolf_Guard_Battle_Leader_in_Terminator_Armour">
+          <UnitName>Wolf Guard Battle Leader in Terminator Armour</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Wolf_Guard_Battle_Leaderon_Thunderwolf">
+          <UnitName>Wolf Guard Battle Leader on Thunderwolf</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Bjorn_the_Fell-Handed">
+          <UnitName>Bjorn the Fell-handed</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Lukas_the_Trickster">
+          <UnitName>Lukas the Trickster</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Iron_Priest">
+          <UnitName>Iron Priest</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Iron_Priest_on_Bike">
+          <UnitName>Iron Priest on Bike</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Iron_Priest_on_Thunderwolf">
+          <UnitName>Iron Priest on Thunderwolf</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Lone_Wolf">
+          <UnitName>Lone Wolf</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Lone_Wolf_in_Terminator_Armour">
+          <UnitName>Lone Wolf in Terminator Armour</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Murderfang">
+          <UnitName>Murderfang</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Arjac_Rockfist">
+          <UnitName>Arjac Rockfist</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Swiftclaw_Attack_Bikes">
+          <UnitName>Swiftclaw Attack Bike</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>3</MaxNumber>
+        </Group>
+        <Group Name="Logan_Grimnar_on_Stormrider">
+          <UnitName>Logan Grimnar on Stormrider</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Cyberwolf">
+          <UnitName>Cyberwolf</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>5</MaxNumber>
+        </Group>
+        <Group Name="Stormwolf">
+          <UnitName>Stormwolf</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Stormfang_Gunship">
+          <UnitName>Stormfang Gunship</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </SoloUnit>
+      <TwoUnitGroups>
+        <Group Name="Wolfen">
+          <UnitName>Wulfen</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Wulfen Pack Leader</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Wolf_Guard">
+          <UnitName>Wolf Guard</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Wolf Guard Pack Leader</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Wolf_Guard_on_Bikes">
+          <UnitName>Wolf Guard on Bike</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Wolf Guard Pack Leader on Bike</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Wolf_Guard_in_Terminator_Armour">
+          <UnitName>Wolf Guard in Terminator Armour</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Wolf Guard Pack Leader in Terminator Armour</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Thunderwolf_Cavalry">
+          <UnitName>Thunderwolf Cavalry</UnitName>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>5</MaxNumber>
+          <UnitName>Thunderwolf Cavalry Pack Leader</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Fenrisian_Wolf">
+          <UnitName>Fenrisian Wolf</UnitName>
+          <MinNumber>5</MinNumber>
+          <MaxNumber>15</MaxNumber>
+          <UnitName>Stormwolf</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </TwoUnitGroups>
+      <ThreeUnitGroups>
+        <Group Name="Ragnar_Blackmane">
+          <UnitName>Svangir</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Ulfgir</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Ragnar Blackmane</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Wolf_Scouts">
+          <UnitName>Wolf Scout</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Wolf Guard Pack Leader</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Wolf Scout Pack Leader</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Sky_Claws">
+          <UnitName>Skyclaw</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Wolf Guard Sky Leader</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Skyclaw Pack Leader</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </ThreeUnitGroups>
+      <FourUnitGroups>
+        <Group Name="Blood_Claws">
+          <UnitName>Blood Claw</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>14</MaxNumber>
+          <UnitName>Wolf Guard Pack Leader in Terminator Armour</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Wolf Guard Pack Leader</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Blood Claw Pack Leader</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Grey_Hunters">
+          <UnitName>Grey Hunter</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Wolf Guard Pack Leader in Terminator Armour</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Wolf Guard Pack Leader</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Grey Hunter Pack Leader</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Swiftclaws">
+          <UnitName>Swiftclaw</UnitName>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Swiftclaw Attack Bike</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Wolf Guard Bike Leader</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Swiftclaw Pack Leader</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Long_Fangs">
+          <UnitName>Long Fang</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>5</MaxNumber>
+          <UnitName>Swiftclaw Attack Bike</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Wolf Guard Bike Leader</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Long Fang Pack Leader</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </FourUnitGroups>
+    </Chapter>
+    <Chapter Name="Deathwatch">
+      <SoloUnit>
+        <Group Name="Watch_Master">
+          <UnitName>Watch Master</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Watch_Master_Artemis">
+          <UnitName>Watch Captain Artemis</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Corvus_Blackstar">
+          <UnitName>Corvus Blackstar</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </SoloUnit>
+      <TwoUnitGroups>
+        <Group Name="Deathwatch_Terminators">
+          <UnitName>Deathwatch Terminator</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Deathwatch Terminator Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Deathwatch_Vanguard_Veterans">
+          <UnitName>Deathwatch Vanguard Veteran</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Deathwatch Vanguard Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Deathwatch_Bikers">
+          <UnitName>Deathwatch Biker</UnitName>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>5</MaxNumber>
+          <UnitName>Deathwatch Biker Sergeant</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </TwoUnitGroups>
+      <SixUnitGroups>
+        <Group Name="Deathwatch_Kill_Team">
+          <UnitName>Deathwatch Veteran</UnitName>
+          <MinNumber>3</MinNumber>
+          <MaxNumber>10</MaxNumber>
+          <UnitName>Watch Sergeant</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Black Shield</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>6</MaxNumber>
+          <UnitName>Deathwatch Terminator</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>5</MaxNumber>
+          <UnitName>Deathwatch Biker</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>5</MaxNumber>
+        </Group>
+      </SixUnitGroups>
+    </Chapter>
+    <Chapter Name="GreyKnights">
+      <SoloUnit>
+        <Group Name="Lord_Kaldor_Draigo">
+          <UnitName>Lord Kaldor Draigo</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Grand_Master_Voldus">
+          <UnitName>Grand Master Voldus</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Grand_Master">
+          <UnitName>Grand Master</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Brother-Captain">
+          <UnitName>Brother-Captain</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Brother-Captain_Stern">
+          <UnitName>Brother-Captain Stern</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Brotherhood_Ancient">
+          <UnitName>Brotherhood Ancient</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Brotherhood_Champion">
+          <UnitName>Brotherhood Champion</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Castellan_Crowe">
+          <UnitName>Castellan Crowe</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Paladin_Ancient">
+          <UnitName>Paladin Ancient</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Grey_Night_Apothecary">
+          <UnitName>Grey Knight Apothecary</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Nemesis_Dreadknight">
+          <UnitName>Nemesis Dreadknight</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </SoloUnit>
+      <TwoUnitGroups>
+        <Group Name="Strike_Squad">
+          <UnitName>Grey Knight</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Justicar</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Grey_Knights_Terminator_Squad">
+          <UnitName>Grey Knight Terminator</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Terminator Justicar</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Purifier_Squad">
+          <UnitName>Purifier</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Knight of the Flame</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Paladin_Squad">
+          <UnitName>Paladin</UnitName>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Paragon</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Interceptor_Squad">
+          <UnitName>Interceptor</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Interceptor Justicar</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Purgation_Squad">
+          <UnitName>Purgator</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Purgator Justicar</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </TwoUnitGroups>
+    </Chapter>
+  </Race>
+  <Race Name="Imperium_2">
+    <Chapter Name="General">
+      <Solounit>
+        <Group Name="Company_Commander">
+          <Unitname>Company Commander</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Tank_Commander">
+          <Unitname>Tank Commander</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Master_of_Ordnance">
+          <Unitname>Master of Ordnance</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Platoon_Commander">
+          <Unitname>Platoon Commander</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Special_Weapons_Squad">
+          <Unitname>Guardsman</Unitname>
+          <MinNumber>6</MinNumber>
+          <MaxNumber>6</MaxNumber>
+        </Group>
+        <Group Name="Heavy_Weapons_Squad">
+          <Unitname>Heavy Weapons Team</Unitname>
+          <MinNumber>3</MinNumber>
+          <MaxNumber>3</MaxNumber>
+        </Group>
+        <Group Name="Conscripts">
+          <Unitname>Conscript</Unitname>
+          <MinNumber>20</MinNumber>
+          <MaxNumber>50</MaxNumber>
+        </Group>
+        <Group Name="Scout_Sentinels">
+          <Unitname>Scout Sentinel</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>3</MaxNumber>
+        </Group>
+        <Group Name="Armoured_Sentinels">
+          <Unitname>Armoured Sentinel</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>3</MaxNumber>
+        </Group>
+        <Group Name="Chimera">
+          <Unitname>Chimera</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Taurox">
+          <Unitname>Taurox</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Basilisks">
+          <Unitname>Basilisk</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>3</MaxNumber>
+        </Group>
+        <Group Name="Hydras">
+          <Unitname>Hydra</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>3</MaxNumber>
+        </Group>
+        <Group Name="Wyverns">
+          <Unitname>Wyvern</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>3</MaxNumber>
+        </Group>
+        <Group Name="Manticore">
+          <Unitname>Manticore</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Deathstrike">
+          <Unitname>Deathstrike</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Leman_Russ_Battle_Tanks">
+          <Unitname>Leman Russ Battle Tank</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>3</MaxNumber>
+        </Group>
+        <Group Name="Leman_Russ_Demolishers">
+          <Unitname>Leman Russ Demolisher</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>3</MaxNumber>
+        </Group>
+        <Group Name="Baneblade">
+          <Unitname>Baneblade</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Banehammer">
+          <Unitname>Banehammer</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Banesword">
+          <Unitname>Banesword</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Doomhammer">
+          <Unitname>Doomhammer</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Hellhammer">
+          <Unitname>Hellhammer</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Shadowsword">
+          <Unitname>Shadowsword</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Stormlord">
+          <Unitname>Stormlord</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Stormsword">
+          <Unitname>Stormsword</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Lord_Castellan_Creed">
+          <Unitname>Lord Castellan Creed</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Colour_Sergeant_Kell">
+          <Unitname>Colour Sergeant Kell</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Knight_Commander_Pask">
+          <Unitname>Knight Commander Pask</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Colonel_'Iron_Hand'_Straken">
+          <Unitname>Colonel 'Iron Hand' Straken</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Sergeant_Harker">
+          <Unitname>Sergeant Harker</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Lord_Commissar">
+          <Unitname>Lord Commissar</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Commissar">
+          <Unitname>Commissar</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Commissar_Yarrick">
+          <Unitname>Commissar Yarrick</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Tempestor_Prime">
+          <Unitname>Tempestor Prime</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Militarum_Tempestus_Command_Squad">
+          <Unitname>Tempestus Scion</Unitname>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>4</MaxNumber>
+        </Group>
+        <Group Name="Taurox_Prime">
+          <Unitname>Taurox Prime</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Ratlings">
+          <Unitname>Ratling</Unitname>
+          <MinNumber>5</MinNumber>
+          <MaxNumber>10</MaxNumber>
+        </Group>
+        <Group Name="Nork_Deddog">
+          <Unitname>Nork Deddog</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Officer_of_the_Fleet">
+          <Unitname>Officer of the Fleet</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Valkyries">
+          <Unitname>Valkyrie</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>3</MaxNumber>
+        </Group>
+        <Group Name="Belisarius_Cawl">
+          <Unitname>Belisarius Cawl</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Tech-Priest_Dominus">
+          <Unitname>Tech-Priest Dominus</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Tech-Priest_Enginseer">
+          <Unitname>Tech-Priest Enginseer</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Kataphron_Breachers">
+          <Unitname>Kataphron Breacher</Unitname>
+          <MinNumber>3</MinNumber>
+          <MaxNumber>12</MaxNumber>
+        </Group>
+        <Group Name="Kataphron_Destroyers">
+          <Unitname>Kataphron Destroyer</Unitname>
+          <MinNumber>3</MinNumber>
+          <MaxNumber>12</MaxNumber>
+        </Group>
+        <Group Name="Fulgurite_Electro-Priests">
+          <Unitname>Fulgurite Electro-Priest</Unitname>
+          <MinNumber>5</MinNumber>
+          <MaxNumber>20</MaxNumber>
+        </Group>
+        <Group Name="Corpuscarii_Electro-Priests">
+          <Unitname>Corpuscarii Electro-Priest</Unitname>
+          <MinNumber>5</MinNumber>
+          <MaxNumber>20</MaxNumber>
+        </Group>
+        <Group Name="Kastelan_Robots">
+          <Unitname>Kastelan Robot</Unitname>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>6</MaxNumber>
+        </Group>
+        <Group Name="Cybernetica_Datasmith">
+          <Unitname>Cybernetica Datasmith</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Servitors">
+          <Unitname>Servitor</Unitname>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>4</MaxNumber>
+        </Group>
+        <Group Name="Ironstrider_Ballistarii">
+          <Unitname>Ironstrider Ballistarius</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>6</MaxNumber>
+        </Group>
+        <Group Name="Sydonian_Dragoons">
+          <Unitname>Sydonian Dragoon</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>6</MaxNumber>
+        </Group>
+        <Group Name="Onager_Dunecrawler">
+          <Unitname>Onager Dunecrawler</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Knight_Errant">
+          <Unitname>Knight Errant</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Knight_Paladin">
+          <Unitname>Knight Paladin</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Knight_Warden">
+          <Unitname>Knight Warden</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Knight_Gallant">
+          <Unitname>Knight Gallant</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Knight_Crusader">
+          <Unitname>Knight Crusader</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </Solounit>
+      <TwoUnitGroups>
+        <Group Name="Command_Squad">
+          <Unitname>Veteran</Unitname>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>4</MaxNumber>
+          <Unitname>Veteran Heavy Weapons Team</Unitname>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Rough_Riders">
+          <Unitname>Rough Rider</Unitname>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <Unitname>Rough Rider Sergeant</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Militarum_Tempestus_Scions">
+          <Unitname>Tempestus Scion</Unitname>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <Unitname>Tempestor</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Ogryns">
+          <Unitname>Ogryn</Unitname>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>8</MaxNumber>
+          <Unitname>Ogryn Bone'ead</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Bullgryns">
+          <Unitname>Bullgryn</Unitname>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>8</MaxNumber>
+          <Unitname>Bullgryn Bone'ead</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Skitarii_Rangers">
+          <Unitname>Skitarii Ranger</Unitname>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <Unitname>Ranger Alpha</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Skitarii_Vanguard">
+          <Unitname>Skitarii Vanguard</Unitname>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <Unitname>Vanguard Alpha</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Sicarian_Infiltrators">
+          <Unitname>Sicarian Infiltrator</Unitname>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <Unitname>Infiltrator Princeps</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Sicarian_Ruststalkers">
+          <Unitname>Sicarian Ruststalker</Unitname>
+          <MinNumber>14</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <Unitname>Ruststalker Princeps</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </TwoUnitGroups>
+      <ThreeUnitGroups>
+        <Group Name="Infantry_Squad">
+          <Unitname>Guardsman</Unitname>
+          <MinNumber>7</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <Unitname>Sergeant</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <Unitname>Heavy Weapons Team</Unitname>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Veterans">
+          <Unitname>Veteran</Unitname>
+          <MinNumber>7</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <Unitname>Veteran Sergeant</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <Unitname>Veteran Weapons Team</Unitname>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Hellhounds">
+          <Unitname>Hellhound</Unitname>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>3</MaxNumber>
+          <Unitname>Devil Dog</Unitname>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>3</MaxNumber>
+          <Unitname>Bane Wolf</Unitname>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>3</MaxNumber>
+        </Group>
+      </ThreeUnitGroups>
+    </Chapter>
+  </Race>
+  <Race Name="Xenos_1">
+    <Chapter Name="Craftworlds">
+      <SoloUnit>
+        <Group Name="Eldrad_Ulthran">
+          <UnitName>Eldrad Ulthran</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Prince_Yriel">
+          <UnitName>Prince Yriel</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Illic_Nightspear">
+          <UnitName>Illic Nightspear</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Asurmen">
+          <UnitName>Asurmen</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Jain_Zar">
+          <UnitName>Jain Zar</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Karandras">
+          <UnitName>Karandras</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Fuegan">
+          <UnitName>Fuegan</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Baharroth">
+          <UnitName>Baharroth</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Maugan_Ra">
+          <UnitName>Maugan Ra</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Autarch">
+          <UnitName>Autarch</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Autarch_with_Swooping_Hawk_Wings">
+          <UnitName>Autarch with Swooping Hawk Wings</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Autarch_with_Warp_Jump_Generator">
+          <UnitName>Autarch with Warp Jump Generator</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Autarch_Skyrunner">
+          <UnitName>Autarch Skyrunner</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Avatar_of_Khaine">
+          <UnitName>Avatar of Khaine</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Farseer">
+          <UnitName>Farseer</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Farseer_Skyrunner">
+          <UnitName>Farseer Skyrunner</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Warlock_Conclave">
+          <UnitName>Warlock</UnitName>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>10</MaxNumber>
+        </Group>
+        <Group Name="Warlock">
+          <UnitName>Warlock</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Warlock_Skyrunner_Conclave">
+          <UnitName>Warlock Skyrunner</UnitName>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>10</MaxNumber>
+        </Group>
+        <Group Name="Warlock_Skyrunner">
+          <UnitName>Warlock Skyrunner</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Spirtseer">
+          <UnitName>Spirtseer</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Storm_Guardians">
+          <UnitName>Guardian</UnitName>
+          <MinNumber>8</MinNumber>
+          <MaxNumber>24</MaxNumber>
+        </Group>
+        <Group Name="Windriders">
+          <UnitName>Windrider</UnitName>
+          <MinNumber>3</MinNumber>
+          <MaxNumber>9</MaxNumber>
+        </Group>
+        <Group Name="Rangers">
+          <UnitName>Ranger</UnitName>
+          <MinNumber>5</MinNumber>
+          <MaxNumber>10</MaxNumber>
+        </Group>
+        <Group Name="Wraithguard">
+          <UnitName>Wraithguard</UnitName>
+          <MinNumber>5</MinNumber>
+          <MaxNumber>10</MaxNumber>
+        </Group>
+        <Group Name="Wraithblade">
+          <UnitName>Wraithblade</UnitName>
+          <MinNumber>5</MinNumber>
+          <MaxNumber>10</MaxNumber>
+        </Group>
+        <Group Name="Wave_Serpent">
+          <UnitName>Wave Serpent</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Crimson_Hunter">
+          <Unitname>Crimson Hunter</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Crimson_Hunter_Exarch">
+          <Unitname>Crimson Hunter Exarch</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Vypers">
+          <Unitname>Vyper</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>3</MaxNumber>
+        </Group>
+        <Group Name="Hemlock_Wraithfighter">
+          <Unitname>Hemlock Wraithfighter</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Vaul's_Wrath_Support_Battery">
+          <Unitname>Support Weapon</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>3</MaxNumber>
+        </Group>
+        <Group Name="Falcon">
+          <Unitname>Falcon</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Fire_Prism">
+          <Unitname>Fire Prism</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Night_Spinner">
+          <Unitname>Night Spinner</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="War_Walkers">
+          <Unitname>War Walker</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>3</MaxNumber>
+        </Group>
+        <Group Name="Wraithlord">
+          <Unitname>Wraithlord</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Wraithknight">
+          <Unitname>Wraithknight</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </SoloUnit>
+      <TwoUnitGroups>
+        <Group Name="Guardian_Defenders">
+          <UnitName>Guardian</UnitName>
+          <MinNumber>10</MinNumber>
+          <MaxNumber>20</MaxNumber>
+          <UnitName>Spirtseer</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>2</MaxNumber>
+        </Group>
+        <Group Name="Dire_Avengers">
+          <UnitName>Dire Avenger Exarch</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Dire Avenger</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>10</MaxNumber>
+        </Group>
+        <Group Name="Howling_Banshees">
+          <UnitName>Howling Banshee Exarch</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Howling Banshee</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>10</MaxNumber>
+        </Group>
+        <Group Name="Striking_Scorpions">
+          <UnitName>Striking Scorpion Exarch</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Striking Scorpion</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>10</MaxNumber>
+        </Group>
+        <Group Name="Fire_Dragons">
+          <UnitName>Fire Dragon Exarch</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Fire Dragon</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>10</MaxNumber>
+        </Group>
+        <Group Name="Swooping_Hawks">
+          <UnitName>Swooping Hawk Exarch</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Swooping Hawk</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>10</MaxNumber>
+        </Group>
+        <Group Name="Warp_Spiders">
+          <UnitName>Warp Spider Exarch</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Warp Spider</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>10</MaxNumber>
+        </Group>
+        <Group Name="Shining_Spear">
+          <UnitName>Shining Spear Exarch</UnitName>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <UnitName>Shining Spear</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>10</MaxNumber>
+        </Group>
+        <Group Name="Dark_Reapers">
+          <Unitname>Dark Reaper Exarch</Unitname>
+          <MinNumber>0</MinNumber>
+          <MaxNumber>1</MaxNumber>
+          <Unitname>Dark Reaper</Unitname>
+          <MinNumber>3</MinNumber>
+          <MaxNumber>10</MaxNumber>
+        </Group>
+      </TwoUnitGroups>
+    </Chapter>
+    <Chapter Name="Drukhari">
+      <SoloUnit>
+        <Group Name="Archon">
+          <UnitName>Archon</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Lhamaean">
+          <UnitName>Lhamaean</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Medusae">
+          <UnitName>Medusae</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Ur-Ghul">
+          <UnitName>UrGhul</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Succubus">
+          <UnitName>Succubus</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Lelith_Hesperax">
+          <UnitName>Lelith Hesperax</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Haemonculus">
+          <UnitName>Haemonculus</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Urien_Rakarth">
+          <UnitName>Urien Rakarth</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Drazhar">
+          <UnitName>Drazhar</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Grotesques">
+          <UnitName>Grotesque</UnitName>
+          <MinNumber>3</MinNumber>
+          <MaxNumber>10</MaxNumber>
+        </Group>
+        <Group Name="Beastmaster">
+          <UnitName>Beastmaster</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Clawed_Fiends">
+          <UnitName>Clawed Fiend</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>6</MaxNumber>
+        </Group>
+        <Group Name="Khymerae">
+          <UnitName>Khymera</UnitName>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>7</MaxNumber>
+        </Group>
+        <Group Name="Razorwing_Flocks">
+          <UnitName>Razorwing Flock</UnitName>
+          <MinNumber>3</MinNumber>
+          <MaxNumber>12</MaxNumber>
+        </Group>
+        <Group Name="Raider">
+          <UnitName>Raider</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Venom">
+          <UnitName>Venom</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Razorwing_Jetfighter">
+          <UnitName>Razorwing Jetfighter</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Voidraven">
+          <UnitName>Voidraven</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Talos">
+          <UnitName>Talos</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Cronos">
+          <UnitName>Cronos</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>3</MaxNumber>
+        </Group>
+        <Group Name="Ravager">
+          <UnitName>Ravager</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </SoloUnit>
+      <TwoUnitGroups>
+        <Group Name="Kabalite_Warriors">
+          <UnitName>Kabalite Warrior</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>19</MaxNumber>
+          <UnitName>Sybarite</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Kabalite_Trueborn">
+          <UnitName>Kabalite Trueborn</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>19</MaxNumber>
+          <UnitName>Dracon</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Wyches">
+          <UnitName>Wych</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>19</MaxNumber>
+          <UnitName>Hekatrix</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Hekatrix_Bloodbrides">
+          <UnitName>Hekatrix Bloodbride</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>19</MaxNumber>
+          <UnitName>Syren</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Incubi">
+          <UnitName>Incubi</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Klaivex</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Mandrakes">
+          <UnitName>Mandrake</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Nightfiend</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Wracks">
+          <UnitName>Wrack</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Acothyst</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Reavers">
+          <UnitName>Reaver</UnitName>
+          <MinNumber>2</MinNumber>
+          <MaxNumber>11</MaxNumber>
+          <UnitName>Arena Champion</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Hellions">
+          <UnitName>Hellion</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>19</MaxNumber>
+          <UnitName>Helliarch</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="Scourges">
+          <UnitName>Scourge</UnitName>
+          <MinNumber>4</MinNumber>
+          <MaxNumber>9</MaxNumber>
+          <UnitName>Solarite</UnitName>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </TwoUnitGroups>
+    </Chapter>
+    <Chapter Name="Harlequins">
+      <Group Name="Troupe">
+        <Unitname>Player</Unitname>
+        <MinNumber>5</MinNumber>
+        <MaxNumber>12</MaxNumber>
+      </Group>
+      <Group Name="Troupe_Master">
+        <Unitname>Troupe Master</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Death_Jester">
+        <Unitname>Death Jester</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Shadowseer">
+        <Unitname>Shadowseer</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Solitaire">
+        <Unitname>Solitaire</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Skyweavers">
+        <Unitname>Skyweavers</Unitname>
+        <MinNumber>2</MinNumber>
+        <MaxNumber>6</MaxNumber>
+      </Group>
+      <Group Name="Starweaver">
+        <Unitname>Starweaver</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Voidweavers">
+        <Unitname>Voidweaver</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>3</MaxNumber>
+      </Group>
+    </Chapter>
+    <Chapter Name="Ynnari">
+      <SoloUnit>
+        <Group Name="Yvraine">
+          <Unitname>Yvraine</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="The_Visarch">
+          <Unitname>The Visarch</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+        <Group Name="The_Yncarne">
+          <Unitname>The Yncarne</Unitname>
+          <MinNumber>1</MinNumber>
+          <MaxNumber>1</MaxNumber>
+        </Group>
+      </SoloUnit>
+    </Chapter>
+    <Chapter Name="Necrons">
+      <Group Name="Imotekh_the_Stormlord">
+        <Unitname>Imotekh the Stormlord</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Overlord">
+        <Unitname>Overlord</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Lord">
+        <Unitname>Lord</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Cryptek">
+        <Unitname>Cryptek</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Destroyer_Lord">
+        <Unitname>Destroyer Lord</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Nemesor_Zahndrekh">
+        <Unitname>Nemesor Zahndrekh</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Vargard_Obyron">
+        <Unitname>Vargard Obyron</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Illuminor_Szeras">
+        <Unitname>Illuminor Szeras</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Orikan_the_Diviner">
+        <Unitname>Orikan the Diviner</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>1</MaxNumber>
+        <Unitname>Orikan Empowered</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Anrakyr_the_Traveller">
+        <Unitname>Anrakyr the Traveller</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Trazyn_the_Infinite">
+        <Unitname>Trazyn the Infinite</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Catacomb_Command_Barge">
+        <Unitname>Catacomb Command Barge</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Necron_Warriors">
+        <Unitname>Necron Warrior</Unitname>
+        <MinNumber>10</MinNumber>
+        <MaxNumber>20</MaxNumber>
+      </Group>
+      <Group Name="Immortals">
+        <Unitname>Immortal</Unitname>
+        <MinNumber>5</MinNumber>
+        <MaxNumber>10</MaxNumber>
+      </Group>
+      <Group Name="Lychguard">
+        <Unitname>Lychguard</Unitname>
+        <MinNumber>5</MinNumber>
+        <MaxNumber>10</MaxNumber>
+      </Group>
+      <Group Name="Deathmarks">
+        <Unitname>Deathmarks</Unitname>
+        <MinNumber>5</MinNumber>
+        <MaxNumber>10</MaxNumber>
+      </Group>
+      <Group Name="Flayed_Ones">
+        <Unitname>Flayed One</Unitname>
+        <MinNumber>5</MinNumber>
+        <MaxNumber>20</MaxNumber>
+      </Group>
+      <Group Name="Triarch_Praetorians">
+        <Unitname>Triarch Praetorian</Unitname>
+        <MinNumber>5</MinNumber>
+        <MaxNumber>10</MaxNumber>
+      </Group>
+      <Group Name="Triarch_Stlker">
+        <Unitname>Triarch Stalker</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="C'tan_Shard_of_the_Nightbringer">
+        <Unitname>C'tan Shard of the Nightbringer</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="C'tan_Shard_of_the_Deceiver">
+        <Unitname>C'tan Shard of the Deceiver</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Ghost_Ark">
+        <Unitname>Ghost Ark</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Night_Scythe">
+        <Unitname>Night Scythe</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Doom_Scythe">
+        <Unitname>Doom Scythe</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Canoptek_Wraiths">
+        <Unitname>Canoptek Wraith</Unitname>
+        <MinNumber>3</MinNumber>
+        <MaxNumber>6</MaxNumber>
+      </Group>
+      <Group Name="Canoptek_Scarabs">
+        <Unitname>Canoptek Scarab Swarm</Unitname>
+        <MinNumber>3</MinNumber>
+        <MaxNumber>9</MaxNumber>
+      </Group>
+      <Group Name="Tomb_Blades">
+        <Unitname>Tomb Blades</Unitname>
+        <MinNumber>3</MinNumber>
+        <MaxNumber>9</MaxNumber>
+      </Group>
+      <Group Name="Destroyers">
+        <Unitname>Destroyer</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>6</MaxNumber>
+        <Unitname>Heavy Destroyer</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Heavy_Destroyers">
+        <Unitname>Heavy Destroyer</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>3</MaxNumber>
+      </Group>
+      <Group Name="Canoptek_Spyders">
+        <Unitname>Canoptek Spyder</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>3</MaxNumber>
+      </Group>
+      <Group Name="Monolith">
+        <Unitname>Monolith</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Annihilation_Barge">
+        <Unitname>Annihilation Barge</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Doomsday_Ark">
+        <Unitname>Doomsday Ark</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Transcendent_C'tan">
+        <Unitname>Transcendent C'tan</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Tesseract_Vault">
+        <Unitname>Tesseract Vault</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Obelisk">
+        <Unitname>Obelisk</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+    </Chapter>
+  </Race>
+    <Race Name ="Xenos 2">
+            <Group Name="Warboss">
+        <Unitname>Warboss</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Warboss_in_Mega_Armour">
+        <Unitname>Warboss in Mega Armour</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Warboss_on_Bike">
+        <Unitname>Warboss on Bike</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Weirdboy">
+        <Unitname>Weirdboy</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Big_Mek">
+        <Unitname>Big Mek</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+        <Unitname>Grot Oiler</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Big_Mek_in_Mega_Armour">
+        <Unitname>Big Mek in Mega Armour</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+        <Unitname>Grot Oiler</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Big_Mek_on_Warbike">
+        <Unitname>Big Mek on Warbike</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Ghazghkull_Thraka">
+        <Unitname>Ghazghkull Thraka</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Kaptin_Badrukk">
+        <Unitname>Kaptin Badrukk</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+        <Unitname>Ammo Runt</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>3</MaxNumber>
+      </Group>
+      <Group Name="Boss_Zagstruk">
+        <Unitname>Boss Zagstruk</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Boss_Snikrot">
+        <Unitname>Boss Snikrot</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Mek">
+        <Unitname>Mek</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+        <Unitname>Grot Oiler</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Painboy">
+        <Unitname>Painboy</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+        <Unitname>Grot Orderly</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Painboy_on_Warbike">
+        <Unitname>Painboy on Warbike</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Mad_Dok_Grotsnik">
+        <Unitname>Mad Dok Grotsnik</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Boyz">
+        <Unitname>Ork Boy</Unitname>
+        <MinNumber>9</MinNumber>
+        <MaxNumber>30</MaxNumber>
+        <Unitname>Boss Nob</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Gretchin">
+        <Unitname>Gretchin</Unitname>
+        <MinNumber>10</MinNumber>
+        <MaxNumber>30</MaxNumber>
+      </Group>
+      <Group Name="Runtherd">
+        <Unitname>Runtherd</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Burna_Boyz">
+        <Unitname>Burna Boy</Unitname>
+        <MinNumber>2</MinNumber>
+        <MaxNumber>15</MaxNumber>
+        <Unitname>Spanner</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>3</MaxNumber>
+      </Group>
+      <Group Name="Tankbustas">
+        <Unitname>Tankbusta</Unitname>
+        <MinNumber>4</MinNumber>
+        <MaxNumber>15</MaxNumber>
+        <Unitname>Boss Nob</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>1</MaxNumber>
+        <Unitname>Bomb Squig</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>6</MaxNumber>
+      </Group>
+      <Group Name="Nobz">
+        <Unitname>Nob</Unitname>
+        <MinNumber>4</MinNumber>
+        <MaxNumber>9</MaxNumber>
+        <Unitname>Boss Nob</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+        <Unitname>Ammo Runt</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>10</MaxNumber>
+      </Group>
+      <Group Name="Nob_with_Waaagh!_Banner">
+        <Unitname>Nob with Waaagh! Banner</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Nobz_on_Warbikes">
+        <Unitname>Nob on Warbike</Unitname>
+        <MinNumber>2</MinNumber>
+        <MaxNumber>8</MaxNumber>
+        <Unitname>Boss Nob on Warbike</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Meganobz">
+        <Unitname>Meganob</Unitname>
+        <MinNumber>2</MinNumber>
+        <MaxNumber>9</MaxNumber>
+        <Unitname>Boss Meganob</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Kommandos">
+        <Unitname>Kommando</Unitname>
+        <MinNumber>4</MinNumber>
+        <MaxNumber>15</MaxNumber>
+        <Unitname>Boss Nob</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Trukk">
+        <Unitname>Trukk</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Stormboyz">
+        <Unitname>Stormboy</Unitname>
+        <MinNumber>4</MinNumber>
+        <MaxNumber>30</MaxNumber>
+        <Unitname>Boss Nob</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Deffkoptas">
+        <Unitname>Deffkopta</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>5</MaxNumber>
+      </Group>
+      <Group Name="Dakkajet">
+        <Unitname>Dakkajet</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Burna-bommer">
+        <Unitname>Burna-bommer</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Blitza-bommer">
+        <Unitname>Blitza-bommer</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Wazbom_Blastajet">
+        <Unitname>Wazbom Blastajet</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Warbikers">
+        <Unitname>Warbiker</Unitname>
+        <MinNumber>2</MinNumber>
+        <MaxNumber>12</MaxNumber>
+        <Unitname>Boss Nob</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Wartrakks">
+        <Unitname>Wartrakk</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>5</MaxNumber>
+      </Group>
+      <Group Name="Skorchas">
+        <Unitname>Skorcha</Unitname>
+        <MinNumber>15</MinNumber>
+        <MaxNumber>5</MaxNumber>
+      </Group>
+      <Group Name="Warbuggies">
+        <Unitname>Warbuggy</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>5</MaxNumber>
+      </Group>
+      <Group Name="Big_gunz">
+        <Unitname>Big Gun</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>6</MaxNumber>
+        <Unitname>Grot Gunner</Unitname>
+        <MinNumber>2</MinNumber>
+        <MaxNumber>12</MaxNumber>
+      </Group>
+      <Group Name="Mek_Gunz">
+        <Unitname>Mek Gun</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>6</MaxNumber>
+        <Unitname>Grot Gunner</Unitname>
+        <MinNumber>5</MinNumber>
+        <MaxNumber>30</MaxNumber>
+      </Group>
+      <Group Name="Battlewagon">
+        <Unitname>Battlewagon</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Deff_Dreads">
+        <Unitname>Deff Dread</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>3</MaxNumber>
+      </Group>
+      <Group Name="Killa_Kans">
+        <Unitname>Killa Kan</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>6</MaxNumber>
+      </Group>
+      <Group Name="Morkanaut">
+        <Unitname>Morkanaut</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Gorkanaut">
+        <Unitname>Gorkanaut</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Lootas">
+        <Unitname>Loota</Unitname>
+        <MinNumber>2</MinNumber>
+        <MaxNumber>15</MaxNumber>
+        <Unitname>Spanner</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>3</MaxNumber>
+      </Group>
+      <Group Name="Flash_Gitz">
+        <Unitname>Flash Git</Unitname>
+        <MinNumber>4</MinNumber>
+        <MaxNumber>9</MaxNumber>
+        <Unitname>Kaptin</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+        <Unitname>Ammo Runt</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>10</MaxNumber>
+      </Group>
+      <Group Name="Stompa">
+        <Unitname>Stompa</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Commander">
+        <Unitname>Commander</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Commander_in_XV86">
+        <Unitname>Commander in XV86 Coldstar Battlesuit</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Ethereal">
+        <Unitname>Ethereal</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Cadre_Fireblade">
+        <Unitname>Cadre Fireblade</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Commander_Farsight">
+        <Unitname>Commander Farsight</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Commander_Shadowsun">
+        <Unitname>Commander Shadowsun</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+        <Unitname>MV52 Shield Drone</Unitname>
+        <MinNumber>2</MinNumber>
+        <MaxNumber>2</MaxNumber>
+        <Unitname>MV62 Command-link Drone</Unitname>
+        <MinNumber>9</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Aun'Shi">
+        <Unitname>Aun'Shi</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Aun'Va">
+        <Unitname>Aun'Va</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+        <Unitname>Ethereal Guard</Unitname>
+        <MinNumber>2</MinNumber>
+        <MaxNumber>2</MaxNumber>
+      </Group>
+      <Group Name="Darkstrider">
+        <Unitname>Darkstrider</Unitname>
+        <MinNumber>1</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Strike_Team">
+        <Unitname>Fire Warrior</Unitname>
+        <MinNumber>4</MinNumber>
+        <MaxNumber>12</MaxNumber>
+        <Unitname>Fire Warrior Shas'ui</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>1</MaxNumber>
+        <Unitname>DS8 Tactial Support Turret</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>2</MaxNumber>
+        <Unitname>MV36 Guardian Drone</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+      <Group Name="Breacher_Team">
+        <Unitname>Fire Warrior</Unitname>
+        <MinNumber>4</MinNumber>
+        <MaxNumber>10</MaxNumber>
+        <Unitname>Fire Warrior Shas'ui</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>1</MaxNumber>
+        <Unitname>DS8 Tactical Support Turret</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>2</MaxNumber>
+        <Unitname>MV36 Guardian Drone</Unitname>
+        <MinNumber>0</MinNumber>
+        <MaxNumber>1</MaxNumber>
+      </Group>
+
+    </Race>
+</Data>
