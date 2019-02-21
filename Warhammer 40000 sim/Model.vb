@@ -3,7 +3,7 @@
 'Imports System.Windows.Forms
 'Imports System.Drawing
 '<Serializable()>
-Public Class Unit
+Public Class Model
     Inherits PictureBox
     'Implements System.ComponentModel.IExtenderProvider
     Dim off As Point
@@ -56,7 +56,7 @@ Public Class Unit
     'End Function
     Property NameofModel As String
         Get
-            Return NameofModeldm
+            Return nameofmodeldm
         End Get
         Set(value As String)
             nameofmodeldm = value

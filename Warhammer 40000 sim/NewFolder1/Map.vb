@@ -32,7 +32,7 @@ Public Class Map
     Dim unitidentifier As New DataTable
     Dim groupidentifier As New DataTable
     '   Dim stringtester() As String = {"1", "2", "3"}
-    Public Coordinates(100) As Point
+    Public Coordinates As List(Of PicBoxInfo)
     Dim listofallweapons As String
     Dim numberofhitrolls As Integer = 1
     Dim numberofwoundrolls As Integer = 0
@@ -64,7 +64,7 @@ Public Class Map
     Dim errorcounter As Integer = 0
     Dim errorflag As Boolean = False
 
- 
+
     Private Sub Map_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.I Then
             Unit_Information.Visible = True
@@ -77,7 +77,7 @@ Public Class Map
     'Private WithEvents ThisPicBoxInfoForUnits2 As New PicBoxInfo()
     Private Sub Map_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
-       
+
 
 
 
@@ -262,7 +262,7 @@ recheck:
                     ''str.Length = 1
                     Weaponslist(0) = ""
                 End If
-                Dim unitaspb As New Unit
+                Dim unitaspb As New Model
                 unitaspb.Identifier = j
                 '' unitaspb.weapons(0) = ""
                 ''unitaspb.playerIdentifier = Race_Selection_Form.Playerid
@@ -389,7 +389,7 @@ recheck:
                 AddHandler unitaspb.MouseUp, AddressOf unitaspb_MouseUp
                 AddHandler unitaspb.MouseClick, AddressOf Unit_MouseClick
 
-                
+
                 'Console.WriteLine(unitaspb.nameofmodel)
                 Me.Controls.Add(unitaspb)
 
@@ -485,7 +485,7 @@ recheck:
                 End With
                 'Me.Controls.Add(cnt)
 
-              
+
             Next
             ' End If
             'Invalidate()
@@ -512,7 +512,7 @@ recheck:
             UnitsSaveFileStream.Close()
         End If
         For Each cnt In Me.Controls
-            If TypeOf cnt Is Unit Then
+            If TypeOf cnt Is Model Then
                 Console.WriteLine(cnt.nameofmodel & " " & cnt.left & " " & cnt.top & " " & cnt.visible & " " & cnt.identifier)
             End If
         Next
@@ -526,7 +526,7 @@ recheck:
                 TSMI_Model_flees.Enabled = False
                 'If sender.currentwounds <
                 For Each cnt In Me.Controls
-                    If TypeOf cnt Is Unit Then
+                    If TypeOf cnt Is Model Then
                         If cnt.isselectedtobetarget = True And cnt.currentwounds > 0 Then
                             If cnt.currentwounds < cnt.maxwounds And cnt.identifier <> unitfortransferinginfo Then
                                 MsgBox("Selected unit already has an injured model, applying damage to that model instead", 33)
@@ -596,7 +596,7 @@ recheck:
         Else
             Unit_Information.Left = 12
         End If
-        If TypeOf sender Is Unit And sender.CanMove = True Then
+        If TypeOf sender Is Model And sender.CanMove = True Then
             oldcornerx = sender.left
             oldcornery = sender.top
             radius = sender.movedistance
@@ -621,7 +621,7 @@ recheck:
         e.Graphics.DrawEllipse(Pens.Black, oldcenterxforcircle, oldcenteryforcircle, radius * 2, radius * 2)
     End Sub
     Public Sub unitaspb_MouseLeave(sender As Object, e As System.EventArgs)
-        If TypeOf sender Is Unit Then
+        If TypeOf sender Is Model Then
             RemoveHandler Me.Paint, AddressOf Map_Paint
         End If
         Me.Invalidate()
@@ -639,7 +639,7 @@ recheck:
             Case Is = 1
                 phasename = "Movement Phase"
                 For Each cnt In Me.Controls
-                    If TypeOf cnt Is Unit Then
+                    If TypeOf cnt Is Model Then
                         cnt.CanMove = True
                         cnt.canshoot = False
                     End If
@@ -647,7 +647,7 @@ recheck:
             Case Is = 2
                 phasename = "Psychic Phase"
                 For Each cnt In Me.Controls
-                    If TypeOf cnt Is Unit Then
+                    If TypeOf cnt Is Model Then
                         cnt.CanMove = False
                         cnt.canshoot = False
                     End If
@@ -656,7 +656,7 @@ recheck:
             Case Is = 3
                 phasename = "Shooting Phase"
                 For Each cnt In Me.Controls
-                    If TypeOf cnt Is Unit Then
+                    If TypeOf cnt Is Model Then
                         cnt.CanMove = False
                         cnt.canshoot = True
                     End If
@@ -665,7 +665,7 @@ recheck:
             Case Is = 4
                 phasename = "Charge Phase"
                 For Each cnt In Me.Controls
-                    If TypeOf cnt Is Unit Then
+                    If TypeOf cnt Is Model Then
                         cnt.CanMove = False
                         cnt.canshoot = False
                     End If
@@ -674,7 +674,7 @@ recheck:
             Case Is = 5
                 phasename = "Fight Phase"
                 For Each cnt In Me.Controls
-                    If TypeOf cnt Is Unit Then
+                    If TypeOf cnt Is Model Then
                         cnt.CanMove = False
                         cnt.canshoot = False
                     End If
@@ -710,7 +710,7 @@ recheck:
                 '    Console.WriteLine(groupidentifier.Rows(x).Item(0) & "," & groupidentifier.Rows(x).Item(1) & "," & groupidentifier.Rows(x).Item(2) & "," & groupidentifier.Rows(x).Item(3))
                 'Next
                 For Each cnt In Me.Controls ' add all loses inc from previous turns 
-                    If TypeOf cnt Is Unit Then
+                    If TypeOf cnt Is Model Then
                         cnt.CanMove = False
                         cnt.canshoot = False
                         'is model dead
@@ -752,7 +752,7 @@ recheck:
         Label2.Text = "Current Phase: " & phasename
     End Sub
     Public Sub unitaspb_MouseUp(sender As Object, e As System.Windows.Forms.MouseEventArgs)
-        If TypeOf sender Is Unit And sender.canmove = True Then
+        If TypeOf sender Is Model And sender.canmove = True Then
             Dim newcornerx As Integer = sender.left
             Dim newcornery As Integer = sender.top
             Dim newcenterx As Integer = newcornerx + sender.width / 2
@@ -2653,12 +2653,12 @@ fireoftzeentch:
                 Unit_Information.Visible = False
                 Dim Squadname As String = "Scouts"
                 For Each shootingcont In Me.Controls
-                    If TypeOf shootingcont Is Unit Then
+                    If TypeOf shootingcont Is Model Then
                         If shootingcont.isshooting = True And shootingcont.visible = True Then
                             ''after hit roll checks
-                            For z = 1 To Coordinates.Length - 1 '' checks range of all targets
+                            For z = 1 To Coordinates.Count - 1 '' checks range of all targets
                                 'Console.WriteLine(calcdistancebetweentwoobjects(shootingcont.left + shootingcont.width / 2, shootingcont.top + shootingcont.height / 2, Coordinates(z).X, Coordinates(z).Y))
-                                If calcdistancebetweentwoobjects(shootingcont.left + shootingcont.width / 2, shootingcont.top + shootingcont.height / 2, Coordinates(z).X, Coordinates(z).Y) > CInt(AllWargear.Rows(0).Item(1)) Then
+                                If calcdistancebetweentwoobjects(shootingcont.left + shootingcont.width / 2, shootingcont.top + shootingcont.height / 2, Coordinates(z).Left, Coordinates(z).Top) > CInt(AllWargear.Rows(0).Item(1)) Then
                                     MsgBox("Some or all targeted units are outside the range of this weapon. Please select target inside the range of the chosen weapon")
                                     Exit Sub
                                 End If
@@ -2669,10 +2669,10 @@ fireoftzeentch:
                                 ap = AllWargear.Rows(0).Item(5).ToString
                                 damage = AllWargear.Rows(0).Item(6)
                                 ''before hit roll checks
-                                If AllWargear.Rows(0).Item(0).ToString = "Astartes shotgun" And (calcdistancebetweentwoobjects(shootingcont.left + shootingcont.width / 2, shootingcont.top + shootingcont.height / 2, Coordinates(z).X, Coordinates(z).Y) < CInt(AllWargear.Rows(0).Item(1)) / 2) Then
+                                If AllWargear.Rows(0).Item(0).ToString = "Astartes shotgun" And (calcdistancebetweentwoobjects(shootingcont.left + shootingcont.width / 2, shootingcont.top + shootingcont.height / 2, Coordinates(z).Left, Coordinates(z).Top) < CInt(AllWargear.Rows(0).Item(1)) / 2) Then
                                     strength += 1
                                 End If
-                                If AllWargear.Rows(0).Item(0).ToString = "Conversion beamer" And (calcdistancebetweentwoobjects(shootingcont.left + shootingcont.width / 2, shootingcont.top + shootingcont.height / 2, Coordinates(z).X, Coordinates(z).Y) > CInt(AllWargear.Rows(0).Item(1)) / 2) Then
+                                If AllWargear.Rows(0).Item(0).ToString = "Conversion beamer" And (calcdistancebetweentwoobjects(shootingcont.left + shootingcont.width / 2, shootingcont.top + shootingcont.height / 2, Coordinates(z).Left, Coordinates(z).Top) > CInt(AllWargear.Rows(0).Item(1)) / 2) Then
                                     strength = 8
                                     ap = -1
                                     damage = 2
@@ -2686,7 +2686,7 @@ fireoftzeentch:
                                 If AllWargear.Rows(0).Item(0).ToString.Contains("Grav") And save >= 3 Then
                                     damage = rolld(3)
                                 End If
-                                If AllWargear.Rows(0).Item(0).ToString.Contains("melta") Or AllWargear.Rows(0).Item(0).ToString.Contains("Melta") Or AllWargear.Rows(0).Item(0).ToString = "Inferno pistol" And Not (AllWargear.Rows(0).Item(0).ToString = "Melta bomb") And (calcdistancebetweentwoobjects(shootingcont.left + shootingcont.width / 2, shootingcont.top + shootingcont.height / 2, Coordinates(z).X, Coordinates(z).Y) < CInt(AllWargear.Rows(0).Item(1)) / 2) Then
+                                If AllWargear.Rows(0).Item(0).ToString.Contains("melta") Or AllWargear.Rows(0).Item(0).ToString.Contains("Melta") Or AllWargear.Rows(0).Item(0).ToString = "Inferno pistol" And Not (AllWargear.Rows(0).Item(0).ToString = "Melta bomb") And (calcdistancebetweentwoobjects(shootingcont.left + shootingcont.width / 2, shootingcont.top + shootingcont.height / 2, Coordinates(z).Left, Coordinates(z).Top) < CInt(AllWargear.Rows(0).Item(1)) / 2) Then
                                     Dim a As Integer = rolld(6)
                                     Dim b As Integer = rolld(6)
                                     If a > b Then
@@ -2784,21 +2784,21 @@ skipshooting:
                 Unit_Information.Visible = False
                 Dim Squadname As String = "Scouts"
                 For Each shootingcont In Me.Controls
-                    If TypeOf shootingcont Is Unit Then
+                    If TypeOf shootingcont Is Model Then
                         If shootingcont.isshooting = True And shootingcont.visible = True Then
                             ''after hit roll checks
-                            For z = 1 To Coordinates.Length - 1 '' checks range of all targets
+                            For z = 1 To Coordinates.Count - 1 '' checks range of all targets
                                 'Console.WriteLine(calcdistancebetweentwoobjects(shootingcont.left + shootingcont.width / 2, shootingcont.top + shootingcont.height / 2, Coordinates(z).X, Coordinates(z).Y))
-                                If calcdistancebetweentwoobjects(shootingcont.left + shootingcont.width / 2, shootingcont.top + shootingcont.height / 2, Coordinates(z).X, Coordinates(z).Y) > CInt(AllWargear.Rows(0).Item(1)) Then
+                                If calcdistancebetweentwoobjects(shootingcont.left + shootingcont.width / 2, shootingcont.top + shootingcont.height / 2, Coordinates(z).Left, Coordinates(z).Top) > CInt(AllWargear.Rows(0).Item(1)) Then
                                     MsgBox("Some or all targeted units are outside the range of this weapon. Please select target inside the range of the chosen weapon")
                                     Exit Sub
                                 End If
-                                
+
                             Next
 
 
                             '##############  DICE ROLLING STARTS HERE  ##############'
-                            
+
                         End If
                     End If
                 Next
@@ -2808,7 +2808,7 @@ skipshooting:
     End Sub
     Private Sub ShootUnit_Click(sender As System.Object, e As System.EventArgs) Handles ShootUnit.Click
         For Each shootingcont In Me.Controls
-            If TypeOf shootingcont Is Unit Then
+            If TypeOf shootingcont Is Model Then
                 If shootingcont.isselectedtobeshooting = True Then
                     shootingcont.isshooting = True
                     Console.WriteLine(shootingcont.nameofmodel & " is selected to be shooting")
@@ -2820,7 +2820,7 @@ skipshooting:
     End Sub
     Private Sub TargetUnit_Click(sender As System.Object, e As System.EventArgs) Handles TargetUnit.Click
         For Each targetcont In Me.Controls
-            If TypeOf targetcont Is Unit Then
+            If TypeOf targetcont Is Model Then
                 If targetcont.isselectedtobetarget = True Then
                     targetcont.istarget = True
                     Console.WriteLine(targetcont.nameofmodel & " is selected to be one of the targets")
@@ -2832,7 +2832,7 @@ skipshooting:
     End Sub
     Private Sub TSMI_Apply_Damage_Click(sender As System.Object, e As System.EventArgs) Handles TSMI_Apply_Damage.Click
         For Each cnt In Me.Controls
-            If TypeOf cnt Is Unit Then
+            If TypeOf cnt Is Model Then
                 If cnt.identifier = unitfortransferinginfo Then
                     Console.WriteLine("Checking for Disgustingly Resilience")
                     For x As Integer = 0 To cnt.abilities.length - 1
@@ -2886,7 +2886,7 @@ Checkdeaths:
         centerx = selectedunit.left + selectedunit.Width / 2
         centery = selectedunit.top + selectedunit.Height / 2
         For Each cnt In Me.Controls
-            If TypeOf cnt Is Unit Then
+            If TypeOf cnt Is Model Then
                 targetunitx = cnt.left + cnt.Width / 2
                 targetunity = cnt.top + cnt.Height / 2
                 distance = calcdistancebetweentwoobjects(centerx, centery, targetunitx, targetunity)
@@ -2903,7 +2903,7 @@ Checkdeaths:
     End Function
     Private Sub TSMI_Model_flees_Click(sender As System.Object, e As System.EventArgs) Handles TSMI_Model_flees.Click
         For Each cnt In Me.Controls
-            If TypeOf cnt Is Unit Then
+            If TypeOf cnt Is Model Then
                 If cnt.identifier = unitfortransferinginfo Then
                     Console.WriteLine("Unit lost: " & cnt.nameofmodel)
                     cnt.visible = False
@@ -3016,7 +3016,7 @@ Checkdeaths:
     End Sub
     Private Sub ShootingSelectToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles TSMI_ShootingSelect.Click
         For Each cnt In Me.Controls
-            If TypeOf cnt Is Unit Then
+            If TypeOf cnt Is Model Then
                 If cnt.identifier = unitfortransferinginfo Then
                     cnt.isselectedtobeshooting = True
                 End If
@@ -3027,7 +3027,7 @@ Checkdeaths:
         Next
         Dim foundweapon As Boolean = False
         For Each cnt In Me.Controls ''add new weapons
-            If TypeOf cnt Is Unit Then
+            If TypeOf cnt Is Model Then
                 If cnt.isselectedtobeshooting = True Then
                     For count2 = 0 To cnt.weapons.length - 1 ''2??dunno why this was here
                         If ActiveWeaponsList.Items.Count = 0 Then
@@ -3055,7 +3055,7 @@ addweapon:
     End Sub
     Private Sub ShootingCancelToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles TSMI_ShootingCancel.Click
         For Each cnt In Me.Controls
-            If TypeOf cnt Is Unit Then
+            If TypeOf cnt Is Model Then
                 If cnt.identifier = unitfortransferinginfo Then
                     cnt.isselectedtobeshooting = False
                 End If
@@ -3066,7 +3066,7 @@ addweapon:
         Next
         Dim foundweapon As Boolean = False
         For Each cnt In Me.Controls ''add new weapons
-            If TypeOf cnt Is Unit Then
+            If TypeOf cnt Is Model Then
                 If cnt.isselectedtobeshooting = True Then
                     For count2 = 0 To cnt.weapons.length - 2
                         If ActiveWeaponsList.Items.Count = 0 Then
@@ -3093,7 +3093,7 @@ addweapon:
     End Sub
     Private Sub ShootingCancelAllToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles TSMI_ShootingCancelAll.Click
         For Each cnt In Me.Controls
-            If TypeOf cnt Is Unit Then
+            If TypeOf cnt Is Model Then
                 cnt.isselectedtobeshooting = False
             End If
         Next
@@ -3103,7 +3103,7 @@ addweapon:
     End Sub
     Private Sub TargetSelectToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles TSMI_TargetSelect.Click
         For Each cnt In Me.Controls
-            If TypeOf cnt Is Unit Then
+            If TypeOf cnt Is Model Then
                 If cnt.identifier = unitfortransferinginfo Then
                     cnt.isselectedtobetarget = True
                 End If
@@ -3112,7 +3112,7 @@ addweapon:
     End Sub
     Private Sub TargetCancelToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles TSMI_TargetCancel.Click
         For Each cnt In Me.Controls
-            If TypeOf cnt Is Unit Then
+            If TypeOf cnt Is Model Then
                 If cnt.identifier = unitfortransferinginfo Then
                     cnt.isselectedtobetarget = False
                 End If
@@ -3121,7 +3121,7 @@ addweapon:
     End Sub
     Private Sub TargetCancelAllToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles TSMI_TargetCancelAll.Click
         For Each cnt In Me.Controls
-            If TypeOf cnt Is Unit Then
+            If TypeOf cnt Is Model Then
                 cnt.isselectedtobetarget = False
             End If
         Next
@@ -3129,7 +3129,7 @@ addweapon:
     Private Sub checkdamage()
         Dim cnthasexplodes As Boolean = False
         For Each cnt In Me.Controls
-            If TypeOf cnt Is Unit Then
+            If TypeOf cnt Is Model Then
                 If cnt.currentwounds <= 0 Then
                     ''check abilites for explodes
                     For x As Integer = 0 To cnt.abilities.length - 1
@@ -3147,7 +3147,7 @@ addweapon:
                         Console.WriteLine(cnt.nameofmodel & " explodes damaging nearby units")
                         cnt.exploded = True
                         For Each unit In Me.Controls
-                            If TypeOf unit Is Unit Then
+                            If TypeOf unit Is Model Then
                                 If calcdistancebetweentwoobjects(cnt.left + cnt.width / 2, cnt.top + cnt.height / 2, unit.left + unit.width / 2, unit.top + unit.height / 2) <= 3 And unit.exploded = False Then
                                     unit.currentwounds -= rolld(3)
                                     Console.WriteLine(unit.nameofmodel & " is damaged by the explosion")
@@ -3179,7 +3179,7 @@ addweapon:
         Dim UnitsSaveFileStream As Stream = File.Create(Race_Selection_Form.UnitsSaveFilename)
         Dim Serializer As New BinaryFormatter
         For Each cnt In Me.Controls
-            If TypeOf cnt Is Unit Then
+            If TypeOf cnt Is Model Then
                 Dim ThisPicBoxInfoForUnits As New PicBoxInfo
                 With ThisPicBoxInfoForUnits
                     .Width = cnt.Width

@@ -1151,31 +1151,6 @@ retryintro:
 
 
     End Sub
-    Sub SavetoFile()
-        'For Each cnt In Map.Controls
-        '    If TypeOf cnt Is Unit Then
-        '        Console.WriteLine(cnt.
-        '    End If
-        'Next
-
-    End Sub
-
-    ''saving functions
-    Function Str2Hex(ByVal Input As String)
-        Dim output As String = String.Join("", Input.Select(Function(c) Conversion.Hex(AscW(c)).PadLeft(2, "0")).ToArray())
-        Return output
-    End Function
-    ''loadingfunctions
-    Function Hex2Str(ByVal Input As String)
-        Dim text As New System.Text.StringBuilder(Input.Length \ 2)
-        For i As Integer = 0 To Input.Length - 1 Step 2
-            text.Append(Chr(Convert.ToByte(Input.Substring(i, 2), 16)))
-        Next
-        Console.WriteLine(text.ToString)
-        Return text.ToString
-
-    End Function
-
 
     Sub AddSceneryToMap(ByVal fromleft As Integer, ByVal fromtop As Integer, ByVal type As Integer, ByVal rotation As Integer)
 
@@ -1193,7 +1168,7 @@ retryintro:
 
     End Sub
     Sub AddUnitToMap(ByVal ID As Integer, ByVal name As String, ByVal x As Integer, ByVal y As Integer, ByVal width As Integer, ByVal height As Integer, ByVal visible As Boolean, ByVal ispsyker As Boolean, ByVal M As Integer, ByVal WS As Integer, ByVal BS As Integer, ByVal S As Integer, ByVal T As Integer, ByVal CurrW As Integer, ByVal MaxW As Integer, ByVal MortW As Integer, ByVal A As Integer, ByVal LD As Integer, ByVal Sv As Integer, ByVal weapons() As String, ByVal teamid As Integer, Optional CanMove As Boolean = True, Optional CanShoot As Boolean = False, Optional hasmoved As Boolean = True, Optional hasadvanced As Boolean = False, Optional istarget As Boolean = True, Optional isshooting As Boolean = False, Optional isselectedtobetarget As Boolean = True, Optional isselectedtobeshooting As Boolean = False, Optional abilities() As String = Nothing, Optional psykerpowers() As String = Nothing, Optional numberofpsykerpowers As Integer = 0, Optional numberofdenythewitch As Integer = 0, Optional ISv As Integer = 20, Optional factiontags() As String = Nothing, Optional rotation As Integer = 0, Optional exploded As Boolean = False)
-        Dim unitaspb As New Unit
+        Dim unitaspb As New Model
         unitaspb.Identifier = ID
         unitaspb.Tag = name
         unitaspb.Left = x
@@ -1263,10 +1238,10 @@ retryintro:
         Return CInt(Map.Height - y)
     End Function
     Sub Target_selection()
+        Map.Coordinates.Clear()
         counter = 0
-        ReDim Map.Coordinates(counter)
         For Each targetcont In Map.Controls
-            If TypeOf targetcont Is Unit Then
+            If TypeOf targetcont Is Model Then
                 If targetcont.istarget = True And targetcont.visible = True Then
 
                     If counter = 0 Then ''making sure the target have the same T and S Values
@@ -1281,14 +1256,54 @@ retryintro:
                         MsgBox("Please select units with the same save characteristic.")
                         Exit Sub
                     End If
-                    Map.Coordinates(counter) = New Point(targetcont.left, targetcont.top)
+                    Dim ThisPicBoxInfoForUnits As New PicBoxInfo
+                    With ThisPicBoxInfoForUnits
+                        .Width = targetcont.Width
+                        .Height = targetcont.Height
+                        .Name = targetcont.Name
+                        .Left = targetcont.left
+                        .Top = targetcont.top
+                        .nameofmodel = targetcont.nameofmodel
+                        .Sizemode = targetcont.sizemode
+                        .Identifier = targetcont.identifier
+                    End With
+                    Map.Coordinates.Add(ThisPicBoxInfoForUnits)
                     counter += 1
-                    ReDim Preserve Map.Coordinates(counter)
                     Map.nomoretargets = False
                 End If
             End If
         Next
     End Sub
+    Function closestunit(ByVal selectedunit As Object) '''' finds closest model to selected model
+        Dim centerx As Integer
+        Dim centery As Integer
+        Dim closestdistance As Double
+        Dim distance As Double
+        Dim targetunitx As Integer
+        Dim targetunity As Integer
+        Dim identstorage As Integer = ""
+        centerx = selectedunit.left + selectedunit.Width / 2
+        centery = selectedunit.top + selectedunit.Height / 2
+        For Each cnt In Map.Controls
+            If TypeOf cnt Is Model Then
+                targetunitx = cnt.left + cnt.Width / 2
+                targetunity = cnt.top + cnt.Height / 2
+                distance = calcdistancebetweentwocentres(centerx, centery, targetunitx, targetunity)
+                If distance < closestdistance Or closestdistance = "" Then
+                    identstorage = cnt.identifier
+                End If
+            End If
+        Next
+        Return identstorage
+    End Function
+    Function calcdistancebetweentwocentres(ByVal unit1x As Integer, ByVal unit1y As Integer, ByVal unit2x As Integer, ByVal unit2y As Integer) As Double
+        Console.WriteLine("Distance between two objects: " & Math.Sqrt((unit1x - unit2x) ^ 2 + (unit1y - unit2y) ^ 2) / Map.aspectratio)
+        Return Math.Sqrt((unit1x - unit2x) ^ 2 + (unit1y - unit2y) ^ 2) / Map.aspectratio
+    End Function
+    Function calcdistancebetweentwoobjectedges(ByVal unit1x As Integer, ByVal unit1y As Integer, ByVal unit2x As Integer, ByVal unit2y As Integer, ByVal unit1width As Integer, ByVal unit1height As Integer, ByVal unit2width As Integer, ByVal unit2height As Integer, Optional unit1shape As String = "Round", Optional unit2shape As String = "Round") As Double
+        Console.WriteLine("Distance between two objects: " & Math.Sqrt((unit1x - unit2x) ^ 2 + (unit1y - unit2y) ^ 2) / Map.aspectratio)
+        Return Math.Sqrt((unit1x - unit2x) ^ 2 + (unit1y - unit2y) ^ 2) / Map.aspectratio
+    End Function
 End Module
 
 
