@@ -8,6 +8,7 @@ There are a number of forms some with similar properties they are:
 - <Race> “Army selection”
 - <Race>”Weapons selection”
 - “Map”
+
 Upon executing the program you will be presented with a number of message boxes, the first asks whether you want deployment zones displayed on the map form, for now we will click “no”. The next two messages boxes asks for the width and height of the scenario/playing table, adjust this at your discretion however upper bounds have been set to 120 inches for width and 80 for height. After confirming the width and height it will prompt you for the number of players, as of January 2019 this has not been play tested any higher or lower than 2, as such please confirm the default value of 2 by clicking “ok” (this instructional will also assume 2 players where appropriate). 
 Now you are presented with the “Race Selection” for now only two buttons do something, if you would like to skip straight to the “Map” and use values current used for debugging then click on the button marked “Orks” otherwise click on the button marked “Space Marines” twice
 The “Team selection” form will now appear and the only button is marked “Continue” please click this. You will now be presented with two buttons, a drop-down list and an empty list box, at your discretion please experiment with these inputs as well as all other inputs available on this screen. When you are done with this please click the button marked “finished” which will take you to the “weapons selection” form, this will preset you with the current values used for debugging for now scroll through them clicking on the button marked “next squad”. Continue doing this for the other player’s forms until the screen fills with a large yellow form (the “Map”) with lines of green boxes on the left and red boxes on the right, it will also have twenty brown boxes randomly placed in between them. The red and green boxes represent models from different players/teams. The brown boxes are scenery parts and have not been fully implemented
@@ -18,8 +19,7 @@ After cycling to the leadership/morale phase (and enough models have died in the
 ## To-do list
 - Needs a proper project name
 - Complete psychic phase and amount of psychic powers per psyker inc denials, Weapons rule exceptions
-- Implement Charge Phase, Fight phase, Abilities, Invulnerable Save, Damage Characteristics (for models with 12+ wounds), assault + heavy for moving and advancing, exploding and chaining, and kill on number of shots termination,
+- Implement Charge Phase, Fight phase, Abilities, Invulnerable Save, Damage Characteristics (for models with 12+ wounds), assault + heavy for moving and advancing, exploding and chaining and kill on number of shots termination, depth (for roofs of building and gantries).
 - Include vehicle and flyers
 - Flesh out Races:- Orks, Dark Eldar, Chaos, Chaos Daemons, Eldar, Tau etc
-
-
+- Plans to include 3d graphics
