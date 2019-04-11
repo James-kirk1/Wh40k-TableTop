@@ -2,8 +2,9 @@
 Public Class Space_Marines_Weapons_Selection
     Dim line As Integer = 0
     ' Dim stringinput As String = "Thunderfire Cannon~Vanguard Veteran Squad 4~Venerable Dreadnought~Vindicator"
-    Dim str() As String ' = Team_Setup.playeronearmy.ToString.Split("~") 'stringinput.Split("~") ''
-    Dim storage As String
+    'Dim str As New List(Of String) 'String ' = Team_Setup.playeronearmy.ToString.Split("~") 'stringinput.Split("~") ''
+    Dim Imp1Name As String
+
     Dim figcount As Integer = 0 '' for counting figs in squad
     Dim maxnumberoffigs As Integer = 0
     Dim nameofsquad As String = ""
@@ -50,52 +51,108 @@ Public Class Space_Marines_Weapons_Selection
                     Exit Sub
                 End If
         End Select
-
+        Dim storagelist As New System.Collections.Specialized.StringCollection
         ''adding to transfer string
-        If storage <> "" Then
-            If Label2.Visible Then
-                storage = storage & "~" & Regex.Replace(Label2.Text, "Model: ", "")
-            Else
-                storage = storage & "~" & nameofsquad
-            End If
+        If Label2.Visible Then
+            Imp1Name = Regex.Replace(Label2.Text, "Model: ", "")
         Else
-            If Label2.Visible Then
-                storage = Regex.Replace(Label2.Text, "Model: ", "")
-            Else
-                storage = nameofsquad
+            Imp1Name = nameofsquad
+        End If
+        If ComboBox1.Visible = True Then
+            If ComboBox1.SelectedIndex > -1 Then
+                storagelist.Add(ComboBox1.Text)
+            ElseIf Label3.Visible = True Then
+                storagelist.Add(Label3.Text)
             End If
         End If
-        If ComboBox1.SelectedIndex > -1 Then
-            storage = storage & "@" & ComboBox1.Text
+        If ComboBox2.Visible = True Then
+            If ComboBox2.SelectedIndex > -1 Then
+                storagelist.Add(ComboBox2.Text)
+            ElseIf Label4.Visible = True Then
+                storagelist.Add(Label4.Text)
+            End If
         End If
-        If ComboBox2.SelectedIndex > -1 Then
-            storage = storage & "$" & ComboBox2.Text
+        If ComboBox3.Visible = True Then
+            If ComboBox3.SelectedIndex > -1 Then
+                storagelist.Add(ComboBox3.Text)
+            ElseIf Label5.Visible = True Then
+                storagelist.Add(Label5.Text)
+            End If
         End If
-        If ComboBox3.SelectedIndex > -1 Then
-            storage = storage & "$" & ComboBox3.Text
+        If ComboBox4.Visible = True Then
+            If ComboBox4.SelectedIndex > -1 Then
+                storagelist.Add(ComboBox4.Text)
+            ElseIf Label6.Visible = True Then
+                storagelist.Add(Label6.Text)
+            End If
         End If
-        If ComboBox4.SelectedIndex > -1 Then
-            storage = storage & "$" & ComboBox4.Text
+        If ComboBox5.Visible = True Then
+            If ComboBox5.SelectedIndex > -1 Then
+                storagelist.Add(ComboBox5.Text)
+            ElseIf Label7.Visible = True Then
+                storagelist.Add(Label7.Text)
+            End If
         End If
-        If ComboBox5.SelectedIndex > -1 Then
-            storage = storage & "$" & ComboBox5.Text
-        End If
-        If CheckBox1.Checked = True And ComboBox1.SelectedIndex > -1 Then
-            storage = storage & "$" & CheckBox1.Text
-        ElseIf CheckBox1.Checked = True And ComboBox1.SelectedIndex <= -1 Then
-            storage = storage & "@" & CheckBox1.Text
+
+
+        '' ''If ComboBox1.SelectedIndex > -1 And Label3.Visible = True And ComboBox1.Visible = True Then
+        '' ''    storagelist.Add(ComboBox1.Text)
+        '' ''ElseIf Label3.Visible = True And ComboBox1.SelectedIndex = -1 Then
+        '' ''    storagelist.Add(Label3.Text)
+        '' ''ElseIf Label3.Visible = False And ComboBox1.Visible = True And ComboBox1.SelectedIndex > -1 Then
+        '' ''    storagelist.Add(ComboBox1.Text)
+        '' ''End If
+        ' ''If ComboBox2.SelectedIndex > -1 And Label4.Visible = True Then
+        ' ''    storagelist.Add(ComboBox2.Text)
+        ' ''ElseIf Label4.Visible = True And ComboBox2.SelectedIndex = -1 Then
+        ' ''    storagelist.Add(Label4.Text)
+        ' ''ElseIf Label4.Visible = False And ComboBox2.Visible = True And ComboBox2.SelectedIndex > -1 Then
+        ' ''    storagelist.Add(ComboBox2.Text)
+        ' ''End If
+        ' ''If ComboBox3.SelectedIndex > -1 And Label5.Visible = True Then
+        ' ''    storagelist.Add(ComboBox3.Text)
+        ' ''ElseIf Label5.Visible = True And ComboBox3.SelectedIndex = -1 Then
+        ' ''    storagelist.Add(Label5.Text)
+        ' ''ElseIf Label5.Visible = False And ComboBox3.Visible = True And ComboBox3.SelectedIndex > -1 Then
+        ' ''    storagelist.Add(ComboBox3.Text)
+        ' ''End If
+        ' ''If ComboBox4.SelectedIndex > -1 And Label6.Visible = True Then
+        ' ''    storagelist.Add(ComboBox4.Text)
+        ' ''ElseIf Label6.Visible = True And ComboBox4.SelectedIndex = -1 Then
+        ' ''    storagelist.Add(Label6.Text)
+        ' ''ElseIf Label6.Visible = False And ComboBox4.Visible = True And ComboBox4.SelectedIndex > -1 Then
+        ' ''    storagelist.Add(ComboBox4.Text)
+        ' ''End If
+        ' ''If ComboBox5.SelectedIndex > -1 And Label7.Visible = True Then
+        ' ''    storagelist.Add(ComboBox5.Text)
+        ' ''ElseIf Label7.Visible = True And ComboBox5.SelectedIndex = -1 Then
+        ' ''    storagelist.Add(Label7.Text)
+        ' ''ElseIf Label7.Visible = False And ComboBox5.Visible = True And ComboBox5.SelectedIndex > -1 Then
+        ' ''    storagelist.Add(ComboBox5.Text)
+        ' ''End If
+        If CheckBox1.Checked = True Then
+            storagelist.Add(CheckBox1.Text)
         End If
         If CheckBox2.Checked = True Then
-            storage = storage & "$" & CheckBox2.Text
+            storagelist.Add(CheckBox2.Text)
         End If
         If CheckBox3.Checked = True Then
-            storage = storage & "$" & CheckBox3.Text
+            storagelist.Add(CheckBox3.Text)
         End If
         If CheckBox4.Checked = True Then
-            storage = storage & "$" & CheckBox4.Text
+            storagelist.Add(CheckBox4.Text)
         End If
+        For x As Integer = 0 To storagelist.Count - 1
+            If storagelist(x).Contains("two") Then
+                storagelist(x) = storagelist(x).Replace("two ", "").Substring(0, storagelist(x).Replace("two ", "").Length - 1)
+                storagelist.Add(storagelist(x))
+            End If
+        Next
 
-        'Console.WriteLine("asdfkjahsdf" & storage)
+
+        Functions.addModelToArmyList(nameofsquad, Functions.Groupid, Imp1Name, storagelist)
+        Functions.Groupid += 1
+        'storagelist.Clear()
         ''reset sequence
         For Each cont As Control In Me.Controls
             cont.Visible = False
@@ -105,44 +162,36 @@ Public Class Space_Marines_Weapons_Selection
         Label1.Visible = True
         Btn_NextSquad.Enabled = True
         Btn_NextModel.Enabled = False
-        If line > str.Count - 1 Then
-            Select Case Race_Selection_Form.Playerid
-                Case Is = 1
-                    Team_Setup.playeronearmy = storage
-                Case Is = 2
-                    Team_Setup.playertwoarmy = storage
-                Case Is = 3
-                    Team_Setup.playerthreearmy = storage
-                Case Is = 4
-                    Team_Setup.playerfourarmy = storage
-                Case Is = 5
-                    Team_Setup.playerfivearmy = storage
-                Case Is = 6
-                    Team_Setup.playersixarmy = storage
-                Case Is = 7
-                    Team_Setup.playersevenarmy = storage
-                Case Is = 8
-                    Team_Setup.playereightarmy = storage
-            End Select
-
-
-
+        If line > listallModels.Count - 1 Then
             WeaponsSelectionToMap()
-
-
+            Me.Close()
         Else
             nameofsquad = ""
-            Dim part() As String = str(line).Split(" ")
+            Dim part As New List(Of String)
+            Try
+                part.AddRange(Functions.listallModels(line).Split(" "))
+            Catch ex As Exception
+                part.Add(Functions.listallModels(line))
+            End Try
+            maxnumberoffigs = 0
             For parta As Integer = 0 To part.Count - 1
                 If IsNumeric(part(parta)) = True Then
-                    maxnumberoffigs = part(parta)
-                    Btn_NextSquad.Enabled = False
-                    Btn_NextModel.Enabled = True
-                    figcount = 1
-                    Exit For
+                   
+                    If maxnumberoffigs = 0 Then
+
+                        maxnumberoffigs = part(parta)
+                        figcount = 1
+                        Exit For
+                    ElseIf thirdunit = 0 Then
+                        thirdunit = part(parta)
+                    ElseIf fourthunit = 0 Then
+                        fourthunit = part(parta)
+                    ElseIf fifthunit = 0 Then
+                        fifthunit = part(parta)
+                    ElseIf sixthunit = 0 Then
+                        sixthunit = part(parta)
+                    End If
                 Else
-                    Btn_NextSquad.Enabled = True
-                    Btn_NextModel.Enabled = False
                     If parta <> 0 Then
                         nameofsquad += " " & part(parta)
                     Else
@@ -151,6 +200,13 @@ Public Class Space_Marines_Weapons_Selection
                     figcount = 0
                 End If
             Next
+            If figcount >= maxnumberoffigs Then
+                Btn_NextSquad.Enabled = True
+                Btn_NextModel.Enabled = False
+            Else
+                Btn_NextSquad.Enabled = False
+                Btn_NextModel.Enabled = True
+            End If
             If figcount = 0 Then
                 Label1.Text = "Group Name: " & nameofsquad
             Else
@@ -168,6 +224,10 @@ Public Class Space_Marines_Weapons_Selection
         ComboBox4.ResetText()
         ComboBox5.Items.Clear()
         ComboBox5.ResetText()
+        CheckBox1.Checked = False
+        CheckBox2.Checked = False
+        CheckBox3.Checked = False
+        CheckBox4.Checked = False
         miscstuff1 = False
         ''''''
         Select Case nameofsquad
@@ -525,6 +585,9 @@ Public Class Space_Marines_Weapons_Selection
                 Label3.Text = "Bolt Pistol"
                 Label4.Visible = True
                 Label4.Text = "Boltgun"
+                ComboBox2.Items.Add("Sniper rifle")
+                ComboBox2.Items.Add("Astartes shotgun")
+                ComboBox2.Items.Add("Combat knife")
                 ComboBox1.Visible = True
                 For str As Integer = 0 To SM_one_Sergeant_Equipment.Count - 1
                     ComboBox1.Items.Add(SM_one_Sergeant_Equipment(str))
@@ -657,7 +720,7 @@ Public Class Space_Marines_Weapons_Selection
                 Next
                 ComboBox2.Visible = True
                 ComboBox2.Items.Add("Missile launcher")
-                ComboBox2.Items.Add("twin Autocannon")
+                ComboBox2.Items.Add("Twin Autocannon")
                 ComboBox3.Visible = True
                 ComboBox3.Items.Add("Heavy flamer")
             Case Is = "Venerable Dreadnought"
@@ -673,7 +736,7 @@ Public Class Space_Marines_Weapons_Selection
                 Next
                 ComboBox2.Visible = True
                 ComboBox2.Items.Add("Missile launcher")
-                ComboBox2.Items.Add("twin Autocannon")
+                ComboBox2.Items.Add("Twin Autocannon")
                 ComboBox3.Visible = True
                 ComboBox3.Items.Add("Heavy flamer")
             Case Is = "Contemptor Dreadnought"
@@ -821,17 +884,15 @@ Public Class Space_Marines_Weapons_Selection
                 figcount = 1
                 Label3.Visible = True
                 Label3.Text = "Heavy bolter"
-                Label4.Visible = True
-                Label4.Text = "Additional"
                 ComboBox1.Visible = True
                 ComboBox1.Items.Add("Multi-melta")
                 ComboBox1.Items.Add("Heavy flamer")
                 ComboBox2.Visible = True
                 ComboBox2.Items.Add("Heavy bolter")
                 ComboBox2.Items.Add("Typhoon missile launcher")
-                ComboBox1.Items.Add("Multi-melta")
-                ComboBox1.Items.Add("Heavy flamer")
-                ComboBox1.Items.Add("Assault cannon")
+                ComboBox2.Items.Add("Multi-melta")
+                ComboBox2.Items.Add("Heavy flamer")
+                ComboBox2.Items.Add("Assault cannon")
             Case Is = "Rhino"
                 CheckBox1.Visible = True
                 CheckBox1.Text = "Hunter-killer missile"
@@ -842,12 +903,12 @@ Public Class Space_Marines_Weapons_Selection
                 CheckBox1.Text = "Hunter-killer missile"
             Case Is = "Razorback"
                 Label3.Visible = True
-                Label3.Text = "twin Heavy bolter"
+                Label3.Text = "Twin Heavy bolter"
                 ComboBox1.Visible = True
-                ComboBox1.Items.Add("twin Lascannon")
-                ComboBox1.Items.Add("twin Assault cannon")
-                ComboBox1.Items.Add("Lascannon and twin Plasma gun ")
-                ComboBox1.Items.Add("twin Heavy flamer")
+                ComboBox1.Items.Add("Twin Lascannon")
+                ComboBox1.Items.Add("Twin Assault cannon")
+                ComboBox1.Items.Add("Lascannon and Twin Plasma gun ")
+                ComboBox1.Items.Add("Twin Heavy flamer")
                 CheckBox1.Visible = True
                 CheckBox1.Text = "Hunter-killer missile"
                 CheckBox2.Visible = True
@@ -915,10 +976,8 @@ Public Class Space_Marines_Weapons_Selection
             Case Is = "Predator"
                 Label3.Visible = True
                 Label3.Text = "Predator autocannon"
-                Label4.Visible = True
-                Label4.Text = "Additional"
                 ComboBox1.Visible = True
-                ComboBox1.Items.Add("twin Lascannon")
+                ComboBox1.Items.Add("Twin Lascannon")
                 ComboBox2.Visible = True
                 ComboBox2.Items.Add("two Lascannons")
                 ComboBox2.Items.Add("two Heavy bolters")
@@ -952,14 +1011,14 @@ Public Class Space_Marines_Weapons_Selection
                 CheckBox2.Text = "Storm bolter"
             Case Is = "Stormraven Gunship"
                 Label3.Visible = True
-                Label3.Text = "twin Assault cannon"
+                Label3.Text = "Twin Assault cannon"
                 Label4.Visible = True
-                Label4.Text = "twin Heavy bolter"
+                Label4.Text = "Twin Heavy bolter"
                 ComboBox1.Visible = True
-                ComboBox1.Items.Add("twin Lascannon")
-                ComboBox1.Items.Add("twin Heavy plasma cannon")
+                ComboBox1.Items.Add("Twin Lascannon")
+                ComboBox1.Items.Add("Twin Heavy plasma cannon")
                 ComboBox2.Visible = True
-                ComboBox2.Items.Add("twin Multi-melta")
+                ComboBox2.Items.Add("Twin Multi-melta")
                 ComboBox2.Items.Add("Typhoon missile launcher")
                 CheckBox1.Visible = True
                 CheckBox1.Text = "two Hurricane bolters"
@@ -1263,9 +1322,7 @@ Public Class Space_Marines_Weapons_Selection
                 ComboBox5.Items.Add("Frag Cannon")
             Case Is = "Baal Predator"
                 Label3.Visible = True
-                Label3.Text = "twin Assault cannon"
-                Label4.Visible = True
-                Label4.Text = "Additional"
+                Label3.Text = "Twin Assault cannon"
                 ComboBox1.Visible = True
                 ComboBox1.Items.Add("Flamestorm cannon")
                 ComboBox2.Visible = True
@@ -1417,27 +1474,25 @@ Public Class Space_Marines_Weapons_Selection
                 figcount = 1
                 Label3.Visible = True
                 Label3.Text = "Heavy bolter"
-                Label4.Visible = True
-                Label4.Text = "Additional"
                 ComboBox1.Visible = True
                 ComboBox1.Items.Add("Multi-melta")
                 ComboBox1.Items.Add("Heavy flamer")
                 ComboBox2.Visible = True
                 ComboBox2.Items.Add("Heavy bolter")
                 ComboBox2.Items.Add("Typhoon missile launcher")
-                ComboBox1.Items.Add("Multi-melta")
-                ComboBox1.Items.Add("Heavy flamer")
-                ComboBox1.Items.Add("Assault cannon")
+                ComboBox2.Items.Add("Multi-melta")
+                ComboBox2.Items.Add("Heavy flamer")
+                ComboBox2.Items.Add("Assault cannon")
             Case Else
                 Console.WriteLine(nameofsquad & " is not available atm")
         End Select
-
-        Console.WriteLine(storage) '
-        ''If figcount = 1 Then
-        ''    Select Case nameofsquad
-        ''        '' seargent or special cases
-        ''    End Select
-        ''End If
+        If figcount >= maxnumberoffigs Then
+            Btn_NextSquad.Enabled = True
+            Btn_NextModel.Enabled = False
+        Else
+            Btn_NextSquad.Enabled = False
+            Btn_NextModel.Enabled = True
+        End If
 
     End Sub
 
@@ -1452,37 +1507,40 @@ Public Class Space_Marines_Weapons_Selection
         Label1.Visible = True
         nameofsquad = ""
         'Console.WriteLine(Race_Selection_Form.Playerid)
-        Select Case Race_Selection_Form.Playerid
-            Case Is = 1
-                str = Team_Setup.playeronearmy.Split("~")
-            Case Is = 2
-                str = Team_Setup.playertwoarmy.Split("~")
-            Case Is = 3
-                str = Team_Setup.playerthreearmy.Split("~")
-            Case Is = 4
-                str = Team_Setup.playerfourarmy.Split("~")
-            Case Is = 5
-                str = Team_Setup.playerfivearmy.Split("~")
-            Case Is = 6
-                str = Team_Setup.playersixarmy.Split("~")
-            Case Is = 7
-                str = Team_Setup.playersevenarmy.Split("~")
-            Case Is = 8
-                str = Team_Setup.playereightarmy.Split("~")
-        End Select
+        'Select Case Race_Selection_Form.Playerid
+        '    Case Is = 1
+        '        str = Team_Setup.playeronearmy '.Split("~")
+        '    Case Is = 2
+        '        str = Team_Setup.playertwoarmy '.Split("~")
+        '    Case Is = 3
+        '        str = Team_Setup.playerthreearmy '.Split("~")
+        '    Case Is = 4
+        '        str = Team_Setup.playerfourarmy '.Split("~")
+        '    Case Is = 5
+        '        str = Team_Setup.playerfivearmy '.Split("~")
+        '    Case Is = 6
+        '        str = Team_Setup.playersixarmy '.Split("~")
+        '    Case Is = 7
+        '        str = Team_Setup.playersevenarmy '.Split("~")
+        '    Case Is = 8
+        '        str = Team_Setup.playereightarmy '.Split("~")
+        'End Select
         'For z As Integer = 0 To str.Count - 1
 
         '    groupstorage(Race_Selection_Form.Playerid.ToString)(z) = str(z).ToString
 
         'Next z
 
-        Dim part() As String = str(line).Split(" ")
+        Dim part As New List(Of String)
+        Try
+            part.AddRange(Functions.listallModels(0).Split(" "))
+        Catch ex As Exception
+            part.AddRange(Functions.listallModels)
+        End Try
         For parta As Integer = 0 To part.Count - 1
             If IsNumeric(part(parta)) = True Then
                 If maxnumberoffigs = 0 Then
                     maxnumberoffigs = part(parta)
-                    Btn_NextSquad.Enabled = False
-                    Btn_NextModel.Enabled = True
                     figcount = 1
                 ElseIf thirdunit = 0 Then
                     thirdunit = part(parta)
@@ -1499,8 +1557,6 @@ Public Class Space_Marines_Weapons_Selection
 
                 ''''''''Exit For
             Else
-                Btn_NextSquad.Enabled = True
-                Btn_NextModel.Enabled = False
                 If parta <> 0 Then
                     nameofsquad += " " & part(parta)
                 Else
@@ -1510,7 +1566,13 @@ Public Class Space_Marines_Weapons_Selection
                 figcount = 0
             End If
         Next
-
+        'If figcount >= maxnumberoffigs Then
+        '    Btn_NextSquad.Enabled = True
+        '    Btn_NextModel.Enabled = False
+        'Else
+        '    Btn_NextSquad.Enabled = False
+        '    Btn_NextModel.Enabled = True
+        'End If
         line += 1
 
         Btn_NextSquad.Visible = True
@@ -1876,6 +1938,9 @@ Public Class Space_Marines_Weapons_Selection
                 Label3.Text = "Bolt Pistol"
                 Label4.Visible = True
                 Label4.Text = "Boltgun"
+                ComboBox2.Items.Add("Sniper rifle")
+                ComboBox2.Items.Add("Astartes shotgun")
+                ComboBox2.Items.Add("Combat knife")
                 ComboBox1.Visible = True
                 For str As Integer = 0 To SM_one_Sergeant_Equipment.Count - 1
                     ComboBox1.Items.Add(SM_one_Sergeant_Equipment(str))
@@ -2008,7 +2073,7 @@ Public Class Space_Marines_Weapons_Selection
                 Next
                 ComboBox2.Visible = True
                 ComboBox2.Items.Add("Missile launcher")
-                ComboBox2.Items.Add("twin Autocannon")
+                ComboBox2.Items.Add("Twin Autocannon")
                 ComboBox3.Visible = True
                 ComboBox3.Items.Add("Heavy flamer")
             Case Is = "Venerable Dreadnought"
@@ -2024,7 +2089,7 @@ Public Class Space_Marines_Weapons_Selection
                 Next
                 ComboBox2.Visible = True
                 ComboBox2.Items.Add("Missile launcher")
-                ComboBox2.Items.Add("twin Autocannon")
+                ComboBox2.Items.Add("Twin Autocannon")
                 ComboBox3.Visible = True
                 ComboBox3.Items.Add("Heavy flamer")
             Case Is = "Contemptor Dreadnought"
@@ -2172,17 +2237,15 @@ Public Class Space_Marines_Weapons_Selection
                 figcount = 1
                 Label3.Visible = True
                 Label3.Text = "Heavy bolter"
-                Label4.Visible = True
-                Label4.Text = "Additional"
                 ComboBox1.Visible = True
                 ComboBox1.Items.Add("Multi-melta")
                 ComboBox1.Items.Add("Heavy flamer")
                 ComboBox2.Visible = True
                 ComboBox2.Items.Add("Heavy bolter")
                 ComboBox2.Items.Add("Typhoon missile launcher")
-                ComboBox1.Items.Add("Multi-melta")
-                ComboBox1.Items.Add("Heavy flamer")
-                ComboBox1.Items.Add("Assault cannon")
+                ComboBox2.Items.Add("Multi-melta")
+                ComboBox2.Items.Add("Heavy flamer")
+                ComboBox2.Items.Add("Assault cannon")
             Case Is = "Rhino"
                 CheckBox1.Visible = True
                 CheckBox1.Text = "Hunter-killer missile"
@@ -2193,12 +2256,12 @@ Public Class Space_Marines_Weapons_Selection
                 CheckBox1.Text = "Hunter-killer missile"
             Case Is = "Razorback"
                 Label3.Visible = True
-                Label3.Text = "twin Heavy bolter"
+                Label3.Text = "Twin Heavy bolter"
                 ComboBox1.Visible = True
-                ComboBox1.Items.Add("twin Lascannon")
-                ComboBox1.Items.Add("twin Assault cannon")
-                ComboBox1.Items.Add("Lascannon and twin Plasma gun ")
-                ComboBox1.Items.Add("twin Heavy flamer")
+                ComboBox1.Items.Add("Twin Lascannon")
+                ComboBox1.Items.Add("Twin Assault cannon")
+                ComboBox1.Items.Add("Lascannon and Twin Plasma gun ")
+                ComboBox1.Items.Add("Twin Heavy flamer")
                 CheckBox1.Visible = True
                 CheckBox1.Text = "Hunter-killer missile"
                 CheckBox2.Visible = True
@@ -2266,10 +2329,8 @@ Public Class Space_Marines_Weapons_Selection
             Case Is = "Predator"
                 Label3.Visible = True
                 Label3.Text = "Predator autocannon"
-                Label4.Visible = True
-                Label4.Text = "Additional"
                 ComboBox1.Visible = True
-                ComboBox1.Items.Add("twin Lascannon")
+                ComboBox1.Items.Add("Twin Lascannon")
                 ComboBox2.Visible = True
                 ComboBox2.Items.Add("two Lascannons")
                 ComboBox2.Items.Add("two Heavy bolters")
@@ -2303,14 +2364,14 @@ Public Class Space_Marines_Weapons_Selection
                 CheckBox2.Text = "Storm bolter"
             Case Is = "Stormraven Gunship"
                 Label3.Visible = True
-                Label3.Text = "twin Assault cannon"
+                Label3.Text = "Twin Assault cannon"
                 Label4.Visible = True
-                Label4.Text = "twin Heavy bolter"
+                Label4.Text = "Twin Heavy bolter"
                 ComboBox1.Visible = True
-                ComboBox1.Items.Add("twin Lascannon")
-                ComboBox1.Items.Add("twin Heavy plasma cannon")
+                ComboBox1.Items.Add("Twin Lascannon")
+                ComboBox1.Items.Add("Twin Heavy plasma cannon")
                 ComboBox2.Visible = True
-                ComboBox2.Items.Add("twin Multi-melta")
+                ComboBox2.Items.Add("Twin Multi-melta")
                 ComboBox2.Items.Add("Typhoon missile launcher")
                 CheckBox1.Visible = True
                 CheckBox1.Text = "two Hurricane bolters"
@@ -2614,9 +2675,7 @@ Public Class Space_Marines_Weapons_Selection
                 ComboBox5.Items.Add("Frag Cannon")
             Case Is = "Baal Predator"
                 Label3.Visible = True
-                Label3.Text = "twin Assault cannon"
-                Label4.Visible = True
-                Label4.Text = "Additional"
+                Label3.Text = "Twin Assault cannon"
                 ComboBox1.Visible = True
                 ComboBox1.Items.Add("Flamestorm cannon")
                 ComboBox2.Visible = True
@@ -2768,17 +2827,15 @@ Public Class Space_Marines_Weapons_Selection
                 figcount = 1
                 Label3.Visible = True
                 Label3.Text = "Heavy bolter"
-                Label4.Visible = True
-                Label4.Text = "Additional"
                 ComboBox1.Visible = True
                 ComboBox1.Items.Add("Multi-melta")
                 ComboBox1.Items.Add("Heavy flamer")
                 ComboBox2.Visible = True
                 ComboBox2.Items.Add("Heavy bolter")
                 ComboBox2.Items.Add("Typhoon missile launcher")
-                ComboBox1.Items.Add("Multi-melta")
-                ComboBox1.Items.Add("Heavy flamer")
-                ComboBox1.Items.Add("Assault cannon")
+                ComboBox2.Items.Add("Multi-melta")
+                ComboBox2.Items.Add("Heavy flamer")
+                ComboBox2.Items.Add("Assault cannon")
             Case Else
                 Console.WriteLine(nameofsquad & " is not available atm")
         End Select
@@ -2786,6 +2843,13 @@ Public Class Space_Marines_Weapons_Selection
             Label1.Text = "Group Name: " & nameofsquad
         Else
             Label1.Text = "Group Name: " & nameofsquad & " " & figcount
+        End If
+        If figcount >= maxnumberoffigs Then
+            Btn_NextSquad.Enabled = True
+            Btn_NextModel.Enabled = False
+        Else
+            Btn_NextSquad.Enabled = False
+            Btn_NextModel.Enabled = True
         End If
         ComboBox1.Sorted = True
         ComboBox2.Sorted = True
@@ -2867,53 +2931,73 @@ Public Class Space_Marines_Weapons_Selection
                 End If
         End Select
         ''adding to transfer string
-        If storage <> "" Then
-            If Label2.Visible Then
-                storage = storage & "~" & Regex.Replace(Label2.Text, "Model: ", "")
-
-            Else
-                storage = storage & "~" & nameofsquad
-            End If
+        Dim storagelist As New System.Collections.Specialized.StringCollection
+        If Label2.Visible Then
+            Imp1Name = Regex.Replace(Label2.Text, "Model: ", "")
         Else
-            If Label2.Visible Then
-                storage = Regex.Replace(Label2.Text, "Model: ", "")
-            Else
-                storage = nameofsquad
-            End If
+            Imp1Name = nameofsquad
         End If
-        If ComboBox1.SelectedIndex > -1 Then
-            storage = storage & "@" & ComboBox1.Text
+
+        If ComboBox1.SelectedIndex > -1 And Label3.Visible = True Then
+            storagelist.Add(ComboBox1.Text)
+        ElseIf Label3.Visible = True And ComboBox1.SelectedIndex = -1 Then
+            storagelist.Add(Label3.Text)
+        ElseIf Label3.Visible = False And ComboBox1.Visible = True And ComboBox1.SelectedIndex > -1 Then
+            storagelist.Add(ComboBox1.Text)
         End If
-        If ComboBox2.SelectedIndex > -1 Then
-            storage = storage & "$" & ComboBox2.Text
+        If ComboBox2.SelectedIndex > -1 And Label4.Visible = True Then
+            storagelist.Add(ComboBox2.Text)
+        ElseIf Label4.Visible = True And ComboBox2.SelectedIndex = -1 Then
+            storagelist.Add(Label4.Text)
+        ElseIf Label4.Visible = False And ComboBox2.Visible = True And ComboBox2.SelectedIndex > -1 Then
+            storagelist.Add(ComboBox2.Text)
         End If
-        If ComboBox3.SelectedIndex > -1 Then
-            storage = storage & "$" & ComboBox3.Text
+        If ComboBox3.SelectedIndex > -1 And Label5.Visible = True Then
+            storagelist.Add(ComboBox3.Text)
+        ElseIf Label5.Visible = True And ComboBox3.SelectedIndex = -1 Then
+            storagelist.Add(Label5.Text)
+        ElseIf Label5.Visible = False And ComboBox3.Visible = True And ComboBox3.SelectedIndex > -1 Then
+            storagelist.Add(ComboBox3.Text)
         End If
-        If ComboBox4.SelectedIndex > -1 Then
-            storage = storage & "$" & ComboBox4.Text
+        If ComboBox4.SelectedIndex > -1 And Label6.Visible = True Then
+            storagelist.Add(ComboBox4.Text)
+        ElseIf Label6.Visible = True And ComboBox4.SelectedIndex = -1 Then
+            storagelist.Add(Label6.Text)
+        ElseIf Label6.Visible = False And ComboBox4.Visible = True And ComboBox4.SelectedIndex > -1 Then
+            storagelist.Add(ComboBox4.Text)
         End If
-        If ComboBox5.SelectedIndex > -1 Then
-            storage = storage & "$" & ComboBox5.Text
+        If ComboBox5.SelectedIndex > -1 And Label7.Visible = True Then
+            storagelist.Add(ComboBox5.Text)
+        ElseIf Label7.Visible = True And ComboBox5.SelectedIndex = -1 Then
+            storagelist.Add(Label7.Text)
+        ElseIf Label7.Visible = False And ComboBox5.Visible = True And ComboBox5.SelectedIndex > -1 Then
+            storagelist.Add(ComboBox5.Text)
         End If
-        If CheckBox1.Checked = True And ComboBox1.SelectedIndex > -1 Then
-            storage = storage & "$" & CheckBox1.Text
-        ElseIf CheckBox1.Checked = True And ComboBox1.SelectedIndex <= -1 Then
-            storage = storage & "@" & CheckBox1.Text
+        If CheckBox1.Checked = True Then
+            storagelist.Add(CheckBox1.Text)
         End If
         If CheckBox2.Checked = True Then
-            storage = storage & "$" & CheckBox2.Text
+            storagelist.Add(CheckBox2.Text)
         End If
         If CheckBox3.Checked = True Then
-            storage = storage & "$" & CheckBox3.Text
+            storagelist.Add(CheckBox3.Text)
         End If
         If CheckBox4.Checked = True Then
-            storage = storage & "$" & CheckBox4.Text
+            storagelist.Add(CheckBox4.Text)
         End If
+        For x As Integer = 0 To storagelist.Count - 1
+            If storagelist(x).Contains("two") Then
+                storagelist(x).Replace("two ", "")
+                storagelist.Add(storagelist(x))
+            End If
+        Next
+
+        Functions.addModelToArmyList(nameofsquad, Functions.Groupid, Imp1Name, storagelist)
+        'Functions.Groupid += 1
 
 
         figcount += 1
-
+        
         ''reset sequence
         ComboBox1.Items.Clear()
         ComboBox1.ResetText()
@@ -2925,6 +3009,10 @@ Public Class Space_Marines_Weapons_Selection
         ComboBox4.ResetText()
         ComboBox5.Items.Clear()
         ComboBox5.ResetText()
+        CheckBox1.Checked = False
+        CheckBox2.Checked = False
+        CheckBox3.Checked = False
+        CheckBox4.Checked = False
         For Each cont As Control In Me.Controls
             cont.Visible = False
         Next
@@ -2958,26 +3046,26 @@ Public Class Space_Marines_Weapons_Selection
                 Label4.Text = "Chainsword"
                 ComboBox1.Visible = True
                 ComboBox1.Items.Add("Storm shield")
-                For str As Integer = 0 To sm_Melee_Weapons.Count - 1
-                    ComboBox1.Items.Add(sm_Melee_Weapons(str))
+                For str As Integer = 0 To SM_Melee_Weapons.Count - 1
+                    ComboBox1.Items.Add(SM_Melee_Weapons(str))
                 Next
-                For str As Integer = 0 To sm_Pistols.Count - 1
-                    ComboBox1.Items.Add(sm_Pistols(str))
+                For str As Integer = 0 To SM_Pistols.Count - 1
+                    ComboBox1.Items.Add(SM_Pistols(str))
                 Next
                 ComboBox2.Visible = True
                 ComboBox2.Items.Add("Storm shield")
                 ComboBox2.Items.Add("Boltgun")
-                For str As Integer = 0 To sm_Melee_Weapons.Count - 1
-                    ComboBox2.Items.Add(sm_Melee_Weapons(str))
+                For str As Integer = 0 To SM_Melee_Weapons.Count - 1
+                    ComboBox2.Items.Add(SM_Melee_Weapons(str))
                 Next
-                For str As Integer = 0 To sm_Pistols.Count - 1
-                    ComboBox2.Items.Add(sm_Pistols(str))
+                For str As Integer = 0 To SM_Pistols.Count - 1
+                    ComboBox2.Items.Add(SM_Pistols(str))
                 Next
-                For str As Integer = 0 To sm_Combi_Weapons.Count - 1
-                    ComboBox2.Items.Add(sm_Combi_Weapons(str))
+                For str As Integer = 0 To SM_Combi_Weapons.Count - 1
+                    ComboBox2.Items.Add(SM_Combi_Weapons(str))
                 Next
-                For str As Integer = 0 To sm_Special_Weapons.Count - 1
-                    ComboBox2.Items.Add(sm_Special_Weapons(str))
+                For str As Integer = 0 To SM_Special_Weapons.Count - 1
+                    ComboBox2.Items.Add(SM_Special_Weapons(str))
                 Next
             Case Is = "Company Veterans on Bike"
                 Label2.Visible = True
@@ -2988,25 +3076,25 @@ Public Class Space_Marines_Weapons_Selection
                 Label4.Text = "Chainsword"
                 ComboBox1.Visible = True
                 ComboBox1.Items.Add("Storm shield")
-                For str As Integer = 0 To sm_Melee_Weapons.Count - 1
-                    ComboBox1.Items.Add(sm_Melee_Weapons(str))
+                For str As Integer = 0 To SM_Melee_Weapons.Count - 1
+                    ComboBox1.Items.Add(SM_Melee_Weapons(str))
                 Next
-                For str As Integer = 0 To sm_Pistols.Count - 1
-                    ComboBox1.Items.Add(sm_Pistols(str))
+                For str As Integer = 0 To SM_Pistols.Count - 1
+                    ComboBox1.Items.Add(SM_Pistols(str))
                 Next
                 ComboBox2.Items.Add("Storm shield")
                 ComboBox2.Items.Add("Boltgun")
-                For str As Integer = 0 To sm_Melee_Weapons.Count - 1
-                    ComboBox2.Items.Add(sm_Melee_Weapons(str))
+                For str As Integer = 0 To SM_Melee_Weapons.Count - 1
+                    ComboBox2.Items.Add(SM_Melee_Weapons(str))
                 Next
-                For str As Integer = 0 To sm_Pistols.Count - 1
-                    ComboBox2.Items.Add(sm_Pistols(str))
+                For str As Integer = 0 To SM_Pistols.Count - 1
+                    ComboBox2.Items.Add(SM_Pistols(str))
                 Next
-                For str As Integer = 0 To sm_Combi_Weapons.Count - 1
-                    ComboBox2.Items.Add(sm_Combi_Weapons(str))
+                For str As Integer = 0 To SM_Combi_Weapons.Count - 1
+                    ComboBox2.Items.Add(SM_Combi_Weapons(str))
                 Next
-                For str As Integer = 0 To sm_Special_Weapons.Count - 1
-                    ComboBox2.Items.Add(sm_Special_Weapons(str))
+                For str As Integer = 0 To SM_Special_Weapons.Count - 1
+                    ComboBox2.Items.Add(SM_Special_Weapons(str))
                 Next
             Case Is = "Tactical Squad"
                 Label2.Visible = True
@@ -3015,19 +3103,19 @@ Public Class Space_Marines_Weapons_Selection
                     Label3.Visible = True
                     Label3.Text = "Boltgun"
                     ComboBox1.Visible = True
-                    For str As Integer = 0 To sm_Special_Weapons.Count - 1
-                        ComboBox1.Items.Add(sm_Special_Weapons(str))
+                    For str As Integer = 0 To SM_Special_Weapons.Count - 1
+                        ComboBox1.Items.Add(SM_Special_Weapons(str))
                     Next
-                    For str As Integer = 0 To sm_Heavy_Weapons.Count - 1
-                        ComboBox1.Items.Add(sm_Heavy_Weapons(str))
+                    For str As Integer = 0 To SM_Heavy_Weapons.Count - 1
+                        ComboBox1.Items.Add(SM_Heavy_Weapons(str))
                     Next
                 End If
                 If maxnumberoffigs = 10 And figcount = 3 Then
                     Label3.Visible = True
                     Label3.Text = "Boltgun"
                     ComboBox1.Visible = True
-                    For str As Integer = 0 To sm_Heavy_Weapons.Count - 1
-                        ComboBox1.Items.Add(sm_Heavy_Weapons(str))
+                    For str As Integer = 0 To SM_Heavy_Weapons.Count - 1
+                        ComboBox1.Items.Add(SM_Heavy_Weapons(str))
                     Next
                 ElseIf maxnumberoffigs = 10 And figcount = 4 Then
                     Label3.Visible = True
@@ -3082,25 +3170,25 @@ Public Class Space_Marines_Weapons_Selection
                     Label3.Text = "Special issue boltgun"
                     ComboBox1.Visible = True
                     ComboBox1.Items.Add("Heavy flamer")
-                    For str As Integer = 0 To sm_Special_Weapons.Count - 1
-                        ComboBox1.Items.Add(sm_Special_Weapons(str))
+                    For str As Integer = 0 To SM_Special_Weapons.Count - 1
+                        ComboBox1.Items.Add(SM_Special_Weapons(str))
                     Next
-                    For str As Integer = 0 To sm_Heavy_Weapons.Count - 1
-                        ComboBox1.Items.Add(sm_Heavy_Weapons(str))
+                    For str As Integer = 0 To SM_Heavy_Weapons.Count - 1
+                        ComboBox1.Items.Add(SM_Heavy_Weapons(str))
                     Next
-                    For str As Integer = 0 To sm_Combi_Weapons.Count - 1
-                        ComboBox1.Items.Add(sm_Combi_Weapons(str))
+                    For str As Integer = 0 To SM_Combi_Weapons.Count - 1
+                        ComboBox1.Items.Add(SM_Combi_Weapons(str))
                     Next
                 Else
                     Label3.Visible = True
                     Label3.Text = "Special issue boltgun"
                     ComboBox1.Visible = True
-                    For str As Integer = 0 To sm_Combi_Weapons.Count - 1
-                        ComboBox1.Items.Add(sm_Combi_Weapons(str))
+                    For str As Integer = 0 To SM_Combi_Weapons.Count - 1
+                        ComboBox1.Items.Add(SM_Combi_Weapons(str))
                     Next
                 End If
 
-            
+
             Case Is = "Vanguard Veteran Squad"
                 Label2.Visible = True
                 Label2.Text = "Model: Space Marine Veteran"
@@ -3109,19 +3197,19 @@ Public Class Space_Marines_Weapons_Selection
                 Label4.Visible = True
                 Label4.Text = "Chainsword"
                 ComboBox1.Visible = True
-                For str As Integer = 0 To sm_Pistols.Count - 1
-                    ComboBox1.Items.Add(sm_Pistols(str))
+                For str As Integer = 0 To SM_Pistols.Count - 1
+                    ComboBox1.Items.Add(SM_Pistols(str))
                 Next
-                For str As Integer = 0 To sm_Melee_Weapons.Count - 1
-                    ComboBox1.Items.Add(sm_Melee_Weapons(str))
+                For str As Integer = 0 To SM_Melee_Weapons.Count - 1
+                    ComboBox1.Items.Add(SM_Melee_Weapons(str))
                 Next
                 ComboBox1.Items.Add("Storm shield")
                 ComboBox2.Visible = True
-                For str As Integer = 0 To sm_Pistols.Count - 1
-                    ComboBox2.Items.Add(sm_Pistols(str))
+                For str As Integer = 0 To SM_Pistols.Count - 1
+                    ComboBox2.Items.Add(SM_Pistols(str))
                 Next
-                For str As Integer = 0 To sm_Melee_Weapons.Count - 1
-                    ComboBox2.Items.Add(sm_Melee_Weapons(str))
+                For str As Integer = 0 To SM_Melee_Weapons.Count - 1
+                    ComboBox2.Items.Add(SM_Melee_Weapons(str))
                 Next
                 CheckBox1.Visible = True
                 CheckBox1.Text = "Jump Pack"
@@ -3143,8 +3231,8 @@ Public Class Space_Marines_Weapons_Selection
                     Label4.Visible = True
                     Label4.Text = "Storm Bolter"
                     ComboBox2.Visible = True
-                    For str As Integer = 0 To sm_Terminator_Heavy_Weapons.Count - 1
-                        ComboBox2.Items.Add(sm_Terminator_Heavy_Weapons(str))
+                    For str As Integer = 0 To SM_Terminator_Heavy_Weapons.Count - 1
+                        ComboBox2.Items.Add(SM_Terminator_Heavy_Weapons(str))
                     Next
                 End If
             Case Is = "Terminator Assault Squad"
@@ -3198,7 +3286,7 @@ Public Class Space_Marines_Weapons_Selection
                 Label2.Text = "Model: Scout Biker"
                 If figcount = 2 Or figcount = 3 Or figcount = 4 Then
                     Label3.Visible = True
-                    Label3.Text = "Bike's twin Boltgun"
+                    Label3.Text = "Bike's Twin Boltgun"
                     ComboBox1.Visible = True
                     ComboBox1.Items.Add("Astartes Grenade launcher")
                 End If
@@ -3209,8 +3297,8 @@ Public Class Space_Marines_Weapons_Selection
                 Label3.Text = "Bolt pistol"
                 ComboBox1.Visible = True
                 If figcount = 2 Or figcount = 3 Then
-                    For str As Integer = 0 To sm_Special_Weapons.Count - 1
-                        ComboBox1.Items.Add(sm_Special_Weapons(str))
+                    For str As Integer = 0 To SM_Special_Weapons.Count - 1
+                        ComboBox1.Items.Add(SM_Special_Weapons(str))
                     Next
                 End If
                 If thirdunit <> 0 Then
@@ -3231,17 +3319,15 @@ Public Class Space_Marines_Weapons_Selection
             Case Is = "Land Speeders"
                 Label3.Visible = True
                 Label3.Text = "Heavy bolter"
-                Label4.Visible = True
-                Label4.Text = "Additional"
                 ComboBox1.Visible = True
                 ComboBox1.Items.Add("Multi-melta")
                 ComboBox1.Items.Add("Heavy flamer")
                 ComboBox2.Visible = True
                 ComboBox2.Items.Add("Heavy bolter")
                 ComboBox2.Items.Add("Typhoon missile launcher")
-                ComboBox1.Items.Add("Multi-melta")
-                ComboBox1.Items.Add("Heavy flamer")
-                ComboBox1.Items.Add("Assault cannon")
+                ComboBox2.Items.Add("Multi-melta")
+                ComboBox2.Items.Add("Heavy flamer")
+                ComboBox2.Items.Add("Assault cannon")
             Case Is = "Devastator Squad"
                 Label2.Visible = True
                 Label2.Text = "Model: Space Marine"
@@ -3275,12 +3361,12 @@ Public Class Space_Marines_Weapons_Selection
                     ComboBox1.Visible = True
                     ComboBox1.Items.Add("Chainsword")
                     If figcount = 2 Then
-                        For str As Integer = 0 To sm_Special_Weapons.Count - 1
-                            ComboBox1.Items.Add(sm_Special_Weapons(str))
+                        For str As Integer = 0 To SM_Special_Weapons.Count - 1
+                            ComboBox1.Items.Add(SM_Special_Weapons(str))
                         Next
                     ElseIf figcount = 3 Then
-                        For str As Integer = 0 To sm_Heavy_Weapons.Count - 1
-                            ComboBox1.Items.Add(sm_Heavy_Weapons(str))
+                        For str As Integer = 0 To SM_Heavy_Weapons.Count - 1
+                            ComboBox1.Items.Add(SM_Heavy_Weapons(str))
                         Next
                         ComboBox1.Items.Add("Power sword")
                         ComboBox1.Items.Add("Power axe")
@@ -3364,8 +3450,8 @@ Public Class Space_Marines_Weapons_Selection
                     Label5.Text = "Storm bolter"
                     ComboBox3.Visible = True
                     ComboBox3.Items.Add("Plasma cannon")
-                    For str As Integer = 0 To sm_Terminator_Heavy_Weapons.Count - 1
-                        ComboBox3.Items.Add(sm_Terminator_Heavy_Weapons(str))
+                    For str As Integer = 0 To SM_Terminator_Heavy_Weapons.Count - 1
+                        ComboBox3.Items.Add(SM_Terminator_Heavy_Weapons(str))
                     Next
                 End If
             Case Is = "Ravenwing Bike Squad"
@@ -3376,8 +3462,8 @@ Public Class Space_Marines_Weapons_Selection
                 ComboBox1.Visible = True
                 ComboBox1.Items.Add("Chainsword")
                 If figcount = 2 Or figcount = 3 Then
-                    For str As Integer = 0 To sm_Special_Weapons.Count - 1
-                        ComboBox1.Items.Add(sm_Special_Weapons(str))
+                    For str As Integer = 0 To SM_Special_Weapons.Count - 1
+                        ComboBox1.Items.Add(SM_Special_Weapons(str))
                     Next
                 End If
                 If thirdunit <> 0 Then
@@ -3398,18 +3484,23 @@ Public Class Space_Marines_Weapons_Selection
             Case Is = "Ravenwing Land Speeders"
                 Label3.Visible = True
                 Label3.Text = "Heavy bolter"
-                Label4.Visible = True
-                Label4.Text = "Additional"
                 ComboBox1.Visible = True
                 ComboBox1.Items.Add("Multi-melta")
                 ComboBox1.Items.Add("Heavy flamer")
                 ComboBox2.Visible = True
                 ComboBox2.Items.Add("Heavy bolter")
                 ComboBox2.Items.Add("Typhoon missile launcher")
-                ComboBox1.Items.Add("Multi-melta")
-                ComboBox1.Items.Add("Heavy flamer")
-                ComboBox1.Items.Add("Assault cannon")
+                ComboBox2.Items.Add("Multi-melta")
+                ComboBox2.Items.Add("Heavy flamer")
+                ComboBox2.Items.Add("Assault cannon")
         End Select
+        If figcount >= maxnumberoffigs Then
+            Btn_NextSquad.Enabled = True
+            Btn_NextModel.Enabled = False
+        Else
+            Btn_NextSquad.Enabled = False
+            Btn_NextModel.Enabled = True
+        End If
         Dim i As Integer = 0
         Do Until i + 1 >= ComboBox1.Items.Count
             If ComboBox1.Items.Item(i) = ComboBox1.Items.Item(i + 1) Then
@@ -3454,4 +3545,5 @@ Public Class Space_Marines_Weapons_Selection
             Label1.Text = "Group Name: " & nameofsquad & " " & figcount
         End If
     End Sub
+
 End Class

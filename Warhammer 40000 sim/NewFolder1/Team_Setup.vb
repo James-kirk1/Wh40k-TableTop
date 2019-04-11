@@ -8,14 +8,14 @@
     Public playersixteam As Integer = 0
     Public playerseventeam As Integer = 0
     Public playereightteam As Integer = 0
-    Public playeronearmy As String = "1:Captain in Terminator Armour@Thunder hammer$Super Duper Mega Weapon~1:Captain in Terminator Armour@Thunder hammer$Super Duper Mega Weapon~2:Librarian in Terminator Armour@Plasma cannon~3:Scout Sergeant~3:Scout~3:Scout~3:Scout~3:Scout~3:Scout~3:Scout~3:Scout~3:Scout~3:Scout~4:Veteran Sergeant~4:Space Marine Veteran~4:Space Marine Veteran@Plasma cannon~4:Space Marine Veteran~4:Space Marine Veteran~4:Space Marine Veteran~4:Space Marine Veteran~4:Space Marine Veteran@~4:Space Marine Veteran~4:Space Marine Veteran~5:Apothecary~6:Space Marine Sergeant@Combi-flamer~6:Space Marine@Heavy bolter~6:Space Marine@Heavy bolter~6:Space Marine@Heavy bolter~6:Space Marine@Heavy bolter~6:Space Marine@~6:Space Marine@~6:Space Marine@~6:Space Marine@~6:Space Marine@~7:Space Marine Sergeant@Combi-flamer$~7:Space Marine@Missile launcher$~7:Space Marine@Missile launcher$~7:Space Marine@Missile launcher$~7:Space Marine@Missile launcher$~7:Space Marine@~7:Space Marine@~7:Space Marine@~7:Space Marine@~7:Space Marine@~8:Whirlwind@Hunter-killer missile$Storm bolter~9:Stormtalon Gunship@two Lascannons$Hunter-killer missile$Storm bolter"
-    Public playertwoarmy As String
-    Public playerthreearmy As String
-    Public playerfourarmy As String
-    Public playerfivearmy As String
-    Public playersixarmy As String
-    Public playersevenarmy As String
-    Public playereightarmy As String
+    Public playeronearmy As New List(Of ModelsAndWeaponsForTransferingtoMap) 'List(Of String))
+    Public playertwoarmy As New List(Of ModelsAndWeaponsForTransferingtoMap) 'List(Of String))
+    Public playerthreearmy As New List(Of ModelsAndWeaponsForTransferingtoMap) 'List(Of String))
+    Public playerfourarmy As New List(Of ModelsAndWeaponsForTransferingtoMap) 'List(Of String))
+    Public playerfivearmy As New List(Of ModelsAndWeaponsForTransferingtoMap) 'List(Of String))
+    Public playersixarmy As New List(Of ModelsAndWeaponsForTransferingtoMap) 'List(Of String))
+    Public playersevenarmy As New List(Of ModelsAndWeaponsForTransferingtoMap) 'List(Of String))
+    Public playereightarmy As New List(Of ModelsAndWeaponsForTransferingtoMap) 'List(Of String))
     Private Sub Team_Setup_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
         Me.StartPosition = FormStartPosition.CenterScreen

@@ -17,7 +17,9 @@ Public Class Scenery
         MyBase.New()
         Me.Width = 26
         Me.Height = 26
-
+        Me.Visible = True
+        Me.SizeMode = PictureBoxSizeMode.StretchImage
+        Me.Image = My.Resources.square_rounded_512_brown ''brown ideally
     End Sub
     Property isLOSBlocking As Boolean
         Get

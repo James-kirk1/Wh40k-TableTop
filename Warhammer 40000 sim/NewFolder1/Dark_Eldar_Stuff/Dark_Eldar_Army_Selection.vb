@@ -550,19 +550,15 @@ Public Class Dark_Eldar_Army_Selection
         Select Case Race_Selection_Form.Playerid
             Case Is = 1
                 For x = 0 To ListBox1.Items.Count - 1
-                    If Team_Setup.playeronearmy = "" Then
-                        Team_Setup.playeronearmy = ListBox1.Items.Item(x)
-                    Else
-                        Team_Setup.playeronearmy = Team_Setup.playeronearmy & "~" & ListBox1.Items.Item(x)
+                    If Team_Setup.playeronearmy.Count = 0 Then
+                        Team_Setup.playeronearmy.Add(ListBox1.Items.Item(x))
                     End If
                 Next
                 'Console.WriteLine(Team_Setup.playeronearmy)
             Case Is = 2
                 For x = 0 To ListBox1.Items.Count - 1
-                    If Team_Setup.playertwoarmy = "" Then
-                        Team_Setup.playertwoarmy = ListBox1.Items.Item(x)
-                    Else
-                        Team_Setup.playertwoarmy = Team_Setup.playeronearmy & "~" & ListBox1.Items.Item(x)
+                    If Team_Setup.playertwoarmy.Count = 0 Then
+                        Team_Setup.playertwoarmy.Add(ListBox1.Items.Item(x))
                     End If
                 Next
                 'Case Is = 3

@@ -1,4 +1,5 @@
-﻿Imports System.Runtime.CompilerServices
+﻿'Imports System.Runtime.CompilerServices
+Imports System.Text.RegularExpressions
 
 Module Functions
     Public playeroneracetext As String = "Not Playing"
@@ -17,7 +18,13 @@ Module Functions
     Dim NumberofOtherPlanetsandDescription As String
     Dim StarType As String
     Dim counter As Integer = 0
-
+    Dim j As Integer = 0
+    Public team As Integer = 1
+    Dim fromleftcolumncounter As Integer = 1
+    Dim fromrightcolumncounter As Integer = 1
+    Public ModelsandWeapons As New List(Of ModelsAndWeaponsForTransferingtoMap)
+    Public listallModels As New List(Of String)
+    Public Groupid As Integer = 1
     ''' <summary>
     ''' Will roll a {number} sided die/dice and returns a random number between 1 and {number}.
     ''' </summary>
@@ -32,7 +39,7 @@ Module Functions
         Console.WriteLine("rolled a " & Maxfaces & "-sided dice and got " & roll)
         Return roll
     End Function
-   
+
     ''' <summary>
     ''' 
     ''' </summary>
@@ -185,6 +192,10 @@ Reroll:
 
     End Function
     Sub RaceSelectiontoTeamSelection()
+        Race_Selection_Form.Timer1.Enabled = False
+        Race_Selection_Form.Timer2.Enabled = False
+        Race_Selection_Form.Timer1.Stop()
+        Race_Selection_Form.Timer2.Stop()
         'from last player to team setup
         If Race_Selection_Form.Playerid = Race_Selection_Form.maxplayers Then
             Race_Selection_Form.Playerid = 1
@@ -276,9 +287,9 @@ Reroll:
                 Case Is = 12
                     playerthreeracetext = "Space Marines"
                 Case Is = 0
-                    playereightracetext = "Not Playing"
+                    playerthreeracetext = "Not Playing"
                 Case Else
-                    playereightracetext = "Not Playing"
+                    playerthreeracetext = "Not Playing"
             End Select
             Select Case Race_Selection_Form.playerfourrace
                 Case Is = 1
@@ -304,9 +315,9 @@ Reroll:
                 Case Is = 12
                     playerfourracetext = "Space Marines"
                 Case Is = 0
-                    playereightracetext = "Not Playing"
+                    playerfourracetext = "Not Playing"
                 Case Else
-                    playereightracetext = "Not Playing"
+                    playerfourracetext = "Not Playing"
             End Select
             Select Case Race_Selection_Form.playerfiverace
                 Case Is = 1
@@ -332,9 +343,9 @@ Reroll:
                 Case Is = 12
                     playerfiveracetext = "Space Marines"
                 Case Is = 0
-                    playereightracetext = "Not Playing"
+                    playerfiveracetext = "Not Playing"
                 Case Else
-                    playereightracetext = "Not Playing"
+                    playerfiveracetext = "Not Playing"
             End Select
             Select Case Race_Selection_Form.playersixrace
                 Case Is = 1
@@ -360,9 +371,9 @@ Reroll:
                 Case Is = 12
                     playersixracetext = "Space Marines"
                 Case Is = 0
-                    playereightracetext = "Not Playing"
+                    playersixracetext = "Not Playing"
                 Case Else
-                    playereightracetext = "Not Playing"
+                    playersixracetext = "Not Playing"
             End Select
             Select Case Race_Selection_Form.playersevenrace
                 Case Is = 1
@@ -388,9 +399,9 @@ Reroll:
                 Case Is = 12
                     playersevenracetext = "Space Marines"
                 Case Is = 0
-                    playereightracetext = "Not Playing"
+                    playersevenracetext = "Not Playing"
                 Case Else
-                    playereightracetext = "Not Playing"
+                    playersevenracetext = "Not Playing"
             End Select
             Select Case Race_Selection_Form.playereightrace
                 Case Is = 1
@@ -474,13 +485,38 @@ Reroll:
         ' Race_Selection_Form.Playerid += 1
     End Sub
     Sub WeaponsSelectionToMap()
+        listallModels.Clear()
+        Select Case Race_Selection_Form.Playerid
+            Case Is = 1
+                Team_Setup.playeronearmy.AddRange(ModelsandWeapons)
+            Case Is = 2
+                Team_Setup.playertwoarmy.AddRange(ModelsandWeapons)
+            Case Is = 3
+                Team_Setup.playerthreearmy.AddRange(ModelsandWeapons)
+            Case Is = 4
+                Team_Setup.playerfourarmy.AddRange(ModelsandWeapons)
+            Case Is = 5
+                Team_Setup.playerfivearmy.AddRange(ModelsandWeapons)
+            Case Is = 6
+                Team_Setup.playersixarmy.AddRange(ModelsandWeapons)
+            Case Is = 7
+                Team_Setup.playersevenarmy.AddRange(ModelsandWeapons)
+            Case Is = 8
+                Team_Setup.playereightarmy.AddRange(ModelsandWeapons)
+        End Select
         ''from weapons selection to map
         Dim Dark_Eldar_Army_Selection As New Dark_Eldar_Army_Selection
         Dim Dark_Eldar_Weapons_Selection As New Dark_Eldar_Weapons_Selection
         Dim Space_Marine_Army_Selection As New Space_Marine_Army_Selection
         Dim Space_Marines_Weapons_Selection As New Space_Marines_Weapons_Selection
+        For model As Integer = 0 To ModelsandWeapons.Count - 1
+            Console.WriteLine(ModelsandWeapons(model).GroupID & " " & ModelsandWeapons(model).GroupName & " " & ModelsandWeapons(model).Name)
+            For weaponsandabilities As Integer = 0 To ModelsandWeapons(model).WeaponsandAbilities.Count - 1
+                Console.WriteLine(" -- " & ModelsandWeapons(model).WeaponsandAbilities(weaponsandabilities))
+            Next
+        Next
         Race_Selection_Form.Playerid += 1
-
+        ModelsandWeapons.Clear()
         For Each a As Form In My.Application.OpenForms
             a.Hide()
             a.SendToBack()
@@ -749,24 +785,24 @@ Reroll:
         'End If
         'Dim units(1, 3) As String
         Dim storage As String = ""
-        Select Case armyid
-            Case Is = 1
-                storage = Team_Setup.playeronearmy
-            Case Is = 2
-                storage = Team_Setup.playertwoarmy
-            Case Is = 3
-                storage = Team_Setup.playerthreearmy
-            Case Is = 4
-                storage = Team_Setup.playerfourarmy
-            Case Is = 5
-                storage = Team_Setup.playerfivearmy
-            Case Is = 6
-                storage = Team_Setup.playersixarmy
-            Case Is = 7
-                storage = Team_Setup.playersevenarmy
-            Case Is = 8
-                storage = Team_Setup.playereightarmy
-        End Select
+        'Select Case armyid
+        '    Case Is = 1
+        '        storage = Team_Setup.playeronearmy
+        '    Case Is = 2
+        '        storage = Team_Setup.playertwoarmy
+        '    Case Is = 3
+        '        storage = Team_Setup.playerthreearmy
+        '    Case Is = 4
+        '        storage = Team_Setup.playerfourarmy
+        '    Case Is = 5
+        '        storage = Team_Setup.playerfivearmy
+        '    Case Is = 6
+        '        storage = Team_Setup.playersixarmy
+        '    Case Is = 7
+        '        storage = Team_Setup.playersevenarmy
+        '    Case Is = 8
+        '        storage = Team_Setup.playereightarmy
+        'End Select
 
         Try
             Dim allunit() As String = storage.Split("~")
@@ -783,7 +819,7 @@ Reroll:
     End Function
 
     Function groupfromaunit(ByVal armyid As Integer, ByVal idofunit As Integer) As String
-   
+
         Dim unitgroup() As String = aunitfromallunit(armyid, idofunit).Split(":")
         Return unitgroup(0)
     End Function
@@ -1010,7 +1046,7 @@ retryintro:
                 modifier = "densly populated "
 
         End Select
-       
+
 
         Select Case rnd.Next(0, maxnumberofotherplanets)
             Case Is = 0
@@ -1152,31 +1188,40 @@ retryintro:
 
     End Sub
 
-    Sub AddSceneryToMap(ByVal fromleft As Integer, ByVal fromtop As Integer, ByVal type As Integer, ByVal rotation As Integer)
+    Sub AddSceneryToMap(ByVal fromleft As Integer, ByVal fromtop As Integer, ByVal width As Integer, ByVal height As Integer, ByVal IsLOSBlocking As Boolean, ByVal isCover As Boolean, ByVal CoverValue As Integer, ByVal isMovementReducing As Boolean, ByVal MovementValue As Integer) ', ByVal rotation As Integer)
 
         Dim sceneryobject As New Scenery
-        Console.WriteLine("Left:" & fromleft & "Top:" & fromtop)
+        'Console.WriteLine("Left:" & fromleft & "Top:" & fromtop)
         ''placement
         sceneryobject.Left = fromleft
         sceneryobject.Top = fromtop
+        sceneryobject.Width = width
+        sceneryobject.Height = height
+
+        sceneryobject.isLOSBlocking = IsLOSBlocking
+        sceneryobject.isCover = isCover
+        sceneryobject.CoverValue = CoverValue
+        sceneryobject.isMovementReducing = isMovementReducing
+        sceneryobject.MovementValue = MovementValue
         ''implemnt type of scenario ie batlescarred,industrial (buildings and pipes), rural,middleofknowwhere,roads ruins,swamp,rocks,mountains,lakes,defenselines,chaotic/warpstorm
         'Console.WriteLine(System.Text.RegularExpressions.Regex.Replace(IO.Path.GetFullPath(My.Resources.ResourceManager.BaseName), "WindowsApplication1.Resources", "") & "square_rounded_512_brown.png")
-        sceneryobject.Image = My.Resources.square_rounded_512_brown ''brown ideally
 
-        sceneryobject.SizeMode = PictureBoxSizeMode.StretchImage
+
+
         Map.Controls.Add(sceneryobject)
 
     End Sub
-    Sub AddUnitToMap(ByVal ID As Integer, ByVal name As String, ByVal x As Integer, ByVal y As Integer, ByVal width As Integer, ByVal height As Integer, ByVal visible As Boolean, ByVal ispsyker As Boolean, ByVal M As Integer, ByVal WS As Integer, ByVal BS As Integer, ByVal S As Integer, ByVal T As Integer, ByVal CurrW As Integer, ByVal MaxW As Integer, ByVal MortW As Integer, ByVal A As Integer, ByVal LD As Integer, ByVal Sv As Integer, ByVal weapons() As String, ByVal teamid As Integer, Optional CanMove As Boolean = True, Optional CanShoot As Boolean = False, Optional hasmoved As Boolean = True, Optional hasadvanced As Boolean = False, Optional istarget As Boolean = True, Optional isshooting As Boolean = False, Optional isselectedtobetarget As Boolean = True, Optional isselectedtobeshooting As Boolean = False, Optional abilities() As String = Nothing, Optional psykerpowers() As String = Nothing, Optional numberofpsykerpowers As Integer = 0, Optional numberofdenythewitch As Integer = 0, Optional ISv As Integer = 20, Optional factiontags() As String = Nothing, Optional rotation As Integer = 0, Optional exploded As Boolean = False)
+    Sub AddUnitToMap(ByVal ID As Integer, ByVal name As String, ByVal x As Integer, ByVal y As Integer, ByVal width As Integer, ByVal height As Integer, ByVal visible As Boolean, ByVal ispsyker As Boolean, ByVal M As Integer, ByVal WS As Integer, ByVal BS As Integer, ByVal S As Integer, ByVal T As Integer, ByVal CurrW As Integer, ByVal MaxW As Integer, ByVal MortW As Integer, ByVal A As Integer, ByVal LD As Integer, ByVal Sv As Integer, ByVal weapons As System.Collections.Specialized.StringCollection, ByVal teamid As Integer, Optional CanMove As Boolean = True, Optional CanShoot As Boolean = False, Optional hasmoved As Boolean = True, Optional hasadvanced As Boolean = False, Optional istarget As Boolean = True, Optional isshooting As Boolean = False, Optional isselectedtobetarget As Boolean = True, Optional isselectedtobeshooting As Boolean = False, Optional abilities() As String = Nothing, Optional psykerpowers() As String = Nothing, Optional numberofpsykerpowers As Integer = 0, Optional numberofdenythewitch As Integer = 0, Optional ISv As Integer = 20, Optional factiontags() As String = Nothing, Optional rotation As Integer = 0, Optional exploded As Boolean = False)
         Dim unitaspb As New Model
         unitaspb.Identifier = ID
-        unitaspb.Tag = name
+        unitaspb.NameofModel = name
         unitaspb.Left = x
         unitaspb.Top = y
         unitaspb.Width = width
         unitaspb.Height = height
+        unitaspb.Visible = visible
         unitaspb.Psyker = ispsyker
-        unitaspb.MoveDistance = m
+        unitaspb.MoveDistance = M
         unitaspb.WeaponSkill = WS
         unitaspb.BallisticSkill = BS
         unitaspb.Strength = S
@@ -1205,6 +1250,7 @@ retryintro:
         unitaspb.factiontags = factiontags
         unitaspb.exploded = exploded
         unitaspb.SizeMode = PictureBoxSizeMode.StretchImage
+
         If teamid = 1 Then
             unitaspb.Image = My.Resources.square_rounded_512_green
         ElseIf teamid = 2 Then
@@ -1216,7 +1262,7 @@ retryintro:
         AddHandler unitaspb.MouseUp, AddressOf Map.unitaspb_MouseUp
         AddHandler unitaspb.MouseClick, AddressOf Map.Unit_MouseClick
         Map.Controls.Add(unitaspb)
-        Console.WriteLine("Successfully added " & unitaspb.Tag & " to the Map")
+        Console.WriteLine("Successfully added " & unitaspb.NameofModel & " to the Map")
     End Sub
     Function centrepointininchesx() As Integer
         Return CInt(map.Width / 2) / map.aspectratio
@@ -1230,7 +1276,7 @@ retryintro:
     Function centrepointactualdimensionsy() As Integer
         Return CInt(map.Height / 2)
     End Function
-    
+
     Function mirror_pointx(ByVal x As Integer) As Integer
         Return CInt(Map.Width - x)
     End Function
@@ -1274,7 +1320,1547 @@ retryintro:
             End If
         Next
     End Sub
-    Function closestunit(ByVal selectedunit As Object) '''' finds closest model to selected model
+    Function calcdistancebetweentwocentres(ByVal unit1x As Integer, ByVal unit1y As Integer, ByVal unit2x As Integer, ByVal unit2y As Integer) As Double
+        Console.WriteLine("Distance between two objects: " & Math.Sqrt((unit1x - unit2x) ^ 2 + (unit1y - unit2y) ^ 2) / Map.aspectratio)
+        Return Math.Sqrt((unit1x - unit2x) ^ 2 + (unit1y - unit2y) ^ 2) / Map.aspectratio
+    End Function
+    Function calcdistancebetweentwoobjectedges(ByVal unit1x As Integer, ByVal unit1y As Integer, ByVal unit2x As Integer, ByVal unit2y As Integer, ByVal unit1width As Integer, ByVal unit1height As Integer, ByVal unit2width As Integer, ByVal unit2height As Integer, Optional unit1shape As String = "Round", Optional unit2shape As String = "Round") As Double
+        Console.WriteLine("Distance between two objects: " & Math.Sqrt((unit1x - unit2x) ^ 2 + (unit1y - unit2y) ^ 2) / Map.aspectratio)
+        Return Math.Sqrt((unit1x - unit2x) ^ 2 + (unit1y - unit2y) ^ 2) / Map.aspectratio
+    End Function
+    Sub WeaponsTable(ByVal WeaponName As String)
+        Try
+            Select Case WeaponName
+                ''SM general weapons
+                Case Is = "Assault bolter"
+                    Map.AllWargear.Rows.Add("Assault bolter", 18, "Assault", 3, 5, -1, 1)
+                Case Is = "Assault cannon"
+                    Map.AllWargear.Rows.Add("Assault cannon", 24, "Heavy", 6, 6, -1, 1)
+                Case Is = "Astartes grenade launcher"
+Astartesgrenadelauncher:
+                    Select Case CustomMsgbox("Frag or krak grenade", "Frag Grenade", "Krak Grenade")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Astartes grenade launcher - Frag grenade", 24, "Assault", rolld(6), 3, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Astartes grenade launcher - Krak grenade", 24, "Assault", 1, 6, -1, rolld(3))
+                        Case Else
+                            GoTo Astartesgrenadelauncher
+                    End Select
+                Case Is = "Astartes shotgun"
+                    Map.AllWargear.Rows.Add("Astartes shotgun", 12, "Assault", 2, 4, 0, 1)
+                Case Is = "Bolt pistol"
+                    Map.AllWargear.Rows.Add("Bolt pistol", 12, "Pistol", 1, 4, 0, 1)
+                Case Is = "Bolt rifle"
+                    Map.AllWargear.Rows.Add("Bolt rifle", 30, "Rapid Fire", 1, 4, -1, 1)
+                Case Is = "Boltgun"
+                    Map.AllWargear.Rows.Add("Boltgun", 24, "Rapid Fire", 1, 4, 0, 1)
+                Case Is = "Boltstorm gauntlet"
+                    Map.AllWargear.Rows.Add("Boltstorm gauntlet (shooting)", 12, "Pistol", 3, 4, 0, 1)
+                Case Is = "Centurion missile launcher"
+                    Map.AllWargear.Rows.Add("Centurion missile launcher", 36, "Assault", rolld(3), 8, -2, rolld(3))
+                Case Is = "Cerberus launcher"
+                    Map.AllWargear.Rows.Add("Cerberus launcher", 18, "Heavy", rolld(6), 4, 0, 1)
+                Case Is = "Combi-bolter"
+                    Map.AllWargear.Rows.Add("Combi-bolter", 24, "Rapid Fire", 2, 4, 0, 1)
+                Case Is = "Combi-flamer"
+combiflamer:
+                    Select Case CustomMsgbox("Boltgun, flamer or both", "Combi-flamer - Boltgun", "Combi-flamer - Flamer", "Both")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Combi-flamer - Boltgun", 24, "Rapid Fire", 1, 4, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Combi-flamer - Flamer", 8, "Assault", rolld(6), 4, 0, 1)
+                        Case Is = 4
+                            MsgBox("Both has not yet been implemented, please select another")
+                            GoTo combiflamer
+                            'Map.AllWargear.Rows.Add("Combi-flamer - Flamer", 24, "Assault", 1, 6, -1, rolld(3))
+                        Case Else
+                            GoTo combiflamer
+                    End Select
+                    'Map.AllWargear.Rows.Add("Combi-flamer - Boltgun", 24, "Rapid Fire", 1, 4, 0, 1)
+                    'Map.AllWargear.Rows.Add("Combi-flamer - Flamer", 8, "Assault", rolld(6), 4, 0, 1)
+                Case Is = "Combi-grav"
+combigrav:
+                    Select Case CustomMsgbox("Boltgun, Grav-gun or both", "Boltgun", "Grav-gun", "Both")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Combi-grav - Boltgun", 24, "Rapid Fire", 1, 4, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Combi-grav - Grav-gun", 18, "Rapid Fire", 1, 5, -3, 1)
+                        Case Is = 4
+                            MsgBox("Both has not yet been implemented, please select another")
+                            GoTo combigrav
+                            'Map.AllWargear.Rows.Add("Combi-flamer - Flamer", 24, "Assault", 1, 6, -1, rolld(3))
+                        Case Else
+                            GoTo combigrav
+                    End Select
+                    'Map.AllWargear.Rows.Add("Combi-grav - Boltgun", 24, "Rapid Fire", 1, 4, 0, 1)
+                    'Map.AllWargear.Rows.Add("Combi-grav - Grav-gun", 18, "Rapid Fire", 1, 5, -3, 1)
+                Case Is = "Combi-melta"
+combimelta:
+                    Select Case CustomMsgbox("Boltgun, Meltagun or both", "Boltgun", "Meltagun", "Both")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Combi-melta - Boltgun", 24, "Rapid Fire", 1, 4, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Combi-melta - Meltagun", 12, "Assault", 1, 8, -4, rolld(6))
+                        Case Is = 4
+                            MsgBox("Both has not yet been implemented, please select another")
+                            GoTo combimelta
+                            'Map.AllWargear.Rows.Add("Combi-flamer - Flamer", 24, "Assault", 1, 6, -1, rolld(3))
+                        Case Else
+                            GoTo combimelta
+                    End Select
+                    'Map.AllWargear.Rows.Add("Combi-melta - Boltgun", 24, "Rapid Fire", 1, 4, 0, 1)
+                    'Map.AllWargear.Rows.Add("Combi-melta - Meltagun", 12, "Assault", 1, 8, -4, rolld(6))
+                Case Is = "Combi-plasma"
+combiplasma:
+                    Select Case CustomMsgbox("Boltgun, Plasma gun or both", "Boltgun", "Plasma gun", "Both")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Combi-plasma - Boltgun", 24, "Rapid Fire", 1, 4, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Combi-plasma - Plasma gun", 24, "Rapid Fire", 1, 7, -3, 1)
+                        Case Is = 4
+                            MsgBox("Both has not yet been implemented, please select another")
+                            GoTo combiplasma
+                            'Map.AllWargear.Rows.Add("Combi-flamer - Flamer", 24, "Assault", 1, 6, -1, rolld(3))
+                        Case Else
+                            GoTo combiplasma
+                    End Select
+                    'Map.AllWargear.Rows.Add("Combi-plasma - Boltgun", 24, "Rapid Fire", 1, 4, 0, 1)
+                    'Map.AllWargear.Rows.Add("Combi-plasma - Plasma gun", 24, "Rapid Fire", 1, 7, -3, 1)
+                Case Is = "Conversion beamer"
+                    Map.AllWargear.Rows.Add("Conversion beamer", 42, "Heavy", rolld(3), 6, 0, 1)
+                Case Is = "Cyclone missile launcher"
+cyclonemissilelauncher:
+                    Select Case CustomMsgbox("Frag or krak missile", "Frag missile", "Krak missile")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Cyclone missile launcher - Frag missile", 36, "Heavy", rolld(3) + rolld(3), 4, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Cyclone missile launcher - Krak missile", 36, "Heavy", 2, 8, -2, rolld(6))
+                        Case Else
+                            GoTo cyclonemissilelauncher
+                    End Select
+                Case Is = "Deathwind launcher"
+                    Map.AllWargear.Rows.Add("Deathwind launcher", 12, "Assault", rolld(6), 5, 0, 1)
+                Case Is = "Demolisher cannon"
+                    Map.AllWargear.Rows.Add("Demolisher cannon", 24, "Heavy", rolld(3), 10, -3, rolld(6))
+                Case Is = "Disintergration combi-gun"
+disintergrationcombigun:
+                    Select Case CustomMsgbox("Boltgun, Disintegration gun or both", "Boltgun", "Disintegration gun", "Both")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Disintegration combi-gun - Boltgun", 24, "Rapid Fire", 1, 4, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Disintegration combi-gun - Disintegration gun", 18, "Rapid Fire", 1, 5, -3, rolld(6))
+                        Case Is = 4
+                            MsgBox("Both has not yet been implemented, please select another")
+                            GoTo disintergrationcombigun
+                            'Map.AllWargear.Rows.Add("Combi-flamer - Flamer", 24, "Assault", 1, 6, -1, rolld(3))
+                        Case Else
+                            GoTo disintergrationcombigun
+                    End Select
+                    'Map.AllWargear.Rows.Add("Disintegration combi-gun - Boltgun", 24, "Rapid Fire", 1, 4, 0, 1)
+                    'Map.AllWargear.Rows.Add("Disintegration combi-gun - Disintegration gun", 18, "Rapid Fire", 1, 5, -3, rolld(6))
+                Case Is = "Disintegration pistol"
+                    Map.AllWargear.Rows.Add("Disintegration pistol", 9, "Pistol", 1, 5, -3, rolld(6))
+                Case Is = "Flamer"
+                    Map.AllWargear.Rows.Add("Flamer", 8, "Assault", rolld(6), 4, 0, 1)
+                Case Is = "Flamestorm cannon"
+                    Map.AllWargear.Rows.Add("Flamestorm cannon", 8, "Heavy", rolld(6), 6, -2, 2)
+                Case Is = "Frag grenade"
+                    Map.AllWargear.Rows.Add("Frag grenade", 6, "Grenade", rolld(6), 3, 0, 1)
+                Case Is = "Grav-pistol"
+                    Map.AllWargear.Rows.Add("Grav-pistol", 12, "Pistol", 1, 5, -3, 1)
+                Case Is = "Grav-cannon and grav-amp"
+                    Map.AllWargear.Rows.Add("Grav-cannon and grav-amp", 24, "Heavy", 4, 5, -3, 1)
+                Case Is = "Grav-gun"
+                    Map.AllWargear.Rows.Add("Grav-gun", 18, "Rapid Fire", 1, 5, -3, 1)
+                Case Is = "Grenade harness"
+                    Map.AllWargear.Rows.Add("Grenade harness", 12, "Assault", rolld(6), 4, -1, 1)
+                Case Is = "Heavy bolter"
+                    Map.AllWargear.Rows.Add("Heavy bolter", 36, "Heavy", 3, 5, -1, 1)
+                Case Is = "Heavy flamer"
+                    Map.AllWargear.Rows.Add("Heavy flamer", 8, "Heavy", rolld(6), 5, -1, 1)
+                Case Is = "Heavy plasma cannon"
+heavyplasmacannon:
+                    Select Case CustomMsgbox("Standard or Supercharge", "Standard", "Supercharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Heavy plasma cannon - Standard", 36, "Heavy", rolld(3), 7, -3, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Heavy plasma cannon - Supercharge", 36, "Heavy", rolld(3), 8, -3, 2)
+                        Case Else
+                            GoTo heavyplasmacannon
+                    End Select
+                    'Map.AllWargear.Rows.Add("Heavy plasma cannon - Standard", 36, "Heavy", rolld(3), 7, -3, 1)
+                    'Map.AllWargear.Rows.Add("Heavy plasma cannon - Supercharge", 36, "Heavy", rolld(3), 8, -3, 2)
+                Case Is = "Hunter-killer missile"
+                    Map.AllWargear.Rows.Add("Hunter-killer missile", 48, "Heavy", 1, 8, -2, rolld(6))
+                Case Is = "Hurricane bolter"
+                    Map.AllWargear.Rows.Add("Hurricane bolter", 24, "Rapid Fire", 6, 4, 0, 1)
+                Case Is = "Icarus stormcannon"
+                    Map.AllWargear.Rows.Add("Icarus stormcannon", 48, "Heavy", 3, 7, -1, 2)
+                Case Is = "Kheres pattern assault cannon"
+                    Map.AllWargear.Rows.Add("Kheres pattern assault cannon", 24, "Heavy", 6, 7, -1, 1)
+                Case Is = "Krak grenade"
+                    Map.AllWargear.Rows.Add("Krak grenade", 6, "Grenade", 1, 6, -1, rolld(3))
+                Case Is = "Las-talon"
+                    Map.AllWargear.Rows.Add("Las-talon", 24, "Heavy", 2, 9, -3, rolld(6))
+                Case Is = "Lascannon"
+                    Map.AllWargear.Rows.Add("Lascannon", 48, "Heavy", 1, 9, -3, rolld(6))
+                Case Is = "Master-crafted auto bolt rifle"
+                    Map.AllWargear.Rows.Add("Master-crafted auto bolt rifle", 24, "Assault", 2, 4, 0, 2)
+                Case Is = "Master-crafted boltgun"
+                    Map.AllWargear.Rows.Add("Master-crafted boltgun", 24, "Rapid Fire", 1, 4, -1, 2)
+                Case Is = "Melta bomb"
+                    Map.AllWargear.Rows.Add("Melta bomb", 4, "Grenade", 1, 8, -4, rolld(6))
+                Case Is = "Meltagun"
+                    Map.AllWargear.Rows.Add("Meltagun", 12, "Assault", 1, 8, -4, rolld(6))
+                Case Is = "Missile launcher"
+missilelauncher:
+                    Select Case CustomMsgbox("Frag or krak missile", "Frag missile", "Krak missile")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Missile launcher - Frag missile", 48, "Heavy", rolld(6), 4, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Missile launcher - Krak missile", 48, "Heavy", 1, 8, -2, rolld(6))
+                        Case Else
+                            GoTo missilelauncher
+                    End Select
+                    'Map.AllWargear.Rows.Add("Missile launcher - Frag missile", 48, "Heavy", rolld(6), 4, 0, 1)
+                    ' Map.AllWargear.Rows.Add("Missile launcher - Krak missile", 48, "Heavy", 1, 8, -2, rolld(6))
+                Case Is = "Multi-melta"
+                    Map.AllWargear.Rows.Add("Multi-melta", 24, "Heavy", 1, 8, -4, rolld(6))
+                Case Is = "Orbital array"
+                    Map.AllWargear.Rows.Add("Orbital array", 72, "Heavy", rolld(3), 10, -4, rolld(6))
+                Case Is = "Plasma blaster"
+plasmablaster:
+                    Select Case CustomMsgbox("Standard or Supercharge", "standard", "Supercharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Plasma blaster - Standard", 18, "Assault", 2, 7, -3, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Plasma blaster - Supercharge", 18, "Assault", 2, 8, -3, 2)
+                        Case Else
+                            GoTo plasmablaster
+                    End Select
+                    'Map.AllWargear.Rows.Add("Plasma blaster - Standard", 18, "Assault", 2, 7, -3, 1)
+                    'Map.AllWargear.Rows.Add("Plasma blaster - Supercharge", 18, "Assault", 2, 8, -3, 2)
+                Case Is = "Plasma cannon"
+plasmacannon:
+                    Select Case CustomMsgbox("Standard or Supercharge", "standard", "Supercharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Plasma cannon - Standard", 36, "Heavy", rolld(3), 7, -3, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Plasma cannon - Supercharge", 36, "Heavy", rolld(3), 8, -3, 2)
+                        Case Else
+                            GoTo plasmacannon
+                    End Select
+                Case Is = "Plasma cutter"
+plasmacutter:
+                    Select Case CustomMsgbox("Standard or Supercharge", "standard", "Supercharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Plasma cannon - Standard", 36, "Heavy", rolld(3), 7, -3, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Plasma cannon - Supercharge", 36, "Heavy", rolld(3), 8, -3, 2)
+                        Case Else
+                            GoTo plasmacutter
+                    End Select
+                Case Is = "Plasma gun"
+plasmagun:
+                    Select Case CustomMsgbox("Standard or Supercharge", "standard", "Supercharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Plasma gun - Standard", 24, "Rapid Fire", 1, 7, -3, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Plasma gun - Supercharge", 24, "Rapid Fire", 1, 8, -3, 2)
+                        Case Else
+                            GoTo plasmagun
+                    End Select
+                Case Is = "Plasma incinerator"
+plasmaincinerator:
+                    Select Case CustomMsgbox("Standard or Supercharge", "standard", "Supercharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Plasma incinerator - Standard", 30, "Rapid Fire", 1, 7, -4, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Plasma incinerator - Supercharge", 30, "Rapid Fire", 1, 8, -4, 2)
+                        Case Else
+                            GoTo plasmaincinerator
+                    End Select
+                Case Is = "Plasma pistol"
+plasmapistol:
+                    Select Case CustomMsgbox("Standard or Supercharge", "standard", "Supercharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Plasma pistol - Standard", 12, "Pistol", 1, 7, -3, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Plasma pistol - Supercharge", 12, "Pistol", 1, 8, -3, 2)
+                        Case Else
+                            GoTo plasmapistol
+                    End Select
+                Case Is = "Predator autocannon"
+                    Map.AllWargear.Rows.Add("Predator autocannon", 48, "Heavy", rolld(3) + rolld(3), 7, -1, 3)
+                Case Is = "Reaper autocannon"
+                    Map.AllWargear.Rows.Add("Reaper autocannon", 36, "Heavy", 4, 7, -1, 1)
+                Case Is = "Skyhammer missile launcher"
+                    Map.AllWargear.Rows.Add("Skyhammer missile launcher", 60, "Heavy", 3, 7, -1, rolld(3))
+                Case Is = "Skyspear missile launcher"
+                    Map.AllWargear.Rows.Add("Skyspear missile launcher", 60, "Heavy", 1, 9, -3, rolld(6))
+                Case Is = "Sniper rifle"
+                    Map.AllWargear.Rows.Add("Sniper rifle", 36, "Heavy", 1, 4, 0, 1)
+                Case Is = "Special issue boltgun"
+                    Map.AllWargear.Rows.Add("Special issue boltgun", 30, "Rapid Fire", 1, 4, -2, 1)
+                Case Is = "Storm bolter"
+                    Map.AllWargear.Rows.Add("Storm bolter", 24, "Rapid Fire", 2, 4, 0, 1)
+                Case Is = "Stormstrike missile launcher"
+                    Map.AllWargear.Rows.Add("Stormstrike missile launcher", 72, "Heavy", 1, 8, -3, 3)
+                Case Is = "Thunderfire cannon"
+                    Map.AllWargear.Rows.Add("Thunderfire cannon", 60, "Heavy", rolld(3) + rolld(3) + rolld(3) + rolld(3), 5, 0, 1)
+                Case Is = "Twin assault cannon"
+                    Map.AllWargear.Rows.Add("Twin assault cannon", 24, "Heavy", 12, 6, -1, 6) ' 1)
+                Case Is = "Twin autocannon"
+                    Map.AllWargear.Rows.Add("Twin autocannon", 48, "Heavy", 4, 7, -1, 2)
+                Case Is = "Twin boltgun"
+                    Map.AllWargear.Rows.Add("Twin boltgun", 24, "Rapid Fire", 2, 4, 0, 1)
+                Case Is = "Twin heavy bolter"
+                    Map.AllWargear.Rows.Add("Twin heavy bolter", 36, "Heavy", 6, 5, -1, 1)
+                Case Is = "Twin heavy flamer"
+                    Map.AllWargear.Rows.Add("Twin heavy flamer", 8, "Heavy", rolld(6) + rolld(6), 5, -1, 1)
+                Case Is = "Twin heavy plasma cannon"
+twinheavyplasmacannon:
+                    Select Case CustomMsgbox("Standard or Supercharge", "Standard", "Supercharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Twin heavy plasma cannon - Standard", 36, "Heavy", rolld(3) + rolld(3), 7, -3, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Twin heavy plasma cannon - Supercharge", 36, "Heavy", rolld(3) + rolld(3), 8, -3, 2)
+                        Case Else
+                            GoTo twinheavyplasmacannon
+                    End Select
+                    'Map.AllWargear.Rows.Add("Twin heavy plasma cannon - Standard", 36, "Heavy", rolld(3) + rolld(3), 7, -3, 1)
+                    'Map.AllWargear.Rows.Add("Twin heavy plasma cannon - Supercharge", 36, "Heavy", rolld(3) + rolld(3), 8, -3, 2)
+                Case Is = "Twin lascannon"
+                    Map.AllWargear.Rows.Add("Twin lascannon", 48, "Heavy", 2, 9, -3, rolld(6))
+                Case Is = "Twin multi-melta"
+                    Map.AllWargear.Rows.Add("Twin multi-melta", 24, "Heavy", 2, 8, -4, rolld(6))
+                Case Is = "Twin plasma gun"
+twinplasmagun:
+                    Select Case CustomMsgbox("Standard or Supercharge", "Standard", "Supercharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Twin plasma gun - Standard", 24, "Rapid Fire", 2, 7, -3, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Twin plasma gun - Supercharge", 24, "Rapid Fire", 2, 8, -3, 2)
+                        Case Else
+                            GoTo twinplasmagun
+                    End Select
+                    'Map.AllWargear.Rows.Add("Twin plasma gun - Standard", 24, "Rapid Fire", 2, 7, -3, 1)
+                    'Map.AllWargear.Rows.Add("Twin plasma gun - Supercharge", 24, "Rapid Fire", 2, 8, -3, 2)
+                Case Is = "Typhoon missile launcher"
+typhoonmissilelauncher:
+                    Select Case CustomMsgbox("Frag or krak missile", "Frag missile", "Krak missile")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Typhoon missile launcher - Frag missile", 48, "Heavy", rolld(6) + rolld(6), 4, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Typhoon missile launcher - Krak missile", 48, "Heavy", 2, 8, -2, rolld(6))
+                        Case Else
+                            GoTo typhoonmissilelauncher
+                    End Select
+                    'Map.AllWargear.Rows.Add("Typhoon missile launcher - Frag missile", 48, "Heavy", rolld(6) + rolld(6), 4, 0, 1)
+                    'Map.AllWargear.Rows.Add("Typhoon missile launcher - Krak missile", 48, "Heavy", 2, 8, -2, rolld(6))
+                Case Is = "Volkite charger"
+                    Map.AllWargear.Rows.Add("Volkite charger", 15, "Heavy", 2, 5, 0, 2)
+                Case Is = "Whirlwind castellan launcher"
+                    Map.AllWargear.Rows.Add("Whirlwind castellan launcher", 72, "Heavy", rolld(6) + rolld(6), 6, 0, 1)
+                Case Is = "Whirlwind vengeance launcher"
+                    Map.AllWargear.Rows.Add("Whirlwind vengeance launcher", 72, "Heavy", rolld(3) + rolld(3), 7, -1, 2)
+                Case Is = "Wrist-mounted grenade launcher"
+                    Map.AllWargear.Rows.Add("Wrist-mounted grenade launcher", 12, "Assault", rolld(3), 4, -1, 1)
+                Case Is = "Gauntlets of Ultramar"
+                    Map.AllWargear.Rows.Add("Gauntlets of Ultramar (shooting)", 24, "Rapid Fire", 2, 4, -1, 2)
+                Case Is = "Hand of Dominion"
+                    Map.AllWargear.Rows.Add("Hand of Dominion (shooting)", 24, "Rapid Fire", 3, 6, -1, 2)
+                Case Is = "Infernus"
+infernus:
+                    Select Case CustomMsgbox("Flamer or Master-crafted boltgun", "Flamer", "Master-crafted boltgun")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Infernus - Flamer", 24, "Assault", rolld(6), 4, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Infernus - Master-crafted boltgun", 24, "Rapid Fire", 1, 4, -1, 2)
+                        Case Else
+                            GoTo infernus
+                    End Select
+                    'Map.AllWargear.Rows.Add("Infernus - Flamer", 24, "Assault", rolld(6), 4, 0, 1)
+                    'Map.AllWargear.Rows.Add("Infernus - Master-crafted boltgun", 24, "Rapid Fire", 1, 4, -1, 2)
+                Case Is = "Quietus"
+                    Map.AllWargear.Rows.Add("Quietus", 36, "Heavy", 2, 4, -1, rolld(3))
+                Case Is = "Dorn's arrow"
+                    Map.AllWargear.Rows.Add("Dorn's arrow", 24, "Assault", 4, 4, -1, 1)
+                Case Is = "Gauntlet of the forge"
+                    Map.AllWargear.Rows.Add("Gauntlet of the Forge", 8, "Assault", rolld(6), 5, -1, 1)
+                Case Is = "Angelus boltgun"
+                    Map.AllWargear.Rows.Add("Angelus boltgun", 12, "Assault", 2, 4, -1, 1)
+                Case Is = "Blood Song"
+bloodsong:
+                    Select Case CustomMsgbox("Master-crafted boltgun or Meltagun", "Master-crafted boltgun", "Meltagun")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Blood Song -  Master-crafted boltgun", 24, "Rapid Fire", 1, 4, -1, 2)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Blood Song -  Meltagun", 12, "Assault", 1, 8, -4, rolld(6))
+                        Case Else
+                            GoTo bloodsong
+                    End Select
+                    'Map.AllWargear.Rows.Add("Blood Song -  Master-crafted boltgun", 24, "Rapid Fire", 1, 4, -1, 2)
+                    'Map.AllWargear.Rows.Add("Blood Song -  Meltagun", 12, "Assault", 1, 8, -4, rolld(6))
+                Case Is = "Frag cannon"
+                    Map.AllWargear.Rows.Add("Frag cannon", 8, "Assault", rolld(6) + rolld(6), 6, -1, 1)
+                Case Is = "Hand flamer"
+                    Map.AllWargear.Rows.Add("Hand flamer", 6, "Pistol", rolld(3), 3, 0, 1)
+                Case Is = "Inferno pistol"
+                    Map.AllWargear.Rows.Add("Inferno pistol", 6, "Pistol", 1, 8, -4, rolld(6))
+                Case Is = "Avenger mega bolter"
+                    Map.AllWargear.Rows.Add("Avenger mega bolter", 36, "Heavy", 10, 6, -1, 1)
+                Case Is = "Blacksword missile launcher"
+                    Map.AllWargear.Rows.Add("Blacksword missile launcher", 36, "Heavy", 1, 7, -3, 2)
+                Case Is = "The Deliverer"
+                    Map.AllWargear.Rows.Add("The Deliverer", 12, "Pistol", 1, 4, -1, 2)
+                Case Is = "Lion's Wrath"
+lionswrath:
+                    Select Case CustomMsgbox("Master-crafted boltgun, Standard or Supercharge", "Master-crafted boltgun", "Standard", "Supercharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Master-crafted boltgun", 24, "Rapid Fire", 1, 4, -1, 2)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Plasma gun - Standard", 24, "Rapid Fire", 1, 7, -3, 1)
+                        Case Is = 4
+                            Map.AllWargear.Rows.Add("Plasma gun - Supercharge", 24, "Rapid Fire", 1, 8, -3, 2)
+                        Case Else
+                            GoTo lionswrath
+                    End Select
+                    'Map.AllWargear.Rows.Add("Master-crafted boltgun", 24, "Rapid Fire", 1, 4, -1, 2)
+                    'Map.AllWargear.Rows.Add("Plasma gun - Standard", 24, "Rapid Fire", 1, 7, -3, 1)
+                    'Map.AllWargear.Rows.Add("Plasma gun - Supercharge", 24, "Rapid Fire", 1, 8, -3, 2)
+                Case Is = "Plasma storm battery"
+plasmastormbattery:
+                    Select Case CustomMsgbox("Standard or Supercharge", "Standard", "Supercharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Plasma storm battery - Standard", 36, "Heavy", rolld(6), 7, -3, 2)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Plasma storm battery - Supercharge", 36, "Heavy", rolld(6), 8, -3, 3)
+                        Case Else
+                            GoTo plasmastormbattery
+                    End Select
+                    'Map.AllWargear.Rows.Add("Plasma storm battery - Standard", 36, "Heavy", rolld(6), 7, -3, 2)
+                    'Map.AllWargear.Rows.Add("Plasma storm battery - Supercharge", 36, "Heavy", rolld(6), 8, -3, 3)
+                Case Is = "Plasma talon"
+plasmatalon:
+                    Select Case CustomMsgbox("Standard or Supercharge", "Standard", "Supercharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Plasma talon - Standard", 36, "Assault", 2, 7, -3, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Plasma talon - Supercharge", 36, "Assault", 2, 8, -3, 2)
+                        Case Else
+                            GoTo plasmatalon
+                    End Select
+                    Map.AllWargear.Rows.Add("Plasma talon - Standard", 36, "Assault", 2, 7, -3, 1)
+                    Map.AllWargear.Rows.Add("Plasma talon - Supercharge", 36, "Assault", 2, 8, -3, 2)
+                Case Is = "Ravenwing grenade launcher"
+ravenwinggrenadelauncher:
+                    Select Case CustomMsgbox("Frag or krak shell", "Frag shell", "Krak shell")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Ravenwing grenade launcher - Frag shell", 36, "Assault", rolld(6), 3, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Ravenwing grenade launcher - Krak shell", 36, "Assault", 2, 6, -1, rolld(3))
+                        Case Else
+                            GoTo ravenwinggrenadelauncher
+                    End Select
+                    'Map.AllWargear.Rows.Add("Ravenwing grenade launcher - Frag shell", 36, "Assault", rolld(6), 3, 0, 1)
+                    'Map.AllWargear.Rows.Add("Ravenwing grenade launcher - Krak shell", 36, "Assault", 2, 6, -1, rolld(3))
+                Case Is = "Redemption missile silo"
+redemptionmissilesilo:
+                    Select Case CustomMsgbox("Fragstorm or krakstorm missile", "Fragstorm missile", "krakstorm missile")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Redemption missile silo - Fragstorm missile", 96, "Heavy", rolld(6) + rolld(6), 4, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Redemption missile silo - Krakstorm missile", 96, "Heavy", rolld(6), 8, -3, rolld(3))
+                        Case Else
+                            GoTo redemptionmissilesilo
+                    End Select
+                    'Map.AllWargear.Rows.Add("Redemption missile silo - Fragstorm missile", 96, "Heavy", rolld(6) + rolld(6), 4, 0, 1)
+                    'Map.AllWargear.Rows.Add("Redemption missile silo - Krakstorm missile", 96, "Heavy", rolld(6), 8, -3, rolld(3))
+                Case Is = "Rift cannon"
+                    Map.AllWargear.Rows.Add("Rift cannon", 18, "Heavy", rolld(3), 10, -3, 3)
+                Case Is = "Twin Icarus lascannon"
+                    Map.AllWargear.Rows.Add("Twin Icarus lascannon", 96, "Heavy", rolld(6) + rolld(6), 9, -3, rolld(6))
+                Case Is = "Twin storm bolter"
+                    Map.AllWargear.Rows.Add("Twin storm bolter", 24, "Rapid Fire", 4, 4, 0, 1)
+                Case Is = "Foehammer (shooting)"
+                    Map.AllWargear.Rows.Add("Foehammer (shooting)", 12, "Assault", 1, 4, -3, rolld(3)) 'strength x2
+                Case Is = "Helfrost cannon"
+helfrostcannon:
+                    Select Case CustomMsgbox("Dispersed or Focused beam", "Dispersed beam", "Focused beam")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Helfrost cannon - Dispersed beam", 24, "Heavy", rolld(3), 6, -2, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Helfrost cannon - Focused beam", 24, "Heavy", 1, 8, -4, rolld(6))
+                        Case Else
+                            GoTo helfrostcannon
+                    End Select
+                    'Map.AllWargear.Rows.Add("Helfrost cannon - Dispersed beam", 24, "Heavy", rolld(3), 6, -2, 1)
+                    'Map.AllWargear.Rows.Add("Helfrost cannon - Focused beam", 24, "Heavy", 1, 8, -4, rolld(6))
+                Case Is = "Helfrost destructor"
+helfrostdestructor:
+                    Select Case CustomMsgbox("Dispersed or Focused beam", "Dispersed beam", "Focused beam")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Helfrost destructor - Dispersed beam", 24, "Heavy", rolld(3) + rolld(3) + rolld(3), 6, -2, 2)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Helfrost destructor - Focused beam", 24, "Heavy", 3, 8, -4, rolld(6))
+                        Case Else
+                            GoTo helfrostdestructor
+                    End Select
+                    'Map.AllWargear.Rows.Add("Helfrost destructor - Dispersed beam", 24, "Heavy", rolld(3) + rolld(3) + rolld(3), 6, -2, 2)
+                    'Map.AllWargear.Rows.Add("Helfrost destructor - Focused beam", 24, "Heavy", 3, 8, -4, rolld(6))
+                Case Is = "Helfrost pistol"
+                    Map.AllWargear.Rows.Add("Helfrost pistol", 12, "Pistol", 1, 8, -4, rolld(3))
+                Case Is = "Nightwing"
+                    Map.AllWargear.Rows.Add("Nightwing", 12, "Assault", rolld(6), 3, 0, 1)
+                Case Is = "Stormfrag auto-launcher"
+                    Map.AllWargear.Rows.Add("Stormfrag auto-launcher", 12, "Assault", rolld(3), 4, 0, 1)
+                Case Is = "Blackstar rocket launcher"
+blackstarrocketlauncher:
+                    Select Case CustomMsgbox("Corvid or Dracos warhead", "Corvid warhead", "Dracos warhead")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Blackstar rocket launcher - Corvid warhead", 30, "Heavy", rolld(6), 6, -1, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Blackstar rocket launcher - Dracos warhead", 30, "Heavy", rolld(6), 4, 0, 1)
+                        Case Else
+                            GoTo blackstarrocketlauncher
+                    End Select
+                    'Map.AllWargear.Rows.Add("Blackstar rocket launcher - Corvid warhead", 30, "Heavy", rolld(6), 6, -1, 1)
+                    'Map.AllWargear.Rows.Add("Blackstar rocket launcher - Dracos warhead", 30, "Heavy", rolld(6), 4, 0, 1)
+                Case Is = "Deathwatch frag cannon"
+deathwatchfragcannon:
+                    Select Case CustomMsgbox("Frag round or Shell", "Frag round", "Shell")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Deathwatch frag cannon - Frag round", 8, "Assault", rolld(6) + rolld(6), 6, -1, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Deathwatch frag cannon - Shell", 24, "Assault", 2, 6, -1, 1)
+                        Case Else
+                            GoTo deathwatchfragcannon
+                    End Select
+                    'Map.AllWargear.Rows.Add("Deathwatch frag cannon - Frag round", 8, "Assault", rolld(6) + rolld(6), 6, -1, 1)
+                    'Map.AllWargear.Rows.Add("Deathwatch frag cannon - Shell", 24, "Assault", 2, 6, -1, 1)
+                Case Is = "Deathwatch shotgun"
+deathwatchshotgun:
+                    Select Case CustomMsgbox("Cryptclearer round, Xenopurge slug or Wyrmsbreath shell", "Cryptclearer round", "Xenopurge slug", "Wyrmsbreath shell")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Deathwatch shotgun - Cryptclearer round", 16, "Assault", 2, 4, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Deathwatch shotgun - Xenopurge slug", 16, "Assault", 2, 4, -1, 1)
+                        Case Is = 4
+                            Map.AllWargear.Rows.Add("Deathwatch shotgun - Wyrmsbreath shell", 7, "Assault", rolld(6), 3, 0, 1)
+                        Case Else
+                            GoTo deathwatchshotgun
+                    End Select
+                    'Map.AllWargear.Rows.Add("Deathwatch shotgun - Cryptclearer round", 16, "Assault", 2, 4, 0, 1)
+                    'Map.AllWargear.Rows.Add("Deathwatch shotgun - Xenopurge slug", 16, "Assault", 2, 4, -1, 1)
+                    'Map.AllWargear.Rows.Add("Deathwatch shotgun - Wyrmsbreath shell", 7, "Assault", rolld(6), 3, 0, 1)
+                Case Is = "Guardian spear (shooting)"
+                    Map.AllWargear.Rows.Add("Guardian spear (shooting)", 24, "Rapid fire", 1, 4, -1, 2)
+                Case Is = "Hellfire Extremis"
+hellfireextremis:
+                    Select Case CustomMsgbox("Hellfire flamer or Boltgun", "Hellfire flamer", "Boltgun")
+                        Case Is = 2
+                            Console.WriteLine("currently not implented")
+                            GoTo hellfireextremis
+                            'Map.AllWargear.Rows.Add("Hellfire Extremis - Hellfire flamer", 8, "Assault", rolld(6), *, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Hellfire Extremis - Boltgun", 24, "Rapid fire", 1, 4, 0, 1)
+                        Case Else
+                            GoTo hellfireextremis
+                    End Select
+                    ' 'Map.AllWargear.Rows.Add("Hellfire Extremis - Hellfire flamer", 8, "Assault", rolld(6), *, 0, 1)
+                    ' Map.AllWargear.Rows.Add("Hellfire Extremis - Boltgun", 24, "Rapid fire", 1, 4, 0, 1)
+                Case Is = "Infernus heavy bolter"
+infernusheavybolter:
+                    Select Case CustomMsgbox("Infernus heavy Bolter or Infernus heavy flamer", "Infernus heavy Bolter", "Infernus heavy flamer")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Infernus heavy bolter - Heavy bolter", 36, "Heavy", 3, 5, -1, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Infernus heavy bolter - Heavy flamer", 8, "Assault", rolld(6), 5, -1, 1)
+                        Case Is = 4
+                            MsgBox("Both has not yet been implemented, please select another")
+                            GoTo infernusheavybolter
+                        Case Else
+                            GoTo infernusheavybolter
+                    End Select
+                    'Map.AllWargear.Rows.Add("Infernus heavy bolter - Heavy bolter", 36, "Heavy", 3, 5, -1, 1)
+                    'Map.AllWargear.Rows.Add("Infernus heavy bolter - Heavy flamer", 8, "Assault", rolld(6), 5, -1, 1)
+                Case Is = "Stalker pattern boltgun"
+                    Map.AllWargear.Rows.Add("Stalker pattern boltgun", 30, "Heavy", 2, 4, 0, 1)
+                    'imperium2
+                Case Is = "Artillery barrage"
+                    Map.AllWargear.Rows.Add("Artillery barrage", 100, "Heavy", rolld(6), 8, -2, rolld(3))
+                Case Is = "Autocannon"
+                    Map.AllWargear.Rows.Add("Autocannon", 48, "Heavy", 2, 7, -1, 2)
+                Case Is = "Bale Eye"
+                    Map.AllWargear.Rows.Add("Bale Eye", 6, "Pistol", 1, 3, -2, 1)
+                Case Is = "Baneblade cannon"
+                    Map.AllWargear.Rows.Add("Baneblade cannon", 72, "Heavy", rolld(6) + rolld(6), 9, -3, 3)
+                Case Is = "Battle cannon"
+                    Map.AllWargear.Rows.Add("Battle cannon", 72, "Heavy", rolld(6), 8, -2, rolld(3))
+                Case Is = "Demolition charge"
+                    Map.AllWargear.Rows.Add("Demolition charge", 6, "Grenade", rolld(6), 8, -3, rolld(3))
+                Case Is = "Earthshaker cannon"
+                    Map.AllWargear.Rows.Add("Earthshaker cannon", 240, "Heavy", rolld(6), 9, -2, rolld(3))
+                Case Is = "Eradicator nova cannon"
+                    Map.AllWargear.Rows.Add("Eradicator nova cannon", 36, "Heavy", rolld(6), 6, -2, rolld(3))
+                Case Is = "Executioner plasma cannon"
+executionerplasmacannon:
+                    Select Case CustomMsgbox("Standard or Supercharge", "Standard", "Supercharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Executioner plasma cannon - Standard", 36, "Heavy", rolld(6), 7, -3, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Executioner plasma cannon - Supercharge", 36, "Heavy", rolld(6), 8, -3, 2)
+                        Case Else
+                            GoTo executionerplasmacannon
+                    End Select
+                    'Map.AllWargear.Rows.Add("Executioner plasma cannon - Standard", 36, "Heavy", rolld(6), 7, -3, 1)
+                    'Map.AllWargear.Rows.Add("Executioner plasma cannon - Supercharge", 36, "Heavy", rolld(6), 8, -3, 2)
+                Case Is = "Exterminator autocannon"
+                    Map.AllWargear.Rows.Add("Exterminator autocannon", 48, "Heavy", 4, 7, -1, 2)
+                Case Is = "Frag bomb"
+                    Map.AllWargear.Rows.Add("Frag bomb", 6, "Grenade", rolld(6), 4, 0, 1)
+                Case Is = "Grenade launcher"
+grenadelauncher:
+                    Select Case CustomMsgbox("Frag or krak grenade", "Frag grenade", "Krak grenade")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Grenade launcher - Frag grenade", 24, "Assault", rolld(6), 3, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Grenade launcher - Krak grenade", 24, "Assault", 1, 6, -1, rolld(3))
+                        Case Else
+                            GoTo grenadelauncher
+                    End Select
+                    'Map.AllWargear.Rows.Add("Grenade launcher - Frag grenade", 24, "Assault", rolld(6), 3, 0, 1)
+                    'Map.AllWargear.Rows.Add("Grenade launcher - Krak grenade", 24, "Assault", 1, 6, -1, rolld(3))
+                Case Is = "Grenadier gauntlet"
+                    Map.AllWargear.Rows.Add("Grenadier gauntlet", 12, "Assault", rolld(6), 4, 0, 1)
+                Case Is = "Heavy stubber"
+                    Map.AllWargear.Rows.Add("Heavy stubber", 36, "Heavy", 3, 4, 0, 1)
+                Case Is = "Hellhammer cannon"
+                    Map.AllWargear.Rows.Add("Hellhammer cannon", 36, "Heavy", rolld(6) + rolld(6), 10, -4, 3)
+                Case Is = "Hellstrike missiles"
+                    Map.AllWargear.Rows.Add("Hellstrike missiles", 72, "Heavy", 1, 8, -2, rolld(6))
+                Case Is = "Hot-shot lasgun"
+                    Map.AllWargear.Rows.Add("Hot-shot lasgun", 18, "Rapid Fire", 1, 3, -2, 1)
+                Case Is = "Hot-shot laspistol"
+                    Map.AllWargear.Rows.Add("Hot-shot laspistol", 6, "Pistol", 1, 3, -2, 1)
+                Case Is = "Hot-shot volley gun"
+                    Map.AllWargear.Rows.Add("Hot-shot volley gun", 24, "Heavy", 4, 4, -2, 1)
+                Case Is = "Hydra quad autocannon"
+                    Map.AllWargear.Rows.Add("Hydra quad autocannon", 72, "Heavy", 8, 7, -1, 2)
+                Case Is = "Inferno cannon"
+                    Map.AllWargear.Rows.Add("Inferno cannon", 16, "Heavy", rolld(6), 6, -1, 2)
+                Case Is = "Lasgun"
+                    Map.AllWargear.Rows.Add("Lasgun", 24, "Rapid Fire", 1, 3, 0, 1)
+                Case Is = "Lasgun array"
+                    Map.AllWargear.Rows.Add("Lasgun array", 24, "Rapid Fire", 3, 3, 0, 1)
+                Case Is = "Laspistol"
+                    Map.AllWargear.Rows.Add("Laspistol", 12, "Pistol", 1, 3, 0, 1)
+                Case Is = "Magma cannon"
+                    Map.AllWargear.Rows.Add("Magma cannon", 60, "Heavy", rolld(6), 10, -5, rolld(6))
+                Case Is = "Melta cannon"
+                    Map.AllWargear.Rows.Add("Melta cannon", 24, "Heavy", rolld(3), 8, -4, rolld(6))
+                Case Is = "Mortar"
+                    Map.AllWargear.Rows.Add("Mortar", 48, "Heavy", rolld(6), 4, 0, 1)
+                Case Is = "Multi-laser"
+                    Map.AllWargear.Rows.Add("Multi-laser", 36, "Heavy", 3, 6, 0, 1)
+                Case Is = "Multiple rocket pod"
+                    Map.AllWargear.Rows.Add("Multiple rocket pod", 36, "Heavy", rolld(6), 5, -1, 1)
+                Case Is = "Payback"
+                    Map.AllWargear.Rows.Add("Payback", 36, "Assault", 3, 5, -2, 1)
+                Case Is = "Punisher gatling cannon"
+                    Map.AllWargear.Rows.Add("Punisher gatling cannon", 24, "Heavy", 20, 5, 0, 1)
+                Case Is = "Quake cannon"
+                    Map.AllWargear.Rows.Add("Quake cannon", 140, "Heavy", rolld(6), 14, -4, rolld(6))
+                Case Is = "Ripper gun"
+                    Map.AllWargear.Rows.Add("Ripper gun", 12, "Assault", 3, 5, 0, 1)
+                Case Is = "Shotgun"
+                    Map.AllWargear.Rows.Add("Shotgun", 12, "Assault", 2, 3, 0, 1)
+                Case Is = "Storm eagle rockets"
+                    Map.AllWargear.Rows.Add("Storm eagle rockets", 120, "Heavy", rolld(6) + rolld(6), 10, -2, rolld(3))
+                Case Is = "Stormsword siege cannon"
+                    Map.AllWargear.Rows.Add("Stormsword siege cannon", 36, "Heavy", rolld(6), 10, -4, rolld(6))
+                Case Is = "Taurox battle cannon"
+                    Map.AllWargear.Rows.Add("Taurox battle cannon", 48, "Heavy", rolld(6), 7, -1, rolld(3))
+                Case Is = "Taurox gatling cannon"
+                    Map.AllWargear.Rows.Add("Taurox gatling cannon", 24, "Heavy", 20, 4, 0, 1)
+                Case Is = "Taurox missile launcher"
+tauroxmissilelauncher:
+                    Select Case CustomMsgbox("Frag or krak missile", "Frag missile", "Krak missile")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Taurox missile launcher - Frag missile", 48, "Heavy", rolld(6) + rolld(6), 4, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Taurox missile launcher - Krak missile", 48, "Heavy", 2, 8, -2, rolld(6))
+                        Case Else
+                            GoTo tauroxmissilelauncher
+                    End Select
+                    ' Map.AllWargear.Rows.Add("Taurox missile launcher - Frag missile", 48, "Heavy", rolld(6) + rolld(6), 4, 0, 1)
+                    'Map.AllWargear.Rows.Add("Taurox missile launcher - Krak missile", 48, "Heavy", 2, 8, -2, rolld(6))
+                Case Is = "Tremor cannon"
+                    Map.AllWargear.Rows.Add("Tremor cannon", 60, "Heavy", rolld(6) + rolld(6), 8, -2, 3)
+                Case Is = "Vanquisher battle cannon"
+                    Map.AllWargear.Rows.Add("Vanquisher battle cannon", 72, "Heavy", 1, 8, -3, rolld(6))
+                Case Is = "Volcano cannon"
+                    Map.AllWargear.Rows.Add("Volcano cannon", 120, "Heavy", rolld(6), 16, -5, rolld(6) + rolld(6))
+                Case Is = "Vulcan mega-bolter"
+                    Map.AllWargear.Rows.Add("Vulcan mega-bolter", 60, "Heavy", 20, 6, -2, 2)
+                Case Is = "Wyvern quad stormshard mortar"
+                    Map.AllWargear.Rows.Add("Wyvern quad stormshard mortar", 48, "Heavy", rolld(6) + rolld(6) + rolld(6) + rolld(6), 4, 0, 1)
+                Case Is = "Aeldari missile launcher"
+aeldarimissilelauncher:
+                    Select Case CustomMsgbox("Sunburst or Starshot missile", "Sunburst missile", "Starshot missile")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Aeldari missile launcher - Sunburst missile", 48, "Heavy", rolld(6), 4, -1, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Aeldari missile launcher - Starshot missile", 48, "Heavy", 1, 8, -2, rolld(6))
+                        Case Else
+                            GoTo aeldarimissilelauncher
+                    End Select
+                    ' Map.AllWargear.Rows.Add("Aeldari missile launcher - Sunburst missile", 48, "Heavy", rolld(6), 4, -1, 1)
+                    'Map.AllWargear.Rows.Add("Aeldari missile launcher - Starshot missile", 48, "Heavy", 1, 8, -2, rolld(6))
+                Case Is = "Avenger shuriken catapult"
+                    Map.AllWargear.Rows.Add("Avenger shuriken catapult", 18, "Assault", 2, 4, 0, 1)
+                Case Is = "Bright lance"
+                    Map.AllWargear.Rows.Add("Bright lance", 36, "Heavy", 1, 8, -4, rolld(6))
+                Case Is = "Chainsabres (shooting)"
+                    Map.AllWargear.Rows.Add("Chainsabres (shooting)", 12, "Pistol", 2, 4, 0, 1)
+                Case Is = "Death spinner"
+                    Map.AllWargear.Rows.Add("Death spinner", 12, "Assault", 2, 6, 0, 1)
+                Case Is = "Doomweaver"
+                    Map.AllWargear.Rows.Add("Doomweaver", 48, "Heavy", rolld(6) + rolld(6), 7, 0, 2)
+                Case Is = "Dragon’s breath flamer"
+                    Map.AllWargear.Rows.Add("Dragon’s breath flamer", 8, "Assault", rolld(6), 5, -1, 1)
+                Case Is = "D-cannon"
+                    Map.AllWargear.Rows.Add("D-cannon", 24, "Heavy", rolld(3), 10, -4, rolld(6))
+                Case Is = "D-scythe"
+                    Map.AllWargear.Rows.Add("D-scythe", 8, "Assault", rolld(3), 10, -4, 1)
+                Case Is = "The Eye of Wrath"
+                    Map.AllWargear.Rows.Add("The Eye of Wrath", 3, "Pistol", rolld(6), 6, -2, 1)
+                Case Is = "Firepike"
+                    Map.AllWargear.Rows.Add("Firepike", 18, "Assault", 1, 8, -4, rolld(6))
+                Case Is = "Fusion gun"
+                    Map.AllWargear.Rows.Add("Fusion gun", 12, "Assault", 1, 8, -4, rolld(6))
+                Case Is = "Fusion pistol"
+                    Map.AllWargear.Rows.Add("Fusion pistol", 6, "Pistol", 1, 8, -4, rolld(6))
+                Case Is = "Hawk’s talon"
+                    Map.AllWargear.Rows.Add("Hawk’s talon", 24, "Assault", 4, 5, 0, 1)
+                Case Is = "Heavy D-scythe"
+                    Map.AllWargear.Rows.Add("Heavy D-scythe", 16, "Assault", rolld(3), 10, -4, 2)
+                Case Is = "Heavy wraithcannon"
+                    Map.AllWargear.Rows.Add("Heavy wraithcannon", 36, "Assault", 2, 10, -4, rolld(6))
+                Case Is = "Lasblaster"
+                    Map.AllWargear.Rows.Add("Lasblaster", 24, "Rapid Fire", 2, 3, 0, 1)
+                Case Is = "Laser lance (shooting)"
+                    Map.AllWargear.Rows.Add("Laser lance (shooting)", 6, "Assault", 1, 6, -4, 2)
+                Case Is = "The Maugetar (shooting)"
+themaugetar:
+                    Select Case CustomMsgbox("Shrieker or Shuriken", "Shrieker", "Shuriken")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("The Maugetar (shooting) - Shrieker", 36, "Assault", 1, 6, -1, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("The Maugetar (shooting) - Shuriken", 36, "Assault", 4, 6, -1, 1)
+                        Case Else
+                            GoTo themaugetar
+                    End Select
+                    Map.AllWargear.Rows.Add("The Maugetar (shooting) - Shrieker", 36, "Assault", 1, 6, -1, 1)
+                    'Case Is = "- Shuriken"
+                    Map.AllWargear.Rows.Add("The Maugetar (shooting) - Shuriken", 36, "Assault", 4, 6, -1, 1)
+                Case Is = "Prism cannon"
+prismcannon:
+                    Select Case CustomMsgbox("Dispersed, Focused or Lance", "Dispersed", "Focused", "Lance")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Prism cannon - Dispersed", 60, "Heavy", rolld(6), 6, -3, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Prism cannon - Focused", 60, "Heavy", rolld(3), 9, -4, rolld(3))
+                        Case Is = 4
+                            Map.AllWargear.Rows.Add("Prism cannon - Lance", 60, "Heavy", 1, 12, -5, rolld(6))
+                        Case Else
+                            GoTo prismcannon
+                    End Select
+                    'Map.AllWargear.Rows.Add("Prism cannon - Dispersed", 60, "Heavy", rolld(6), 6, -3, 1)
+                    'Map.AllWargear.Rows.Add("Prism cannon - Focused", 60, "Heavy", rolld(3), 9, -4, rolld(3))
+                    'Map.AllWargear.Rows.Add("Prism cannon - Lance", 60, "Heavy", 1, 12, -5, rolld(6))
+                Case Is = "Pulse laser"
+                    Map.AllWargear.Rows.Add("Pulse laser", 48, "Heavy", 2, 8, -3, 3)
+                Case Is = "Ranger long rifle"
+                    Map.AllWargear.Rows.Add("Ranger long rifle", 36, "Heavy", 1, 4, 0, 1)
+                Case Is = "Reaper launcher"
+reaperlauncher:
+                    Select Case CustomMsgbox("Starshot or Starswarm missile", "Starshot missile", "Starswarm missile")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Reaper launcher - Starshot missile", 48, "Heavy", 1, 8, -2, 3)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Reaper launcher - Starswarm missile", 48, "Heavy", 2, 5, -2, 2)
+                        Case Else
+                            GoTo reaperlauncher
+                    End Select
+                    'Map.AllWargear.Rows.Add("Reaper launcher - Starshot missile", 48, "Heavy", 1, 8, -2, 3)
+                    'Map.AllWargear.Rows.Add("Reaper launcher - Starswarm missile", 48, "Heavy", 2, 5, -2, 2)
+                Case Is = "Scatter laser"
+                    Map.AllWargear.Rows.Add("Scatter laser", 36, "Heavy", 4, 6, 0, 1)
+                Case Is = "Scorpion’s claw (shooting)"
+                    Map.AllWargear.Rows.Add("Scorpion’s claw (shooting)", 12, "Assault", 2, 4, 0, 1)
+                Case Is = "Shadow weaver"
+                    Map.AllWargear.Rows.Add("Shadow weaver", 48, "Heavy", rolld(6), 6, 0, 1)
+                Case Is = "Shuriken cannon"
+                    Map.AllWargear.Rows.Add("Shuriken cannon", 24, "Assault", 3, 6, 0, 1)
+                Case Is = "Shuriken catapult"
+                    Map.AllWargear.Rows.Add("Shuriken catapult", 12, "Assault", 2, 4, 0, 1)
+                Case Is = "Shuriken pistol"
+                    Map.AllWargear.Rows.Add("Shuriken pistol", 12, "Pistol", 1, 4, 0, 1)
+                Case Is = "Singing spear (shooting)"
+                    Map.AllWargear.Rows.Add("Singing spear (shooting)", 12, "Assault", 1, 9, 0, rolld(3))
+                Case Is = "Spinneret rifle"
+                    Map.AllWargear.Rows.Add("Spinneret rifle", 18, "Rapid Fire", 1, 6, -4, 1)
+                Case Is = "Star lance (shooting)"
+                    Map.AllWargear.Rows.Add("Star lance (shooting)", 6, "Assault", 1, 8, -4, 2)
+                Case Is = "Starcannon"
+                    Map.AllWargear.Rows.Add("Starcannon", 36, "Heavy", 2, 6, -3, 3)
+                Case Is = "Sunburst grenade"
+                    Map.AllWargear.Rows.Add("Sunburst grenade", 6, "Grenade", rolld(6), 4, -1, 1)
+                Case Is = "Suncannon"
+                    Map.AllWargear.Rows.Add("Suncannon", 48, "Heavy", rolld(6) + rolld(6), 6, -3, rolld(3))
+                Case Is = "Sunrifle"
+                    Map.AllWargear.Rows.Add("Sunrifle", 24, "Assault", 4, 3, -2, 1)
+                Case Is = "Tempest launcher"
+                    Map.AllWargear.Rows.Add("Tempest launcher", 36, "Heavy", rolld(6) + rolld(6), 4, -2, 1)
+                Case Is = "Triskele (shooting)"
+                    Map.AllWargear.Rows.Add("Triskele (shooting)", 12, "Assault", 3, 3, -2, 1)
+                Case Is = "Twin Aeldari missile launcher"
+twinaeldarimissilelauncher:
+                    Select Case CustomMsgbox("Sunburst or Starshot missile", "Sunburst missile", "Starshot missile")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Twin Aeldari missile launcher - Sunburst missile", 48, "Heavy", rolld(6) + rolld(6), 4, -1, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Twin Aeldari missile launcher - Starshot missile", 48, "Heavy", 2, 8, -2, rolld(6))
+                        Case Else
+                            GoTo twinaeldarimissilelauncher
+                    End Select
+                    'Map.AllWargear.Rows.Add("Twin Aeldari missile launcher - Sunburst missile", 48, "Heavy", rolld(6) + rolld(6), 4, -1, 1)
+                    'Map.AllWargear.Rows.Add("Twin Aeldari missile launcher - Starshot missile", 48, "Heavy", 2, 8, -2, rolld(6))
+                Case Is = "Twin bright lance"
+                    Map.AllWargear.Rows.Add("Twin bright lance", 36, "Heavy", 2, 8, -4, rolld(6))
+                Case Is = "Twin scatter laser"
+                    Map.AllWargear.Rows.Add("Twin scatter laser", 36, "Heavy", 8, 6, 0, 1)
+                Case Is = "Twin shuriken cannon"
+                    Map.AllWargear.Rows.Add("Twin shuriken cannon", 24, "Assault", 6, 6, 0, 1)
+                Case Is = "Twin shuriken catapult"
+                    Map.AllWargear.Rows.Add("Twin shuriken catapult", 12, "Assault", 4, 4, 0, 1)
+                Case Is = "Twin starcannon"
+                    Map.AllWargear.Rows.Add("Twin starcannon", 36, "Heavy", 4, 6, -3, 3)
+                Case Is = "Vibro cannon"
+                    Map.AllWargear.Rows.Add("Vibro cannon", 48, "Heavy", 1, 7, -1, rolld(3))
+                Case Is = "Voidbringer"
+                    Map.AllWargear.Rows.Add("Voidbringer", 48, "Heavy", 1, 4, -3, rolld(3))
+                Case Is = "The Wailing Doom (shooting)"
+                    Map.AllWargear.Rows.Add("The Wailing Doom (shooting)", 12, "Assault", 1, 8, -4, rolld(6))
+                Case Is = "Wraithcannon"
+                    Map.AllWargear.Rows.Add("Wraithcannon", 12, "Assault", 1, 10, -4, rolld(6))
+                Case Is = "Baleblast"
+                    Map.AllWargear.Rows.Add("Baleblast", 18, "Assault", 2, 4, -1, 1)
+                Case Is = "Blast pistol"
+                    Map.AllWargear.Rows.Add("Blast pistol", 6, "Pistol", 1, 8, -4, rolld(3))
+                Case Is = "Blaster"
+                    Map.AllWargear.Rows.Add("Blaster", 18, "Assault", 1, 8, -4, rolld(3))
+                Case Is = "Casket of Flensing"
+                    Map.AllWargear.Rows.Add("Casket of Flensing", 12, "Assault", rolld(6) + rolld(6), 3, -2, 1)
+                Case Is = "Dark lance"
+                    Map.AllWargear.Rows.Add("Dark lance", 36, "Heavy", 1, 8, -4, rolld(6))
+                Case Is = "Dark scythe"
+                    Map.AllWargear.Rows.Add("Dark scythe", 24, "Assault", rolld(3), 8, -4, rolld(3))
+                Case Is = "Darklight grenade"
+                    Map.AllWargear.Rows.Add("Darklight grenade", 6, "Grenade", rolld(6), 4, -1, 1)
+                Case Is = "Disintegrator cannon"
+                    Map.AllWargear.Rows.Add("Disintegrator cannon", 36, "Assault", 3, 5, -3, 2)
+                Case Is = "Eyeburst"
+                    Map.AllWargear.Rows.Add("Eyeburst", 9, "Assault", 4, 4, -2, 1)
+                Case Is = "Haywire blaster"
+                    Map.AllWargear.Rows.Add("Haywire blaster", 24, "Assault", 1, 4, -1, 1)
+                Case Is = "Heat lance"
+                    Map.AllWargear.Rows.Add("Heat lance", 18, "Assault", 1, 6, -5, rolld(6))
+                Case Is = "Hexrifle"
+                    Map.AllWargear.Rows.Add("Hexrifle", 36, "Heavy", 1, 4, -1, 1)
+                Case Is = "Phantasm grenade launcher"
+                    Map.AllWargear.Rows.Add("Phantasm grenade launcher", 18, "Assault", rolld(3), 1, 0, 1)
+                Case Is = "Razorwing missiles"
+razorwingmissiles:
+                    Select Case CustomMsgbox("Monoscythe or Shatterfield missile", "Monoscythe missile", "Shatterfield missile")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Razorwing missiles - Monoscythe missile", 48, "Assault", rolld(6), 6, 0, 2)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Razorwing missiles - Shatterfield missile", 48, "Assault", rolld(6), 7, -1, 1)
+                        Case Else
+                            GoTo razorwingmissiles
+                    End Select
+                    'Map.AllWargear.Rows.Add("Razorwing missiles - Monoscythe missile", 48, "Assault", rolld(6), 6, 0, 2)
+                    'Map.AllWargear.Rows.Add("Razorwing missiles - Shatterfield missile", 48, "Assault", rolld(6), 7, -1, 1)
+                Case Is = "Shredder"
+                    Map.AllWargear.Rows.Add("Shredder", 12, "Assault", rolld(3), 6, 0, 1)
+                Case Is = "Spirit syphon"
+                    Map.AllWargear.Rows.Add("Spirit syphon", 8, "Assault", rolld(6), 3, -2, 1)
+                Case Is = "Spirit vortex"
+                    Map.AllWargear.Rows.Add("Spirit vortex", 18, "Assault", rolld(6), 3, -2, 1)
+                Case Is = "Stinger pod"
+                    Map.AllWargear.Rows.Add("Stinger pod", 24, "Assault", rolld(6) + rolld(6), 5, 0, 1)
+                Case Is = "Void lance"
+                    Map.AllWargear.Rows.Add("Void lance", 36, "Assault", 1, 9, -4, rolld(6))
+                Case Is = "Voidraven missiles"
+voidravenmissiles:
+                    Select Case CustomMsgbox("Implosion or Shatterfield missile", "Implosion missile", "Shatterfield missile")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Voidraven missiles - Implosion missile", 48, "Assault", rolld(3), 6, -3, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Voidraven missiles - Shatterfield missile", 48, "Assault", rolld(6), 7, -1, 1)
+                        Case Else
+                            GoTo voidravenmissiles
+                    End Select
+                    'Map.AllWargear.Rows.Add("Voidraven missiles - Implosion missile", 48, "Assault", rolld(3), 6, -3, 1)
+                    'Map.AllWargear.Rows.Add("Voidraven missiles - Shatterfield missile", 48, "Assault", rolld(6), 7, -1, 1)
+                Case Is = "Haywire cannon"
+                    Map.AllWargear.Rows.Add("Haywire cannon", 24, "Heavy", rolld(3), 4, -1, 1)
+                Case Is = "Neuro disruptor"
+                    Map.AllWargear.Rows.Add("Neuro disruptor", 12, "Pistol", 1, 3, -3, rolld(3))
+                Case Is = "Prismatic cannon"
+prismaticcannon:
+                    Select Case CustomMsgbox("Dispersed, Focused or Lance", "Dispersed", "Focused", "Lance")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Prismatic cannon - Dispersed", 24, "Heavy", rolld(6), 4, -2, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Prismatic cannon - Focused", 24, "Heavy", rolld(3), 6, -3, rolld(3))
+                        Case Is = 4
+                            Map.AllWargear.Rows.Add("Prismatic cannon - Lance", 24, "Heavy", 1, 8, -4, rolld(6))
+                        Case Else
+                            GoTo prismaticcannon
+                    End Select
+                    'Map.AllWargear.Rows.Add("Prismatic cannon - Dispersed", 24, "Heavy", rolld(6), 4, -2, 1)
+                    'Map.AllWargear.Rows.Add("Prismatic cannon - Focused", 24, "Heavy", rolld(3), 6, -3, rolld(3))
+                    'Map.AllWargear.Rows.Add("Prismatic cannon - Lance", 24, "Heavy", 1, 8, -4, rolld(6))
+                Case Is = "Prismatic grenade"
+                    Map.AllWargear.Rows.Add("Prismatic grenade", 6, "Grenade", rolld(6), 4, -1, 1)
+                Case Is = "Shrieker cannon"
+shriekercannon:
+                    Select Case CustomMsgbox("Shrieker or Shuriken", "Shrieker", "Shuriken")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Shrieker cannon - Shrieker", 24, "Assault", 1, 6, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Shrieker cannon - Shuriken", 24, "Assault", 3, 6, 0, 1)
+                        Case Else
+                            GoTo shriekercannon
+                    End Select
+                    'Map.AllWargear.Rows.Add("Shrieker cannon - Shrieker", 24, "Assault", 1, 6, 0, 1)
+                    'Map.AllWargear.Rows.Add("Shrieker cannon - Shuriken", 24, "Assault", 3, 6, 0, 1)
+                Case Is = "Star bolas"
+                    Map.AllWargear.Rows.Add("Star bolas", 12, "Grenade", rolld(3), 6, -3, 1)
+                Case Is = "Death ray"
+                    Map.AllWargear.Rows.Add("Death ray", 24, "Heavy", rolld(3), 10, -4, rolld(6))
+                Case Is = "Doomsday cannon"
+doomsdaycannon:
+                    Select Case CustomMsgbox("Low or High power", "Low", "High")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Doomsday cannon - Low power", 24, "Heavy", rolld(3), 8, -2, rolld(3))
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Doomsday cannon - High power", 72, "Heavy", rolld(3), 10, -5, rolld(6))
+                        Case Else
+                            GoTo doomsdaycannon
+                    End Select
+                    'Map.AllWargear.Rows.Add("Doomsday cannon - Low power", 24, "Heavy", rolld(3), 8, -2, rolld(3))
+                    'Map.AllWargear.Rows.Add("Doomsday cannon - High power", 72, "Heavy", rolld(3), 10, -5, rolld(6))
+                Case Is = "Eldritch Lance (shooting)"
+                    Map.AllWargear.Rows.Add("Eldritch Lance (shooting)", 36, "Assault", 1, 8, -4, rolld(6))
+                Case Is = "Gauntlet of fire"
+                    Map.AllWargear.Rows.Add("Gauntlet of fire", 8, "Assault", rolld(6), 4, 0, 1)
+                Case Is = "Gauss blaster"
+                    Map.AllWargear.Rows.Add("Gauss blaster", 24, "Rapid Fire", 1, 5, -2, 1)
+                Case Is = "Gauss cannon"
+                    Map.AllWargear.Rows.Add("Gauss cannon", 24, "Heavy", 2, 5, -3, rolld(3))
+                Case Is = "Gauss flayer"
+                    Map.AllWargear.Rows.Add("Gauss flayer", 24, "Rapid Fire", 1, 4, -1, 1)
+                Case Is = "Gauss flayer array"
+                    Map.AllWargear.Rows.Add("Gauss flayer array", 24, "Rapid Fire", 5, 4, -1, 1)
+                Case Is = "Gauss flux arc"
+                    Map.AllWargear.Rows.Add("Gauss flux arc", 24, "Heavy", 3, 5, -2, 1)
+                Case Is = "Heat ray"
+heatray:
+                    Select Case CustomMsgbox("Dispersed or Focused", "Dispersed", "Focused")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Heat ray - Dispersed", 8, "Heavy", rolld(6), 5, -1, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Heat ray - Focused", 24, "Heavy", 2, 8, -4, rolld(6))
+                        Case Else
+                            GoTo cyclicionblaster
+                    End Select
+                    ' Map.AllWargear.Rows.Add("Heat ray - Dispersed", 8, "Heavy", rolld(6), 5, -1, 1)
+                    'Map.AllWargear.Rows.Add("Heat ray - Focused", 24, "Heavy", 2, 8, -4, rolld(6))
+                Case Is = "Heavy gauss cannon"
+                    Map.AllWargear.Rows.Add("Heavy gauss cannon", 36, "Heavy", 1, 9, -4, rolld(6))
+                Case Is = "Particle beamer"
+                    Map.AllWargear.Rows.Add("Particle beamer", 24, "Assault", 3, 6, 0, 1)
+                Case Is = "Particle caster"
+                    Map.AllWargear.Rows.Add("Particle caster", 12, "Pistol", 1, 6, 0, 1)
+                Case Is = "Particle shredder"
+                    Map.AllWargear.Rows.Add("Particle shredder", 24, "Heavy", 6, 7, -1, rolld(3))
+                Case Is = "Particle whip"
+                    Map.AllWargear.Rows.Add("Particle whip", 24, "Heavy", 6, 8, -2, rolld(3))
+                Case Is = "Rod of covenant (shooting)"
+                    Map.AllWargear.Rows.Add("Rod of covenant (shooting)", 12, "Assault", 1, 5, -3, 1)
+                Case Is = "Staff of light (shooting)"
+                    Map.AllWargear.Rows.Add("Staff of light (shooting)", 12, "Assault", 3, 5, -2, 1)
+                Case Is = "Staff of the Destroyer (shooting)"
+                    Map.AllWargear.Rows.Add("Staff of the Destroyer (shooting)", 18, "Assault", 3, 6, -3, 2)
+                Case Is = "Synaptic disintegrator"
+                    Map.AllWargear.Rows.Add("Synaptic disintegrator", 24, "Rapid Fire", 1, 4, 0, 1)
+                Case Is = "Tachyon arrow"
+                    Map.AllWargear.Rows.Add("Tachyon arrow", 120, "Assault", 1, 10, -5, rolld(6))
+                Case Is = "Tesla cannon"
+                    Map.AllWargear.Rows.Add("Tesla cannon", 24, "Assault", 3, 6, 0, 1)
+                Case Is = "Tesla carbine"
+                    Map.AllWargear.Rows.Add("Tesla carbine", 24, "Assault", 2, 5, 0, 1)
+                Case Is = "Tesla destructor"
+                    Map.AllWargear.Rows.Add("Tesla destructor", 24, "Assault", 4, 7, 0, 1)
+                Case Is = "Tesla sphere"
+                    Map.AllWargear.Rows.Add("Tesla sphere", 24, "Assault", 5, 7, 0, 1)
+                Case Is = "Transdimensional beamer"
+                    Map.AllWargear.Rows.Add("Transdimensional beamer", 12, "Heavy", rolld(3), 4, -3, 1)
+                Case Is = "Twin heavy gauss cannon"
+                    Map.AllWargear.Rows.Add("Twin heavy gauss cannon", 36, "Heavy", 2, 9, -4, rolld(6))
+                Case Is = "Twin tesla destructor"
+                    Map.AllWargear.Rows.Add("Twin tesla destructor", 24, "Assault", 8, 7, 0, 1)
+                Case Is = "Big shoota"
+                    Map.AllWargear.Rows.Add("Big shoota", 36, "Assault", 3, 5, 0, 1)
+                Case Is = "Burna (shooting)"
+                    Map.AllWargear.Rows.Add("Burna (shooting)", 8, "Assault", rolld(3), 4, 0, 1)
+                Case Is = "Dakkagun"
+                    Map.AllWargear.Rows.Add("Dakkagun", 18, "Assault", 3, 5, 0, 1)
+                Case Is = "Deffgun"
+                    Map.AllWargear.Rows.Add("Deffgun", 48, "Heavy", rolld(3), 7, -1, 2)
+                Case Is = "Deffkannon"
+                    Map.AllWargear.Rows.Add("Deffkannon", 72, "Heavy", rolld(6), 10, -4, rolld(6))
+                Case Is = "Deffstorm mega-shoota"
+                    Map.AllWargear.Rows.Add("Deffstorm mega-shoota", 36, "Heavy", rolld(6) + rolld(6) + rolld(6), 6, -1, 1)
+                Case Is = "Grot blasta"
+                    Map.AllWargear.Rows.Add("Grot blasta", 12, "Pistol", 1, 3, 0, 1)
+                Case Is = "Grotzooka"
+                    Map.AllWargear.Rows.Add("Grotzooka", 18, "Heavy", rolld(3) + rolld(3), 6, 0, 1)
+                Case Is = "Kannon"
+kannon:
+                    Select Case CustomMsgbox("Frag or Shell", "Frag", "Shell")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Kannon - Frag", 36, "Heavy", rolld(6), 4, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Kannon - Shell", 36, "Heavy", 1, 8, -2, rolld(6))
+                        Case Else
+                            GoTo kannon
+                    End Select
+                    'Map.AllWargear.Rows.Add("Kannon - Frag", 36, "Heavy", rolld(6), 4, 0, 1)
+                    'Map.AllWargear.Rows.Add("Kannon - Shell", 36, "Heavy", 1, 8, -2, rolld(6))
+                Case Is = "Killkannon"
+                    Map.AllWargear.Rows.Add("Killkannon", 24, "Heavy", rolld(6), 7, -2, 2)
+                Case Is = "Kombi-weapon with rokkit launcha" '- Rokkit launcha"
+Kombiweaponwithrokkitlauncha:
+                    Select Case CustomMsgbox("Rokkit launcha, Shoota or both", "Rokkit launcha", "Shoota", "Both")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Kombi-weapon - Rokkit launcha", 24, "Assault", 1, 8, -2, 3)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Kombi-weapon - Shoota", 18, "Assault", 2, 4, 0, 1)
+                        Case Is = 4
+                            MsgBox("Both has not yet been implemented, please select another")
+                            GoTo Kombiweaponwithrokkitlauncha
+                        Case Else
+                            GoTo Kombiweaponwithrokkitlauncha
+                    End Select
+                    ' Map.AllWargear.Rows.Add("Kombi-weapon - Rokkit launcha", 24, "Assault", 1, 8, -2, 3)
+                    ' Case Is = "- Shoota"
+                    ' Map.AllWargear.Rows.Add("Kombi-weapon - Shoota", 18, "Assault", 2, 4, 0, 1)
+                Case Is = "Kombi-weapon with skorcha"
+Kombiweaponwithskorcha:
+                    Select Case CustomMsgbox("Rokkit launcha, Shoota or both", "Rokkit launcha", "Shoota", "Both")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Kombi-weapon with skorcha - Shoota", 18, "Assault", 2, 4, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Kombi-weapon with skorcha - Skorcha", 8, "Assault", rolld(6), 5, -1, 1)
+                        Case Is = 4
+                            MsgBox("Both has not yet been implemented, please select another")
+                            GoTo Kombiweaponwithskorcha
+                        Case Else
+                            GoTo Kombiweaponwithskorcha
+                    End Select
+                    'Map.AllWargear.Rows.Add("Kombi-weapon with skorcha - Shoota", 18, "Assault", 2, 4, 0, 1)
+                    'Map.AllWargear.Rows.Add("Kombi-weapon with skorcha - Skorcha", 8, "Assault", rolld(6), 5, -1, 1)
+                Case Is = "Kopta rokkits"
+                    Map.AllWargear.Rows.Add("Kopta rokkits", 24, "Assault", 2, 8, -2, 3)
+                Case Is = "Kustom mega-blasta"
+                    Map.AllWargear.Rows.Add("Kustom mega-blasta", 24, "Assault", 1, 8, -3, rolld(3))
+                Case Is = "Kustom mega-kannon"
+                    Map.AllWargear.Rows.Add("Kustom mega-kannon", 36, "Heavy", rolld(6), 8, -3, rolld(3))
+                Case Is = "Kustom mega-slugga"
+                    Map.AllWargear.Rows.Add("Kustom mega-slugga", 12, "Pistol", 1, 8, -3, rolld(3))
+                Case Is = "Kustom shoota"
+                    Map.AllWargear.Rows.Add("Kustom shoota", 18, "Assault", 4, 4, 0, 1)
+                Case Is = "Lobba"
+                    Map.AllWargear.Rows.Add("Lobba", 48, "Heavy", rolld(6), 5, 0, 1)
+                Case Is = "Pair of rokkit pistols"
+                    Map.AllWargear.Rows.Add("Pair of rokkit pistols", 12, "Pistol", 2, 7, -2, rolld(3))
+                Case Is = "Rack of rokkits"
+                    Map.AllWargear.Rows.Add("Rack of rokkits", 24, "Assault", 2, 8, -2, 3)
+                Case Is = "Da Rippa"
+darippa:
+                    Select Case CustomMsgbox("Standard or Supercharge", "Standard", "Supercharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Da Rippa - Standard", 24, "Heavy", 3, 7, -3, 2)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Da Rippa - Supercharge", 24, "Heavy", 3, 8, -3, 3)
+                        Case Else
+                            GoTo darippa
+                    End Select
+                    ' Map.AllWargear.Rows.Add("Da Rippa - Standard", 24, "Heavy", 3, 7, -3, 2)
+                    ' Map.AllWargear.Rows.Add("Da Rippa - Supercharge", 24, "Heavy", 3, 8, -3, 3)
+                Case Is = "Rokkit launcha"
+                    Map.AllWargear.Rows.Add("Rokkit launcha", 24, "Assault", 1, 8, -2, 3)
+                Case Is = "Shokk attack gun"
+                    Map.AllWargear.Rows.Add("Shokk attack gun", 60, "Heavy", rolld(6), rolld(6) + rolld(6), -5, rolld(3))
+                Case Is = "Shoota"
+                    Map.AllWargear.Rows.Add("Shoota", 18, "Assault", 2, 4, 0, 1)
+                Case Is = "Skorcha"
+                    Map.AllWargear.Rows.Add("Skorcha", 8, "Assault", rolld(6), 5, -1, 1)
+                Case Is = "Skorcha missile"
+                    Map.AllWargear.Rows.Add("Skorcha missile", 24, "Assault", rolld(6), 5, -1, 1)
+                Case Is = "Slugga"
+                    Map.AllWargear.Rows.Add("Slugga", 12, "Pistol", 1, 4, 0, 1)
+                Case Is = "Snazzgun"
+                    Map.AllWargear.Rows.Add("Snazzgun", 24, "Heavy", 3, 5, -2, 1)
+                Case Is = "Squig bomb"
+                    Map.AllWargear.Rows.Add("Squig bomb", 18, "Assault", 1, 8, -2, rolld(6))
+                Case Is = "Stikkbomb"
+                    Map.AllWargear.Rows.Add("Stikkbomb", 6, "Grenade", rolld(6), 3, 0, 1)
+                Case Is = "Stikkbomb flinga"
+                    Map.AllWargear.Rows.Add("Stikkbomb flinga", 12, "Assault", rolld(6) + rolld(6), 3, 0, 1)
+                Case Is = "Supa shoota"
+                    Map.AllWargear.Rows.Add("Supa shoota", 36, "Assault", 3, 6, -1, 1)
+                Case Is = "Supa-gatler"
+                    Map.AllWargear.Rows.Add("Supa-gatler", 48, "Heavy", rolld(6) + rolld(6), 7, -2, 1)
+                Case Is = "Supa-rokkit"
+                    Map.AllWargear.Rows.Add("Supa-rokkit", 100, "Heavy", rolld(3), 8, -2, rolld(6))
+                Case Is = "Tankbusta bomb"
+                    Map.AllWargear.Rows.Add("Tankbusta bomb", 6, "Grenade", rolld(3), 8, -2, rolld(6))
+                Case Is = "Tellyport blasta"
+                    Map.AllWargear.Rows.Add("Tellyport blasta", 12, "Assault", rolld(3), 8, -2, 1)
+                Case Is = "Tellyport mega-blasta"
+                    Map.AllWargear.Rows.Add("Tellyport mega-blasta", 24, "Assault", rolld(3), 8, -2, 1)
+                Case Is = "Traktor kannon"
+                    Map.AllWargear.Rows.Add("Traktor kannon", 36, "Heavy", 1, 8, -2, rolld(3))
+                Case Is = "Twin big shoota"
+                    Map.AllWargear.Rows.Add("Twin big shoota", 36, "Assault", 6, 5, 0, 1)
+                Case Is = "Wazbom mega-kannon"
+                    Map.AllWargear.Rows.Add("Wazbom mega-kannon", 36, "Heavy", rolld(3), 8, -3, rolld(3))
+                Case Is = "Zzap gun"
+                    Map.AllWargear.Rows.Add("Zzap gun", 36, "Heavy", 1, rolld(6) + rolld(6), -3, 3)
+                Case Is = "Airbursting fragmentation projector"
+                    Map.AllWargear.Rows.Add("Airbursting fragmentation projector", 18, "Assault", rolld(6), 4, 0, 1)
+                Case Is = "Burst cannon"
+                    Map.AllWargear.Rows.Add("Burst cannon", 18, "Assault", 4, 5, 0, 1)
+                Case Is = "Cluster rocket system"
+                    Map.AllWargear.Rows.Add("Cluster rocket system", 48, "Heavy", rolld(6) + rolld(6) + rolld(6) + rolld(6), 5, 0, 1)
+                Case Is = "Cyclic ion blaster"
+cyclicionblaster:
+                    Select Case CustomMsgbox("Standard or Overcharge", "Standard", "Overcharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Cyclic ion blaster - Standard", 18, "Assault", 3, 7, -1, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Cyclic ion blaster - Overcharge", 18, "Assault", rolld(3), 8, -1, rolld(3))
+                        Case Else
+                            GoTo cyclicionblaster
+                    End Select
+                    'Map.AllWargear.Rows.Add("Cyclic ion blaster - Standard", 18, "Assault", 3, 7, -1, 1)
+                    'Map.AllWargear.Rows.Add("Cyclic ion blaster - Overcharge", 18, "Assault", rolld(3), 8, -1, rolld(3))
+                Case Is = "Cyclic ion raker"
+cyclicionraker:
+                    Select Case CustomMsgbox("Standard or Overcharge", "Standard", "Overcharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Cyclic ion raker - Standard", 24, "Heavy", 6, 7, -1, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Cyclic ion raker - Overcharge", 24, "Heavy", rolld(6), 8, -1, rolld(3))
+                        Case Else
+                            GoTo cyclicionraker
+                    End Select
+                    'Map.AllWargear.Rows.Add("Cyclic ion raker - Standard", 24, "Heavy", 6, 7, -1, 1)
+                    'Map.AllWargear.Rows.Add("Cyclic ion raker - Overcharge", 24, "Heavy", rolld(6), 8, -1, rolld(3))
+                Case Is = "Fusion blaster"
+                    Map.AllWargear.Rows.Add("Fusion blaster", 18, "Assault", 1, 8, -4, rolld(6))
+                Case Is = "Fusion collider"
+                    Map.AllWargear.Rows.Add("Fusion collider", 18, "Heavy", rolld(3), 8, -4, rolld(6))
+                Case Is = "Heavy burst cannon"
+heavyburstcannon:
+                    Select Case CustomMsgbox("Standard or Nova-charge", "Standard", "Nova-charge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Heavy burst cannon - Standard", 36, "Heavy", 8, 6, -1, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Heavy burst cannon - Nova-charge", 36, "Heavy", 12, 6, -2, 1)
+                        Case Else
+                            GoTo heavyburstcannon
+                    End Select
+                    'Map.AllWargear.Rows.Add("Heavy burst cannon - Standard", 36, "Heavy", 8, 6, -1, 1)
+                    'Map.AllWargear.Rows.Add("Heavy burst cannon - Nova-charge", 36, "Heavy", 12, 6, -2, 1)
+                Case Is = "Heavy rail rifle"
+                    Map.AllWargear.Rows.Add("Heavy rail rifle", 60, "Heavy", 2, 8, -4, rolld(6))
+                Case Is = "High-output burst cannon"
+                    Map.AllWargear.Rows.Add("High-output burst cannon", 18, "Assault", 8, 5, 0, 1)
+                Case Is = "High-yield missile pod"
+                    Map.AllWargear.Rows.Add("High-yield missile pod", 36, "Heavy", 4, 7, -1, rolld(3))
+                Case Is = "Ion accelerator"
+ionaccelerator:
+                    Select Case CustomMsgbox("Standard, Overcharge or Nova-charge", "Standard", "Overcharge", "Nova-charge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Ion accelerator - Standard", 72, "Heavy", 3, 7, -3, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Ion accelerator - Overcharge", 72, "Heavy", rolld(6), 8, -3, rolld(3))
+                        Case Is = 4
+                            Map.AllWargear.Rows.Add("Ion accelerator - Nova-charge", 72, "Heavy", rolld(6), 9, -3, 3)
+                        Case Else
+                            GoTo ionaccelerator
+                    End Select
+                    'Map.AllWargear.Rows.Add("Ion accelerator - Standard", 72, "Heavy", 3, 7, -3, 1)
+                    'Map.AllWargear.Rows.Add("Ion accelerator - Overcharge", 72, "Heavy", rolld(6), 8, -3, rolld(3))
+                    'Map.AllWargear.Rows.Add("Ion accelerator - Nova-charge", 72, "Heavy", rolld(6), 9, -3, 3)
+                Case Is = "Ion cannon"
+ioncannon:
+                    Select Case CustomMsgbox("Standard or Overcharge", "Standard", "Overcharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Ion cannon - Standard", 60, "Heavy", 3, 7, -2, 2)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Ion cannon - Overcharge", 60, "Heavy", rolld(3), 8, -2, 3)
+                        Case Else
+                            GoTo ioncannon
+                    End Select
+                    ' Map.AllWargear.Rows.Add("Ion cannon - Standard", 60, "Heavy", 3, 7, -2, 2)
+                    ' Map.AllWargear.Rows.Add("Ion cannon - Overcharge", 60, "Heavy", rolld(3), 8, -2, 3)
+                Case Is = "Ion rifle"
+ionrifle:
+                    Select Case CustomMsgbox("Standard or Overcharge", "standard", "Overcharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Ion rifle - Standard", 30, "Rapid Fire", 1, 7, -1, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Ion rifle - Overcharge", 30, "Heavy", rolld(3), 8, -1, 1)
+                        Case Else
+                            GoTo ionrifle
+                    End Select
+                    ' Map.AllWargear.Rows.Add("Ion rifle - Standard", 30, "Rapid Fire", 1, 7, -1, 1)
+                    'Map.AllWargear.Rows.Add("Ion rifle - Overcharge", 30, "Heavy", rolld(3), 8, -1, 1)
+                Case Is = "Kroot gun"
+                    Map.AllWargear.Rows.Add("Kroot gun", 48, "Rapid Fire", 1, 7, -1, rolld(3))
+                Case Is = "Kroot rifle (shooting)"
+                    Map.AllWargear.Rows.Add("Kroot rifle (shooting)", 24, "Rapid Fire", 1, 4, 0, 1)
+                Case Is = "Longshot pulse rifle"
+                    Map.AllWargear.Rows.Add("Longshot pulse rifle", 48, "Rapid Fire", 1, 5, 0, 1)
+                Case Is = "Missile pod"
+                    Map.AllWargear.Rows.Add("Missile pod", 36, "Assault", 2, 7, -1, rolld(3))
+                Case Is = "Neutron blaster"
+                    Map.AllWargear.Rows.Add("Neutron blaster", 18, "Assault", 2, 5, -2, 1)
+                Case Is = "Plasma rifle"
+                    Map.AllWargear.Rows.Add("Plasma rifle", 24, "Rapid Fire", 1, 6, -3, 1)
+                Case Is = "Pulse blastcannon"
+pulseblastcannon:
+                    Select Case CustomMsgbox("Close, Medium or Long range", "Close range", "Medium range", "Long range")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Pulse blastcannon - Close range", 10, "Heavy", 2, 14, -4, 6)
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Pulse blastcannon - Medium range", 20, "Heavy", 4, 12, -2, 3)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Pulse blastcannon - Long range", 30, "Heavy", 6, 10, 0, 1)
+                        Case Else
+                            GoTo pulseblastcannon
+                    End Select
+                    'Map.AllWargear.Rows.Add("Pulse blastcannon - Close range", 10, "Heavy", 2, 14, -4, 6)
+                    'Map.AllWargear.Rows.Add("Pulse blastcannon - Medium range", 20, "Heavy", 4, 12, -2, 3)
+                    'Map.AllWargear.Rows.Add("Pulse blastcannon - Long range", 30, "Heavy", 6, 10, 0, 1)
+                Case Is = "Pulse blaster"
+pulseblaster:
+                    Select Case CustomMsgbox("Close, Medium or Long range", "Close range", "Medium range", "Long range")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Pulse blaster - Close range", 5, "Assault", 2, 6, -2, 1)
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Pulse blaster - Medium range", 10, "Assault", 2, 5, -1, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Pulse blaster - Long range", 15, "Assault", 2, 4, 0, 1)
+                        Case Else
+                            GoTo pulseblaster
+                    End Select
+                    'Map.AllWargear.Rows.Add("Pulse blaster - Close range", 5, "Assault", 2, 6, -2, 1)
+                    'Map.AllWargear.Rows.Add("Pulse blaster - Medium range", 10, "Assault", 2, 5, -1, 1)
+                    'Map.AllWargear.Rows.Add("Pulse blaster - Long range", 15, "Assault", 2, 4, 0, 1)
+                Case Is = "Pulse carbine"
+                    Map.AllWargear.Rows.Add("Pulse carbine", 18, "Assault", 2, 5, 0, 1)
+                Case Is = "Pulse driver cannon"
+                    Map.AllWargear.Rows.Add("Pulse driver cannon", 72, "Heavy", rolld(3), 10, -3, rolld(6))
+                Case Is = "Pulse pistol"
+                    Map.AllWargear.Rows.Add("Pulse pistol", 12, "Pistol", 1, 5, 0, 1)
+                Case Is = "Pulse rifle"
+                    Map.AllWargear.Rows.Add("Pulse rifle", 30, "Rapid Fire", 1, 5, 0, 1)
+                Case Is = "Quad ion turret"
+quadionturret:
+                    Select Case CustomMsgbox("Standard or Supercharge", "Standard", "Supercharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Quad ion turret - Standard", 30, "Heavy", 4, 7, -1, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Quad ion turret - Overcharge", 30, "Heavy", rolld(6), 8, -1, rolld(3))
+                        Case Else
+                            GoTo quadionturret
+                    End Select
+                    Map.AllWargear.Rows.Add("Quad ion turret - Standard", 30, "Heavy", 4, 7, -1, 1)
+                    Map.AllWargear.Rows.Add("Quad ion turret - Overcharge", 30, "Heavy", rolld(6), 8, -1, rolld(3))
+                Case Is = "Rail rifle"
+                    Map.AllWargear.Rows.Add("Rail rifle", 30, "Rapid Fire", 1, 6, -4, rolld(3))
+                Case Is = "Railgun"
+railgun:
+                    Select Case CustomMsgbox("Solid shot or Submunitions", "Solid shot", "Submunitions")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Railgun - Solid shot", 72, "Heavy", 1, 10, -4, rolld(6))
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Railgun - Submunitions", 72, "Heavy", rolld(6), 6, -1, 1)
+                        Case Else
+                            GoTo railgun
+                    End Select
+                    'Map.AllWargear.Rows.Add("Railgun - Solid shot", 72, "Heavy", 1, 10, -4, rolld(6))
+                    'Map.AllWargear.Rows.Add("Railgun - Submunitions", 72, "Heavy", rolld(6), 6, -1, 1)
+                Case Is = "Smart missile system"
+                    Map.AllWargear.Rows.Add("Smart missile system", 30, "Heavy", 4, 5, 0, 1)
+                Case Is = "Supremacy railgun"
+                    Map.AllWargear.Rows.Add("Supremacy railgun", 72, "Heavy", 2, 10, -4, rolld(6))
+                Case Is = "Barbed strangler"
+                    Map.AllWargear.Rows.Add("Barbed strangler", 36, "Assault", rolld(6), 5, -1, 1)
+                Case Is = "Bio-electric pulse"
+                    Map.AllWargear.Rows.Add("Bio-electric pulse", 12, "Assault", 6, 5, 0, 1)
+                Case Is = "Bio-electric pulse with containment spines"
+                    Map.AllWargear.Rows.Add("Bio-electric pulse with containment spines", 12, "Assault", 12, 5, 0, 1)
+                Case Is = "Bio-plasma"
+                    Map.AllWargear.Rows.Add("Bio-plasma", 12, "Assault", rolld(3), 7, -3, 1)
+                Case Is = "Bio-plasmic cannon"
+                    Map.AllWargear.Rows.Add("Bio-plasmic cannon", 36, "Heavy", 6, 7, -3, 2)
+                Case Is = "Choking spores"
+                    Map.AllWargear.Rows.Add("Choking spores", 12, "Assault", rolld(6), 3, 0, rolld(3))
+                Case Is = "Deathspitter"
+                    Map.AllWargear.Rows.Add("Deathspitter", 18, "Assault", 3, 5, -1, 1)
+                Case Is = "Deathspitter with slimer maggots"
+                    Map.AllWargear.Rows.Add("Deathspitter with slimer maggots", 18, "Assault", 3, 7, -1, 1)
+                Case Is = "Devourer"
+                    Map.AllWargear.Rows.Add("Devourer", 18, "Assault", 3, 4, 0, 1)
+                Case Is = "Devourer with brainleech worms"
+                    Map.AllWargear.Rows.Add("Devourer with brainleech worms", 18, "Assault", 3, 6, 0, 1)
+                Case Is = "Drool cannon"
+                    Map.AllWargear.Rows.Add("Drool cannon", 8, "Assault", rolld(6), 6, -1, 1)
+                Case Is = "Flamespurt"
+                    Map.AllWargear.Rows.Add("Flamespurt", 10, "Assault", rolld(6), 5, -1, 1)
+                Case Is = "Fleshborer"
+                    Map.AllWargear.Rows.Add("Fleshborer", 12, "Assault", 1, 4, 0, 1)
+                Case Is = "Fleshborer hive"
+                    Map.AllWargear.Rows.Add("Fleshborer hive", 18, "Heavy", 20, 5, 0, 1)
+                Case Is = "Grasping tongue"
+                    Map.AllWargear.Rows.Add("Grasping tongue", 12, "Assault", 1, 6, -3, rolld(3))
+                Case Is = "Heavy venom cannon"
+                    Map.AllWargear.Rows.Add("Heavy venom cannon", 36, "Assault", rolld(3), 9, -1, rolld(3))
+                Case Is = "Impaler cannon"
+                    Map.AllWargear.Rows.Add("Impaler cannon", 36, "Heavy", 2, 8, -2, rolld(3))
+                Case Is = "Rupture cannon"
+                    Map.AllWargear.Rows.Add("Rupture cannon", 48, "Heavy", 2, 10, -1, 2)
+                Case Is = "Shockcannon"
+                    Map.AllWargear.Rows.Add("Shockcannon", 24, "Assault", rolld(3), 7, -1, rolld(3))
+                Case Is = "Spike rifle"
+                    Map.AllWargear.Rows.Add("Spike rifle", 18, "Assault", 1, 3, 0, 1)
+                Case Is = "Spinemaws"
+                    Map.AllWargear.Rows.Add("Spinemaws", 6, "Pistol", 4, 2, 0, 1)
+                Case Is = "Stinger salvo"
+                    Map.AllWargear.Rows.Add("Stinger salvo", 18, "Assault", 4, 5, -1, 1)
+                Case Is = "Stranglethorn cannon"
+                    Map.AllWargear.Rows.Add("Stranglethorn cannon", 36, "Assault", rolld(6), 7, -1, 2)
+                Case Is = "Strangleweb"
+                    Map.AllWargear.Rows.Add("Strangleweb", 8, "Assault", rolld(3), 2, 0, 1)
+                Case Is = "Tentaclids"
+                    Map.AllWargear.Rows.Add("Tentaclids", 36, "Assault", 2, 5, 0, 1)
+                Case Is = "Venom cannon"
+                    Map.AllWargear.Rows.Add("Venom cannon", 36, "Assault", rolld(3), 8, -1, 1)
+                Case Is = "Autogun"
+                    Map.AllWargear.Rows.Add("Autogun", 24, "Rapid Fire", 1, 3, 0, 1)
+                Case Is = "Autopistol"
+                    Map.AllWargear.Rows.Add("Autopistol", 12, "Pistol", 1, 3, 0, 1)
+                Case Is = "Blasting charge"
+                    Map.AllWargear.Rows.Add("Blasting charge", 6, "Grenade", rolld(6), 3, 0, 1)
+                Case Is = "Cache of demolition charges"
+                    Map.AllWargear.Rows.Add("Cache of demolition charges", 6, "Assault", rolld(6), 8, -3, rolld(3))
+                Case Is = "Clearance incinerator"
+                    Map.AllWargear.Rows.Add("Clearance incinerator", 12, "Assault", rolld(6), 5, -1, 1)
+                Case Is = "Demolition charges"
+                    Map.AllWargear.Rows.Add("Demolition charges", 6, "Assault", rolld(6), 8, -3, rolld(3))
+                Case Is = "Heavy mining laser"
+                    Map.AllWargear.Rows.Add("Heavy mining laser", 36, "Heavy", 1, 9, -3, rolld(6))
+                Case Is = "Heavy seismic cannon"
+heavyseismiccannon:
+                    Select Case CustomMsgbox("Long or Short-wave", "Long-wave", "Short-wave")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Heavy seismic cannon - Long-wave", 24, "Heavy", 4, 4, -1, 2)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Heavy seismic cannon - Short-wave", 12, "Heavy", 2, 8, -2, 3)
+                        Case Else
+                            GoTo heavyseismiccannon
+                    End Select
+                    'Map.AllWargear.Rows.Add("Heavy seismic cannon - Long-wave", 24, "Heavy", 4, 4, -1, 2)
+                    'Map.AllWargear.Rows.Add("Heavy seismic cannon - Short-wave", 12, "Heavy", 2, 8, -2, 3)
+                Case Is = "Mining laser"
+                    Map.AllWargear.Rows.Add("Mining laser", 24, "Heavy", 1, 9, -3, rolld(3))
+                Case Is = "Needle pistol"
+                    Map.AllWargear.Rows.Add("Needle pistol", 12, "Pistol", 1, 1, 0, 1)
+                Case Is = "Seismic cannon"
+seismiccannon:
+                    Select Case CustomMsgbox("Standard or Supercharge", "standard", "Supercharge")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Seismic cannon - Long-wave", 24, "Heavy", 4, 3, 0, 1)
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Seismic cannon - Short-wave", 12, "Heavy", 2, 6, -1, 2)
+                        Case Else
+                            GoTo seismiccannon
+                    End Select
+                    'Map.AllWargear.Rows.Add("Seismic cannon - Long-wave", 24, "Heavy", 4, 3, 0, 1)
+                    'Map.AllWargear.Rows.Add("Seismic cannon - Short-wave", 12, "Heavy", 2, 6, -1, 2)
+                Case Is = "Baleflamer"
+                    Map.AllWargear.Rows.Add("Baleflamer", 18, "Assault", rolld(6), 6, -2, 2)
+                Case Is = "Blastmaster"
+blastmaster:
+                    Select Case CustomMsgbox("Single or Varied frequency", "Single frequency", "Varied frequency")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Blastmaster - Single frequency", 48, "Heavy", rolld(3), 8, -2, rolld(3))
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Blastmaster - Varied frequency", 36, "Assault", rolld(6), 4, -1, 1)
+                        Case Else
+                            GoTo blastmaster
+                    End Select
+                    ' Map.AllWargear.Rows.Add("Blastmaster - Single frequency", 48, "Heavy", rolld(3), 8, -2, rolld(3))
+                    ' Map.AllWargear.Rows.Add("Blastmaster - Varied frequency", 36, "Assault", rolld(6), 4, -1, 1)
+                Case Is = "Blight grenade"
+                    Map.AllWargear.Rows.Add("Blight grenade", 6, "Grenade", rolld(6), 3, 0, 1)
+                Case Is = "Blight launcher"
+                    Map.AllWargear.Rows.Add("Blight launcher", 24, "Assault", 2, 6, -2, rolld(3))
+                Case Is = "Cypher’s bolt pistol"
+                    Map.AllWargear.Rows.Add("Cypher’s bolt pistol", 16, "Pistol", 3, 4, -1, 1)
+                Case Is = "Cypher’s plasma pistol"
+                    Map.AllWargear.Rows.Add("Cypher’s plasma pistol", 12, "Pistol", 2, 8, -3, 2)
+                Case Is = "The Destroyer Hive"
+                    Map.AllWargear.Rows.Add("The Destroyer Hive", 6, "Pistol", rolld(6) + rolld(6), 4, -3, 1)
+                Case Is = "Doom siren"
+                    Map.AllWargear.Rows.Add("Doom siren", 8, "Assault", rolld(3), 5, -2, 1)
+                Case Is = "Ectoplasma cannon"
+                    Map.AllWargear.Rows.Add("Ectoplasma cannon", 24, "Heavy", rolld(3), 7, -3, rolld(3))
+                Case Is = "Hades autocannon"
+                    Map.AllWargear.Rows.Add("Hades autocannon", 36, "Heavy", 4, 8, -1, 2)
+                Case Is = "Hades gatling cannon"
+                    Map.AllWargear.Rows.Add("Hades gatling cannon", 48, "Heavy", 12, 8, -2, 2)
+                Case Is = "Havoc launcher"
+                    Map.AllWargear.Rows.Add("Havoc launcher", 48, "Heavy", rolld(6), 5, 0, 1)
+                Case Is = "Heavy warpflamer"
+                    Map.AllWargear.Rows.Add("Heavy warpflamer", 8, "Heavy", rolld(6), 5, -2, 1)
+                Case Is = "Helbrute plasma cannon"
+                    Map.AllWargear.Rows.Add("Helbrute plasma cannon", 36, "Heavy", rolld(3), 8, -3, 2)
+                Case Is = "Hellfyre missile rack"
+                    Map.AllWargear.Rows.Add("Hellfyre missile rack", 24, "Heavy", 2, 8, -2, rolld(3))
+                Case Is = "Ichor cannon"
+                    Map.AllWargear.Rows.Add("Ichor cannon", 48, "Heavy", rolld(6), 7, -4, rolld(3))
+                Case Is = "Inferno bolt pistol"
+                    Map.AllWargear.Rows.Add("Inferno bolt pistol", 12, "Pistol", 1, 4, -2, 1)
+                Case Is = "Inferno boltgun"
+                    Map.AllWargear.Rows.Add("Inferno boltgun", 24, "Rapid Fire", 1, 4, -2, 1)
+                Case Is = "Inferno combi-bolter"
+                    Map.AllWargear.Rows.Add("Inferno combi-bolter", 24, "Rapid Fire", 2, 4, -2, 1)
+                Case Is = "Khârn’s plasma pistol"
+                    Map.AllWargear.Rows.Add("Khârn’s plasma pistol", 12, "Pistol", 1, 8, -3, 2)
+                Case Is = "Magma cutter"
+                    Map.AllWargear.Rows.Add("Magma cutter", 6, "Pistol", 1, 8, -4, 3)
+                Case Is = "Skullhurler"
+                    Map.AllWargear.Rows.Add("Skullhurler", 60, "Heavy", rolld(6), 9, -3, rolld(3))
+                Case Is = "Sonic blaster"
+                    Map.AllWargear.Rows.Add("Sonic blaster", 24, "Assault", 3, 4, 0, 1)
+                Case Is = "Soulreaper cannon"
+                    Map.AllWargear.Rows.Add("Soulreaper cannon", 24, "Heavy", 4, 5, -3, 1)
+                Case Is = "Talon of Horus (shooting)"
+                    Map.AllWargear.Rows.Add("Talon of Horus (shooting)", 24, "Rapid Fire", 2, 4, -1, rolld(3))
+                Case Is = "Tyrant’s Claw (shooting)"
+                    Map.AllWargear.Rows.Add("Tyrant’s Claw (shooting)", 9, "Assault", rolld(6), 5, -1, 1)
+                Case Is = "Warp bolter"
+                    Map.AllWargear.Rows.Add("Warp bolter", 24, "Assault", 2, 4, -1, 2)
+                Case Is = "Warpflame pistol"
+                    Map.AllWargear.Rows.Add("Warpflame pistol", 6, "Pistol", rolld(6), 3, -2, 1)
+                Case Is = "Warpflamer"
+                    Map.AllWargear.Rows.Add("Warpflamer", 8, "Assault", rolld(6), 4, -2, 1)
+                Case Is = "Bellow of endless fury"
+                    Map.AllWargear.Rows.Add("Bellow of endless fury", 8, "Assault", rolld(6), 5, -1, 1)
+                Case Is = "Bloodflail"
+                    Map.AllWargear.Rows.Add("Bloodflail", 8, "Assault", 1, 1, -3, 3)
+                Case Is = "Coruscating flames"
+                    Map.AllWargear.Rows.Add("Coruscating flames", 18, "Assault", 2, 3, 0, 1)
+                Case Is = "Death’s heads"
+                    Map.AllWargear.Rows.Add("Death’s heads", 12, "Assault", 2, 4, 0, 1)
+                Case Is = "Fire of Tzeentch"
+fireoftzeentch:
+                    Select Case CustomMsgbox("Blue or Pink", "Blue", "Pink")
+                        Case Is = 2
+                            Map.AllWargear.Rows.Add("Fire of Tzeentch - Blue", 18, "Heavy", rolld(3), 9, -4, rolld(3))
+                        Case Is = 3
+                            Map.AllWargear.Rows.Add("Fire of Tzeentch - Pink", 8, "Pistol", rolld(6), 5, -2, 1)
+                        Case Else
+                            GoTo fireoftzeentch
+                    End Select
+                    ' Map.AllWargear.Rows.Add("Fire of Tzeentch - Blue", 18, "Heavy", rolld(3), 9, -4, rolld(3))
+                    ' Map.AllWargear.Rows.Add("Fire of Tzeentch - Pink", 8, "Pistol", rolld(6), 5, -2, 1)
+                Case Is = "Flickering flames"
+                    Map.AllWargear.Rows.Add("Flickering flames", 8, "Pistol", rolld(6), 4, -1, 1)
+                Case Is = "Harvester cannon"
+                    Map.AllWargear.Rows.Add("Harvester cannon", 48, "Heavy", 3, 7, -1, rolld(3))
+                Case Is = "Hellfire"
+                    Map.AllWargear.Rows.Add("Hellfire", 8, "Assault", rolld(6), 5, -1, 1)
+                Case Is = "Lashes of torment"
+                    Map.AllWargear.Rows.Add("Lashes of torment", 6, "Assault", rolld(6), 4, 0, 1)
+                Case Is = "Phlegm bombardment"
+                    Map.AllWargear.Rows.Add("Phlegm bombardment", 36, "Heavy", rolld(3), 8, -2, 3)
+                Case Is = "Skull cannon"
+                    Map.AllWargear.Rows.Add("Skull cannon", 36, "Heavy", rolld(3), 8, -1, rolld(3))
+                Case Is = "Avenger gatling cannon"
+                    Map.AllWargear.Rows.Add("Avenger gatling cannon", 36, "Heavy", 12, 6, -2, 2)
+                Case Is = "Ironstorm missile pod"
+                    Map.AllWargear.Rows.Add("Ironstorm missile pod", 72, "Heavy", rolld(6), 5, -1, 2)
+                Case Is = "Rapid-fire battle cannon"
+                    Map.AllWargear.Rows.Add("Rapid-fire battle cannon", 72, "Heavy", rolld(6) + rolld(6), 8, -2, rolld(3))
+                Case Is = "Stormspear rocket pod"
+                    Map.AllWargear.Rows.Add("Stormspear rocket pod", 48, "Heavy", 3, 8, -2, rolld(6))
+                Case Is = "Thermal cannon"
+                    Map.AllWargear.Rows.Add("Thermal cannon", 36, "Heavy", rolld(3), 9, -4, rolld(6))
+                Case Is = "Twin Icarus autocannon"
+                    Map.AllWargear.Rows.Add("Twin Icarus autocannon", 48, "Heavy", 4, 7, -1, 2)
+                Case Is = "Icarus lascannon"
+                    Map.AllWargear.Rows.Add("Icarus lascannon", 96, "Heavy", 1, 9, -3, rolld(6))
+                Case Is = "Quad-gun"
+                    Map.AllWargear.Rows.Add("Quad-gun", 48, "Heavy", 8, 7, -1, 1)
+                Case Is = "Super Duper Mega Weapon"
+                    Map.AllWargear.Rows.Add("Super Duper Mega Weapon", 60, "Rapid Fire", 100, 100, -10, 100)
+                Case Else
+                    'handles stuff like camo cloak
+                    MsgBox("That is not a weapon, please select a weapon!")
+                    Map.skipshooting = True
+                    '######################################################################################
+                    '######################################################################################
+                    '######################################################################################
+                    '######################################################################################
+                    '######################################################################################
+                    '######################################################################################
+                    '######################################################################################
+                    '######################################################################################
+                    '######################################################################################
+                    '######################################################################################
+                    '######################################################################################
+                    '######################################################################################
+                    '######################################################################################
+            End Select
+        Catch ex As Exception
+            MsgBox("You need to select a weapon, stupid!")
+            Map.skipshooting = True
+        End Try
+    End Sub
+    Function closestunit(ByVal selectedunit As Object) '''' finds closest unit to selected unit
         Dim centerx As Integer
         Dim centery As Integer
         Dim closestdistance As Double
@@ -1288,7 +2874,7 @@ retryintro:
             If TypeOf cnt Is Model Then
                 targetunitx = cnt.left + cnt.Width / 2
                 targetunity = cnt.top + cnt.Height / 2
-                distance = calcdistancebetweentwocentres(centerx, centery, targetunitx, targetunity)
+                distance = calcdistancebetweentwoobjects(centerx, centery, targetunitx, targetunity)
                 If distance < closestdistance Or closestdistance = "" Then
                     identstorage = cnt.identifier
                 End If
@@ -1296,14 +2882,139 @@ retryintro:
         Next
         Return identstorage
     End Function
-    Function calcdistancebetweentwocentres(ByVal unit1x As Integer, ByVal unit1y As Integer, ByVal unit2x As Integer, ByVal unit2y As Integer) As Double
+    Function calcdistancebetweentwoobjects(ByVal unit1x As Integer, ByVal unit1y As Integer, ByVal unit2x As Integer, ByVal unit2y As Integer) As Double
         Console.WriteLine("Distance between two objects: " & Math.Sqrt((unit1x - unit2x) ^ 2 + (unit1y - unit2y) ^ 2) / Map.aspectratio)
         Return Math.Sqrt((unit1x - unit2x) ^ 2 + (unit1y - unit2y) ^ 2) / Map.aspectratio
     End Function
-    Function calcdistancebetweentwoobjectedges(ByVal unit1x As Integer, ByVal unit1y As Integer, ByVal unit2x As Integer, ByVal unit2y As Integer, ByVal unit1width As Integer, ByVal unit1height As Integer, ByVal unit2width As Integer, ByVal unit2height As Integer, Optional unit1shape As String = "Round", Optional unit2shape As String = "Round") As Double
-        Console.WriteLine("Distance between two objects: " & Math.Sqrt((unit1x - unit2x) ^ 2 + (unit1y - unit2y) ^ 2) / Map.aspectratio)
-        Return Math.Sqrt((unit1x - unit2x) ^ 2 + (unit1y - unit2y) ^ 2) / Map.aspectratio
+    Sub TransferUnits(ByVal ListofUnits As List(Of ModelsAndWeaponsForTransferingtoMap))
+        Dim left As Integer = 0
+        Dim top As Integer = 0
+
+        Map.heightofmap = 0
+        For model As Integer = 0 To ListofUnits.Count - 1
+            Console.WriteLine(ListofUnits(model).GroupID & " " & ListofUnits(model).GroupName & " " & ListofUnits(model).Name)
+            For weaponsandabilities As Integer = 0 To ListofUnits(model).WeaponsandAbilities.Count - 1
+                Console.WriteLine(" -- " & ListofUnits(model).WeaponsandAbilities(weaponsandabilities))
+
+
+                Dim lines = My.Resources.Units_Info_for_WH40K.Split(CChar(vbCrLf))
+                Dim fullunit As String = ""
+                Dim unitinfo() As String = {}
+                For Each line1 In lines
+                    If line1 <> "" Then
+
+                        '            '' Console.WriteLine(line1)
+                        fullunit = line1.Replace(vbLf, "")
+                        unitinfo = fullunit.Split(",")
+
+                        If fullunit.Split(",")(0) = ListofUnits(model).Name Then
+                            If ListofUnits(model).GroupID = team Then
+                                Map.groupidentifier.Rows.Add(team, 0, 0, 0) ' just set the leadership to something
+                                team += 1
+                            End If
+                            If Map.currentteam = Team_Setup.playeroneteam Then
+                                If (10 + Map.heightofmap + (unitinfo(1) * Map.aspectratio)) >= Map.Height Then 'if get to bottom of the page/screen
+                                    Map.heightofmap = 0
+                                    fromleftcolumncounter += 1
+                                End If
+                                left = (fromleftcolumncounter * (6.7 * Map.aspectratio) + 2) - (6.7 * Map.aspectratio) '4.15 is the width of the largest unit currently ingame
+                            Else ''team <> player 1's
+                                If (10 + Map.heightofmap + (unitinfo(1) * Map.aspectratio)) >= Map.Height Then 'if get to bottom of the page/screen
+                                    Map.heightofmap = 0
+                                    fromrightcolumncounter += 1
+                                End If
+                                left = Map.Width - (fromrightcolumncounter * ((6.7 * Map.aspectratio) + 2)) + ((6.7 * Map.aspectratio) - (unitinfo(1) * Map.aspectratio))
+                            End If
+                            top = 2 + Map.heightofmap
+                            Map.heightofmap = top + unitinfo(2) * Map.aspectratio
+                            AddUnitToMap(j, unitinfo(0), left, top, unitinfo(1) * Map.aspectratio, unitinfo(2) * Map.aspectratio, True, False, unitinfo(3) * Map.aspectratio, unitinfo(4), unitinfo(5), unitinfo(6), unitinfo(7), unitinfo(8), unitinfo(8), 0, unitinfo(9), unitinfo(10), unitinfo(11), ListofUnits(model).WeaponsandAbilities, Map.currentteam)
+                            j = j + 1
+                        End If
+                    End If
+                Next
+            Next
+        Next
+
+        ' '' ''Dim AllUnitList As New List(Of String)(ListofUnits.Split("~"c))
+        ' '' ''Dim SeperateNamesAndWeapons As New List(Of String) ' name and weapons
+        ' '' ''Dim Weaponslist As New List(Of String) ' weapon list of models
+        ' '' ''For Each UnitnameandWeapons As String In AllUnitList
+       
+        ' '' ''    SeperateNamesAndWeapons.Clear()
+        ' '' ''    Weaponslist.Clear()
+
+        ' '' ''    If UnitnameandWeapons.Contains("@") Then
+        ' '' ''        SeperateNamesAndWeapons.AddRange(UnitnameandWeapons.Split("@"))
+
+        ' '' ''        If SeperateNamesAndWeapons.Contains("$") Then 'shows all weapons
+        ' '' ''            Weaponslist.AddRange(SeperateNamesAndWeapons(1).Split("$"))
+        ' '' ''        Else ''shows only one weapon
+        ' '' ''            Weaponslist.Add(SeperateNamesAndWeapons(1))
+        ' '' ''        End If
+        ' '' ''    Else
+        ' '' ''        SeperateNamesAndWeapons.Add(UnitnameandWeapons)
+
+        ' '' ''    End If
+        ' '' ''    'Dim unitaspb As New Model
+
+        ' '' ''    '    unitaspb.Identifier = j
+        ' '' ''    '    '' unitaspb.weapons(0) = ""
+        ' '' ''    '    ''unitaspb.playerIdentifier = Race_Selection_Form.Playerid
+        
+
+    End Sub
+    Sub addModelToArmyList(ByVal groupname As String, ByVal groupid As Integer, ByVal Model As String, ByVal weaponsorabilities As System.Collections.Specialized.StringCollection)
+
+        'Model = Regex.Replace(Model, "~", "")
+        'Console.WriteLine(Model)
+        Dim thismodelsandweaponsfortransferngtomap As New ModelsAndWeaponsForTransferingtoMap
+        With thismodelsandweaponsfortransferngtomap
+            .GroupName = groupname
+            .GroupID = groupid
+            .Name = Model
+            .WeaponsandAbilities = weaponsorabilities
+        End With
+        For x = 0 To weaponsorabilities.Count - 1
+            Console.WriteLine(weaponsorabilities(x))
+        Next
+        ModelsandWeapons.Add(thismodelsandweaponsfortransferngtomap)
+
+
+
+
+
+
+    End Sub
+    Function IsLOSBlocking(ByVal Unit1x As Integer, ByVal Unit1y As Integer, ByVal Unit1width As Integer, ByVal Unit1height As Integer, ByVal Unit2x As Integer, ByVal Unit2y As Integer, ByVal Unit2width As Integer, ByVal Unit2height As Integer, ByVal SceneryObjects As List(Of PicBoxInfo)) As Boolean
+        For Each point1 In All4Corners(Unit1x, Unit1y, Unit1width, Unit1height)
+
+            For Each pont2 In All4Corners(Unit2x, Unit2y, Unit2width, Unit2height)
+
+            Next
+
+
+        Next
+
+        Return False
+    End Function
+    Function All4Corners(ByVal x As Integer, ByVal y As Integer, ByVal w As Integer, ByVal h As Integer)
+        Dim pointarray As New List(Of Point)
+        Dim newpoint As Point
+        Dim squarex As New List(Of Integer)
+
+        Dim squarey As New List(Of Integer)
+        squarex.Add(x)
+        squarex.Add(x + w)
+        squarey.Add(y)
+        squarey.Add(y + h)
+        For Each x In squarex
+            For Each y In squarey
+                newpoint.X = x
+                newpoint.Y = y
+                pointarray.Add(newpoint)
+            Next
+        Next
+
+        Return pointarray
     End Function
 End Module
-
-

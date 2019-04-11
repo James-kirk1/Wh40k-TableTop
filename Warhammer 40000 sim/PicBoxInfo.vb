@@ -38,7 +38,8 @@ Public Class PicBoxInfo
     Public Strength As Integer
     Public TeamId As Integer
     Public Toughness As Integer
-    Public Weapons As String()
+    Public Weapons As System.Collections.Specialized.StringCollection
     Public WeaponSkill As Integer
-    Public visible As Boolean
+    Public Visible As Boolean
+    Public Terraintype As String
 End Class

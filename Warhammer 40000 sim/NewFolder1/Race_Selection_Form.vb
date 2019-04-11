@@ -18,12 +18,17 @@ Public Class Race_Selection_Form
     Public mapwidth1 As Integer
     Dim usedeploymentmaps As Boolean
     Public setdeploymentmap As Integer = 0
+    Dim Introtext As String = "Current Date: 1 768 998.M41" & vbCrLf & "Galactic Position: UL/XIS/GIN/378/253" & vbCrLf & "Planet Name: NATIS" & vbCrLf & "Planetary Size: Medium 35 000km at Equator" & vbCrLf & "Moons: 4" & vbCrLf & "Class: Developing" & vbCrLf & "Tech Level: Industrial" & vbCrLf & "Star size: Medium" & vbCrLf & "Designation: Adeptus Astartes Recruitment World" & vbCrLf & "Previous Class: Feudal Jungle/Desert World" & vbCrLf & "Inhabitants: Imperial Citizens, Natis Fusiliers PDF" & vbCrLf & "Notable Visitors: Survivors of Order of the Lazuline Reliquary, Space Marines of the Doom Wyverns Chapter"
+    '"Current Date: 1 768 998.M41" & vbCrLf & "Planet: NATIS" & vbCrLf & "Designation: Recruitment and Developing Industrial World" & vbCrLf & "Previous Class: Feudal Jungle/Desert World" & vbCrLf & "Inhabitants: Imperial Citzens, Natis Fuiliers PDF" & vbCrLf & "Notable Visitors: Survivors of Order of the Lazuline Reliquary, Space Marines of the Doom Wyverns Chapter" & vbCrLf & "Reason for Visit: Currently Unknown for Adeptus Sororitas otherwise Training new Initiates for the Space Marines"
+    Dim introtextcounter As Integer = 0
+
 
 
 
     Private Sub Form1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         'Console.WriteLine(Application.StartupPath & " " & Application.ExecutablePath)
         Console.WriteLine(aunitfromallunit(1, 1))
+        GeneratePlanetDescription()
         'Console.WriteLine(SaveFilename)
         If File.Exists(UnitsSaveFilename) And File.Exists(ScenerySaveFilename) Then
             If MsgBox("Do you want to load most recent save", MsgBoxStyle.YesNo, "Setup") = 6 Then
@@ -98,6 +103,8 @@ EntermaxPlayers:
         End Try
         Timer1.Enabled = True
         Timer1.Start()
+        Timer2.Enabled = True
+        Timer2.Start()
         Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
         Me.StartPosition = FormStartPosition.CenterScreen
 
@@ -380,4 +387,14 @@ EntermaxPlayers:
         Label1.Text = "Player " & Playerid & " Select your race"
     End Sub
     
+    Private Sub Timer2_Tick(sender As System.Object, e As System.EventArgs) Handles Timer2.Tick
+        Label2.Text = Introtext.Substring(0, introtextcounter)
+        introtextcounter += 1
+        Dim random As New Random
+        Timer2.Interval = random.Next(100, 122)
+        If introtextcounter > Introtext.Length Then
+            Timer2.Stop()
+            Timer2.Enabled = False
+        End If
+    End Sub
 End Class

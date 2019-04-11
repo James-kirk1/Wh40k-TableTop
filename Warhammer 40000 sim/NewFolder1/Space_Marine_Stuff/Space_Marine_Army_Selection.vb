@@ -850,40 +850,12 @@ Public Class Space_Marine_Army_Selection
 
 
     Private Sub Btn_finished_Click(sender As System.Object, e As System.EventArgs) Handles Btn_finished.Click
-        Select Case Race_Selection_Form.Playerid
-            Case Is = 1
-                For x = 0 To ListBox1.Items.Count - 1
-                    If Team_Setup.playeronearmy = "" Then
-                        Team_Setup.playeronearmy = ListBox1.Items.Item(x)
-                    Else
-                        Team_Setup.playeronearmy = Team_Setup.playeronearmy & "~" & ListBox1.Items.Item(x)
-                    End If
-                Next
-                'Console.WriteLine(Team_Setup.playeronearmy)
-                'Case Is = 2
-                '    Team_Setup.playertwoarmy = ListBox1.Text
-                'Case Is = 3
-                '    Team_Setup.playerthreearmy = ListBox1.Text
-                'Case Is = 4
-                '    Team_Setup.playerfourarmy = ListBox1.Text
-                'Case Is = 5
-                '    Team_Setup.playerfivearmy = ListBox1.Text
-                'Case Is = 6
-                '    Team_Setup.playersixarmy = ListBox1.Text
-                'Case Is = 7
-                '    Team_Setup.playersevenarmy = ListBox1.Text
-                'Case Is = 8
-                '    Team_Setup.playereightarmy = ListBox1.Text
-        End Select
-
+        Functions.listallModels.Clear()
+        For x = 0 To ListBox1.Items.Count - 1
+            Functions.listallModels.Add(ListBox1.Items.Item(x))
+        Next
         Space_Marines_Weapons_Selection.Show()
         Space_Marines_Weapons_Selection.BringToFront()
-        'For Each item As String In ListBox1.Items
-        '    Console.Write(item & "~")
-        'Next
-
-        'Space_Marines_Weapons_Selection.Show()
-
     End Sub
 
     Private Sub Timer1_Tick(sender As System.Object, e As System.EventArgs) Handles Timer1.Tick

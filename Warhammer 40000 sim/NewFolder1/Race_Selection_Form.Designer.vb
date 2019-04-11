@@ -37,6 +37,8 @@ Partial Class Race_Selection_Form
         Me.Race_Inquisition = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'Race_Space_Marines
@@ -45,7 +47,7 @@ Partial Class Race_Selection_Form
         Me.Race_Space_Marines.Name = "Race_Space_Marines"
         Me.Race_Space_Marines.Size = New System.Drawing.Size(210, 23)
         Me.Race_Space_Marines.TabIndex = 0
-        Me.Race_Space_Marines.Text = "Space Marines"
+        Me.Race_Space_Marines.Text = "Space Marin213es"
         Me.Race_Space_Marines.UseVisualStyleBackColor = True
         '
         'Race_Orks
@@ -162,12 +164,26 @@ Partial Class Race_Selection_Form
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(241, 13)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(39, 13)
+        Me.Label2.TabIndex = 13
+        Me.Label2.Text = "Label2"
+        '
+        'Timer2
+        '
+        Me.Timer2.Interval = 111
+        '
         'Race_Selection_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(234, 513)
+        Me.ClientSize = New System.Drawing.Size(1300, 513)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Race_Inquisition)
         Me.Controls.Add(Me.Race_Chaos_Daemons)
@@ -205,5 +221,7 @@ Partial Class Race_Selection_Form
     Friend WithEvents Race_Inquisition As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Timer2 As System.Windows.Forms.Timer
 
 End Class

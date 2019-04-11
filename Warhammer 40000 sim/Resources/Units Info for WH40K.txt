@@ -14,6 +14,7 @@ Chaplain in Terminator Armour,1.5,1.5,5,2,3,4,4,5,3,9,2
 Chaplain on Bike,2.75,1,14,2,3,4,5,5,3,9,3
 Apothecary,1.25,1.25,6,3,3,4,4,4,3,8,3
 Apothecary on Bike,2.75,1,14,3,3,4,5,5,3,8,3
+Lieutenant,1.25,1.25,6,2,3,4,4,4,3,8,3
 Primaris Lieutenant,1.25,1.25,6,2,3,4,4,5,4,8,3
 Company Ancient,1.25,1.25,6,3,3,4,4,4,3,8,3
 Company Ancient on Bike,2.75,1,14,3,3,4,5,5,3,8,3
@@ -52,59 +53,61 @@ Scout Biker Sergeant,2.75,1,16,3,3,4,5,2,2,8,4
 Space Marine Biker,2.75,1,14,3,3,4,5,2,1,7,3
 Biker Sergeant,2.75,1,14,3,3,4,5,2,2,8,3
 Attack Bike,2.75,2.75,14,3,3,4,5,4,2,7,3
-Land Speeder Storm,1,1,18,3,3,4,5,7,2,7,4
-Land Speeder,1,1,16,3,3,4,5,6,2,7,3
-Rhino,1,1,12,6,3,6,7,10,3,8,3
-Rhino Primaris,1,1,12,6,3,6,7,10,3,8,3
-Razorback,1,1,12,6,3,6,7,10,3,8,3
-Drop Pod,1,1,0,0,3,6,6,8,0,8,3
-Stormhawk Interceptor,1,1,60,6,3,6,7,10,3,8,3
-Stormtalon Gunship,1,1,50,6,3,6,6,10,3,8,3
-Space Marine,1,1,6,3,3,4,4,1,1,7,3
+Land Speeder Storm,2.16,2.16,18,3,3,4,5,7,2,7,4
+Land Speeder,2.16,2.16,16,3,3,4,5,6,2,7,3
+Rhino,4.5,3,12,6,3,6,7,10,3,8,3
+Rhino Primaris,4.5,3,12,6,3,6,7,10,3,8,3
+Razorback,4.5,3,12,6,3,6,7,10,3,8,3
+Drop Pod,4.5,4.5,0,0,3,6,6,8,0,8,3
+Stormhawk Interceptor,2.16,2.16,60,6,3,6,7,10,3,8,3
+Stormtalon Gunship,2.16,2.16,50,6,3,6,6,10,3,8,3
+Space Marine,1.25,1.25,6,3,3,4,4,1,1,7,3
 Armorium Cherub,1,1,6,6,0,2,4,1,1,3,6
-Hellblaster,1,1,6,3,3,4,4,2,2,7,3
-Hellblaster Sergeant,1,1,6,3,3,4,4,2,3,8,3
-Thunderfire Cannon,1,1,3,6,3,3,6,4,1,8,3
+Hellblaster,1.25,1.25,6,3,3,4,4,2,2,7,3
+Hellblaster Sergeant,1.25,1.25,6,3,3,4,4,2,3,8,3
+Thunderfire Cannon,1.5,1.5,3,6,3,3,6,4,1,8,3
 Techmarine Gunner,1,1,6,3,2,4,4,2,3,8,2
-Predator,1,1,12,6,3,6,7,11,3,8,3
-Whirlwind,1,1,12,6,3,6,7,11,3,8,3
-Vindicator,1,1,10,6,3,6,8,11,3,8,3
-Hunter,1,1,10,6,3,6,8,11,3,8,3
-Stalker,1,1,10,6,3,6,8,11,3,8,3
-Stormraven Gunship,1,1,45,6,3,8,7,14,3,9,3
-Land Raider,1,1,10,6,3,8,8,16,6,9,2
-Land Raider Crusader,1,1,10,6,3,8,8,16,6,9,3
-Land Raider Redeemer,1,1,10,6,3,8,8,16,6,9,2
-Land Raider Excelsior,1,1,10,6,3,8,8,16,6,9,2
-Roboute Guilliman,1,1,8,2,2,6,6,9,6,10,2
-Marneus Calgar,1,1,5,2,2,4,4,7,5,9,2
-Marneus Calgar in Artificer Armour,1,1,6,2,2,4,4,6,5,9,2
-Captain Sicarius,1,1,6,2,2,4,4,5,4,9,2
-Chief Librarian Tigurius,1,1,6,3,3,4,4,4,3,9,3
-Chaplain Cassius,1,1,6,2,3,4,5,4,3,9,3
-Sergeant Telion,1,1,7,3,2,4,4,4,2,8,4
-Sergeant Chronus (Infantry),1,1,6,3,2,4,4,4,2,8,3
-Tyrannic War Veteran,1,1,6,3,3,4,4,1,2,8,3
-Veteran Sergeant (Astartes),1,1,6,3,3,4,4,1,3,9,3
+Predator,4.5,3,12,6,3,6,7,11,3,8,3
+Whirlwind,4.5,3,12,6,3,6,7,11,3,8,3
+Vindicator,4.5,3,10,6,3,6,8,11,3,8,3
+Hunter,4.5,3,10,6,3,6,8,11,3,8,3
+Stalker,4.5,3,10,6,3,6,8,11,3,8,3
+Stormraven Gunship,2.16,2.16,45,6,3,8,7,14,3,9,3
+Land Raider,6.7,3.9,10,6,3,8,8,16,6,9,2
+Land Raider Crusader,6.7,3.9,10,6,3,8,8,16,6,9,3
+Land Raider Redeemer,6.7,3.9,10,6,3,8,8,16,6,9,2
+Land Raider Excelsior,6.7,3.9,10,6,3,8,8,16,6,9,2
+
+
+Roboute Guilliman,2,2,8,2,2,6,6,9,6,10,2
+Marneus Calgar,1.5,1.5,5,2,2,4,4,7,5,9,2
+Marneus Calgar in Artificer Armour,1.25,1.25,6,2,2,4,4,6,5,9,2
+Captain Sicarius,1.25,1.25,6,2,2,4,4,5,4,9,2
+Chief Librarian Tigurius,1.25,1.25,6,3,3,4,4,4,3,9,3
+Chaplain Cassius,1.25,1.25,6,2,3,4,5,4,3,9,3
+Sergeant Telion,1.25,1.25,7,3,2,4,4,4,2,8,4
+Sergeant Chronus (Infantry),1.25,1.25,6,3,2,4,4,4,2,8,3
+Tyrannic War Veteran,1.25,1.25,6,3,3,4,4,1,2,8,3
+Veteran Sergeant (Astartes),1.25,1.25,6,3,3,4,4,1,3,9,3
 Terminus Ultra,1,1,10,6,3,8,8,16,6,9,2
-Captain Lysander,1,1,5,2,2,4,4,6,4,9,2
-Pedro Kantor,1,1,6,2,2,4,4,6,4,9,2
-High Marshal Helbrecht,1,1,6,2,2,4,4,6,4,9,2
-The Emperor’s Champion,1,1,6,2,3,4,4,4,4,8,2
-Chaplain Grimaldus,1,1,6,2,3,4,4,4,3,9,3
+Captain Lysander,1.25,1.25,5,2,2,4,4,6,4,9,2
+Pedro Kantor,1.25,1.25,6,2,2,4,4,6,4,9,2
+High Marshal Helbrecht,1.25,1.25,6,2,2,4,4,6,4,9,2
+The Emperor’s Champion,1.25,1.25,6,2,3,4,4,4,4,8,2
+Chaplain Grimaldus,1.25,1.25,6,2,3,4,4,4,3,9,3
 Cenobyte Servitor,1,1,5,5,5,3,3,1,1,6,4
 Initiate,1,1,6,3,3,4,4,1,1,7,3
 Neophyte,1,1,6,3,3,4,4,1,1,6,4
-Sword Brother,1,1,6,3,3,4,4,1,2,8,3
-Kayvaan Shrike,1,1,12,2,2,4,4,5,5,9,3
-Vulkan He’stan,1,1,6,2,2,4,4,5,4,9,2
-Kor’sarro Khan,1,1,6,2,2,4,4,5,4,9,3
+Sword Brother,1.25,1.25,6,3,3,4,4,1,2,8,3
+Kayvaan Shrike,1.25,1.25,12,2,2,4,4,5,5,9,3
+Vulkan He’stan,1.25,1.25,6,2,2,4,4,5,4,9,2
+Kor’sarro Khan,1.25,1.25,6,2,2,4,4,5,4,9,3
 Kor’sarro Khan on Moondrakkan,2.75,1,14,2,2,4,5,6,4,9,3
-Legionnaire,1,1,5,3,3,4,4,1,2,10,3
-Legionnaire Sergeant,1,1,5,3,3,4,4,1,3,10,3
-Commander Dante,1,1,12,2,2,4,4,6,6,9,2
-Captain Tycho,1,1,6,2,2,4,4,5,4,9,2
-Tycho the Lost,1,1,6,2,2,4,4,5,4,9,2
+Legionnaire,1.25,1.25,5,3,3,4,4,1,2,10,3
+Legionnaire Sergeant,1.25,1.25,5,3,3,4,4,1,3,10,3
+Commander Dante,1.25,1.25,12,2,2,4,4,6,6,9,2
+Captain Tycho,1.25,1.25,6,2,2,4,4,5,4,9,2
+Tycho the Lost,1.25,1.25,6,2,2,4,4,5,4,9,2
 Librarian Dreadnought,1,1,6,2,3,6,7,8,3,9,3
 Chief Librarian Mephiston,1,1,7,2,2,5,5,5,4,9,2
 The Sanguinor,1,1,12,2,2,4,4,5,5,9,2

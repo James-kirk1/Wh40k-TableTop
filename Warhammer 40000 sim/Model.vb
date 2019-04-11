@@ -27,8 +27,8 @@ Public Class Model
     'Dim groupidentifierdm As Integer
     'Dim playeridentifierdm As Integer
 
-    Dim weaponsdm As String()
-    Dim listofallweaponsdm As String
+    Dim weaponsdm As System.Collections.Specialized.StringCollection
+    'Dim listofallweaponsdm As String
     Dim hasmoveddm As Boolean = False
     Dim hasadvanceddm As Boolean = False
     Dim istargetdm As Boolean = False
@@ -190,11 +190,11 @@ Public Class Model
             ispsyker = value
         End Set
     End Property
-    Property Weapons As String()
+    Property Weapons As System.Collections.Specialized.StringCollection
         Get
             Return weaponsdm
         End Get
-        Set(value() As String)
+        Set(value As System.Collections.Specialized.StringCollection)
             weaponsdm = value
         End Set
     End Property
